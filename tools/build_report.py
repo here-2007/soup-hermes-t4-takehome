@@ -40,6 +40,9 @@ def build_pdf():
                                 spaceAfter=7, textColor=colors.HexColor(NAVY)),
         "heading": ParagraphStyle("heading", fontName="Helvetica-Bold", fontSize=11.2, leading=13,
                                   spaceBefore=8, spaceAfter=5, textColor=colors.HexColor(TEAL), keepWithNext=True),
+        "point": ParagraphStyle("point", fontName="Helvetica", fontSize=9.15, leading=11.65,
+                                leftIndent=10, bulletIndent=0, spaceAfter=4,
+                                textColor=colors.HexColor(NAVY)),
         "cell": ParagraphStyle("cell", fontName="Helvetica", fontSize=8.1, leading=10.1,
                                textColor=colors.HexColor(NAVY)),
         "headcell": ParagraphStyle("headcell", fontName="Helvetica-Bold", fontSize=8.1, leading=10.1,
@@ -62,6 +65,12 @@ def build_pdf():
             story.append(Paragraph(inline(line[2:]), styles["title"])); index += 1; continue
         if line.startswith("## "):
             story.append(Paragraph(inline(line[3:]), styles["heading"])); index += 1; continue
+        point = re.match(r"^(- |[1-3]\. )(.*)$", line)
+        if point:
+            bullet = "\u2022" if point.group(1) == "- " else point.group(1).strip()
+            story.append(Paragraph(inline(point.group(2)), styles["point"], bulletText=bullet))
+            index += 1
+            continue
         if line.startswith("|"):
             rows = []
             while index < len(lines) and lines[index].strip().startswith("|"):
@@ -86,10 +95,12 @@ def build_pdf():
             continue
         paragraph = [lines[index]]
         index += 1
-        while index < len(lines) and lines[index].strip() and not lines[index].strip().startswith(("#", "|", "<!--")):
+        while (index < len(lines) and lines[index].strip()
+               and not lines[index].strip().startswith(("#", "|", "<!--", "- "))
+               and not re.match(r"^[1-3]\. ", lines[index].strip())):
             paragraph.append(lines[index]); index += 1
         text = " ".join(paragraph)
-        style = styles["source"] if text.startswith("Evidence:") else styles["body"]
+        style = styles["source"] if text.startswith(("Evidence:", "Evidence map:")) else styles["body"]
         rendered = "".join(inline(part.strip()) + ("<br/>" if part.endswith("  ") else " ")
                            for part in paragraph).strip()
         story.append(Paragraph(rendered, style))

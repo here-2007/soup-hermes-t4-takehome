@@ -4,7 +4,13 @@
 
 The dense merge improves exact tool-call correctness from **50.0% to 60.0%**. NF4 reduces it to **49.3%**, while a general tool-call regression and an unresolved merge-equivalence check also block release. This repository contains the completed experiment, including the failed gates.
 
-[Two-page report](report.pdf) · [Readable report](REPORT.md) · [Download submission ZIP](https://github.com/here-2007/soup-hermes-t4-takehome/releases/latest/download/soup-ai-engineer-submission.zip) · [Exact model artifacts, Kaggle v1](https://www.kaggle.com/models/pernavjain/soup-experiment/PyTorch/experiment-artifacts/1)
+[Two-page report](report.pdf) · [Email attachment](https://github.com/here-2007/soup-hermes-t4-takehome/releases/latest/download/pernav-jain-soup-email-submission.zip) · [Full archive](https://github.com/here-2007/soup-hermes-t4-takehome/releases/latest/download/soup-ai-engineer-submission.zip) · [Exact model artifacts, Kaggle v1](https://www.kaggle.com/models/pernavjain/soup-experiment/PyTorch/experiment-artifacts/1)
+
+## What to attach to the email
+
+Attach **`pernav-jain-soup-email-submission.zip` (5.95 MiB)**. This is a curated submission with the report, both executed notebooks, original verifier, exact training data/configuration, all raw command/device logs, saved predictions and check results. It has its own short README and a working CPU review command.
+
+The attachment leaves seven large binary probe tensors, older automated report drafts and most preparation cache files in the full archive. `EMAIL_MANIFEST.json` names every omission. No failed log, result or test prediction is removed or shortened. Model weights remain on Kaggle. The separate full archive contains the complete repository and original preparation records.
 
 ![Measured task results and paired uncertainty](figures/artifact-comparison.png)
 

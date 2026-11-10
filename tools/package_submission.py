@@ -17,7 +17,7 @@ def files(root):
                   and p.name not in {".DS_Store", "SHA256SUMS"} and not p.name.endswith((".pyc", ".kaggle-partial")))
 
 
-def build(output, root=ROOT):
+def build(output, root=ROOT, archive_root="soup-hermes-t4-takehome"):
     root, output = Path(root).resolve(), Path(output).resolve()
     if output.is_relative_to(root):
         raise ValueError("Write the ZIP outside the repository to avoid recursive inclusion")
@@ -27,7 +27,7 @@ def build(output, root=ROOT):
     manifest.write_text("".join(f"{digest}  {name}\n" for name, digest in hashes.items()))
     members.append(manifest)
     output.parent.mkdir(parents=True, exist_ok=True)
-    prefix = "soup-hermes-t4-takehome/"
+    prefix = archive_root + "/"
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
         for path in members:
             info = zipfile.ZipInfo(prefix + str(path.relative_to(root)), date_time=(2026, 11, 10, 0, 0, 0))

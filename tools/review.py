@@ -59,9 +59,21 @@ def same(actual, expected, label):
         raise ValueError(f"Different value: {label}: {actual!r} != {expected!r}")
 
 
-def review(run, preparation=None):
+def selected_manifest(original, omitted):
+    for name, expected in omitted.items():
+        if name not in original or original[name] != expected:
+            raise ValueError("Email omission differs from the original manifest: " + name)
+    return {name: entry for name, entry in original.items() if name not in omitted}
+
+
+def review(run, preparation=None, email_manifest=None):
     run = Path(run).resolve()
-    indexed = verify_manifest(run, read_json(run / "evidence-index.json")["files"])
+    bundle = read_json(email_manifest) if email_manifest else {}
+    if email_manifest:
+        verify_manifest(Path(email_manifest).parent, bundle["files"])
+    omitted_run = bundle.get("omitted_run_files", {})
+    omitted_preparation = bundle.get("omitted_preparation_files", {})
+    indexed = verify_manifest(run, selected_manifest(read_json(run / "evidence-index.json")["files"], omitted_run))
     spec = importlib.util.spec_from_file_location("recorded_verifier", run / "verify_artifacts.py")
     engine = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(engine)
@@ -142,7 +154,8 @@ def review(run, preparation=None):
     data_summary = None
     if preparation:
         preparation = Path(preparation)
-        preparation_count = verify_manifest(preparation, read_json(preparation / "manifest.json"), nested=True)
+        preparation_count = verify_manifest(preparation, selected_manifest(
+            read_json(preparation / "manifest.json"), omitted_preparation), nested=True)
         data_summary = read_json(preparation / "audit/data-audit.json")["counts_and_distribution"]
     selection = read_json(run / "evidence/selection.json")
     accuracy = [row["complete"] for row in selection["all_seeds"]]
@@ -163,6 +176,7 @@ def review(run, preparation=None):
     return {
         "review_status": "PASS", "release_verdict": verdict["verdict"], "run_id": read_json(run / "settings.json")["run_id"],
         "original_run_files_hash_verified": indexed, "preparation_files_hash_verified": preparation_count,
+        "original_run_files_omitted": len(omitted_run), "preparation_files_omitted": len(omitted_preparation),
         "test_predictions_rescored": sum(len(rows) for rows in predictions.values()),
         "bootstrap_comparisons_reproduced": len(pairs), "raw_gpu0_samples": raw_samples,
         "metrics": metrics, "paired_bootstrap": pairs, "general_suites": general, "memory": memory,
@@ -182,9 +196,11 @@ def main():
     parser.add_argument("--run", type=Path, default=ROOT / "run")
     parser.add_argument("--preparation", type=Path, default=ROOT / "data-preparation")
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--email-bundle", action="store_true",
+                        help="Verify the curated attachment using its explicit EMAIL_MANIFEST.json omissions")
     args = parser.parse_args()
     try:
-        result = review(args.run, args.preparation)
+        result = review(args.run, args.preparation, ROOT / "EMAIL_MANIFEST.json" if args.email_bundle else None)
     except (ValueError, KeyError, OSError, TypeError) as exc:
         print(f"Evidence audit FAIL: {exc}", file=sys.stderr)
         return 1
@@ -192,7 +208,8 @@ def main():
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
     print(json.dumps({key: result[key] for key in ("review_status", "release_verdict", "original_run_files_hash_verified",
-          "preparation_files_hash_verified", "test_predictions_rescored", "bootstrap_comparisons_reproduced",
+          "preparation_files_hash_verified", "original_run_files_omitted", "preparation_files_omitted",
+          "test_predictions_rescored", "bootstrap_comparisons_reproduced",
           "raw_gpu0_samples", "blockers")}, indent=2))
     return 0
 

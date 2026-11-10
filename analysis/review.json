@@ -4,6 +4,8 @@
   "run_id": "20261110T044014005029Z",
   "original_run_files_hash_verified": 215,
   "preparation_files_hash_verified": 53,
+  "original_run_files_omitted": 0,
+  "preparation_files_omitted": 0,
   "test_predictions_rescored": 450,
   "bootstrap_comparisons_reproduced": 3,
   "raw_gpu0_samples": 60824,

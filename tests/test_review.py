@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
 
 from pypdf import PdfReader
 
@@ -15,6 +16,8 @@ SPEC.loader.exec_module(REVIEW)
 PACKAGE_SPEC = importlib.util.spec_from_file_location("submission_package", ROOT / "tools/package_submission.py")
 PACKAGE = importlib.util.module_from_spec(PACKAGE_SPEC)
 PACKAGE_SPEC.loader.exec_module(PACKAGE)
+sys.path.insert(0, str(ROOT / "tools"))
+import package_email as EMAIL
 
 
 class IntegrityTests(unittest.TestCase):
@@ -60,6 +63,34 @@ class IntegrityTests(unittest.TestCase):
         for required in ("DON'T SHIP", "0.03867", "49.33%", "8.993", "Reflection and AI use"):
             self.assertIn(required, text)
         self.assertNotIn("PENDING", text)
+        self.assertGreaterEqual(sum(line.startswith("- ") for line in (ROOT / "REPORT.md").read_text().splitlines()), 20)
+
+    def test_email_package_keeps_required_records_and_exposes_omissions(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            result = EMAIL.populate(root)
+            self.assertEqual(result["original_run_files_hash_verified"], 205)
+            self.assertEqual(result["original_run_files_omitted"], 10)
+            self.assertEqual(result["preparation_files_hash_verified"], 7)
+            self.assertEqual(result["test_predictions_rescored"], 450)
+            self.assertEqual(result["release_verdict"], "DON'T SHIP")
+            original_logs = {p.name for p in (ROOT / "run/evidence/logs").iterdir()}
+            self.assertEqual({p.name for p in (root / "run/evidence/logs").iterdir()}, original_logs)
+            self.assertEqual(REVIEW.sha256(root / "run/evidence/nvidia-smi.raw.log"),
+                             REVIEW.sha256(ROOT / "run/evidence/nvidia-smi.raw.log"))
+            self.assertFalse(list(root.rglob("*.pt")))
+            for name in ("report.pdf", "run/verify_artifacts.py", "run/data/train.jsonl", "EMAIL_MANIFEST.json"):
+                self.assertTrue((root / name).is_file(), name)
+            (root / "run/evidence/predictions/test-Q.jsonl").write_text("changed")
+            with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
+                REVIEW.review(root / "run", root / "data-preparation", root / "EMAIL_MANIFEST.json")
+
+    def test_email_omissions_must_match_the_original_manifest(self):
+        self.assertEqual(REVIEW.selected_manifest({"kept": "a", "omitted": "b"}, {"omitted": "b"}), {"kept": "a"})
+        with self.assertRaisesRegex(ValueError, "omission differs"):
+            REVIEW.selected_manifest({"kept": "a"}, {"unknown": "b"})
+        with self.assertRaisesRegex(ValueError, "omission differs"):
+            REVIEW.selected_manifest({"kept": "a"}, {"kept": "forged"})
 
     def test_package_round_trip_preserves_bytes_and_excludes_git(self):
         with tempfile.TemporaryDirectory() as directory:

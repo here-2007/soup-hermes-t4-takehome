@@ -3,74 +3,83 @@
 **Pernav Jain | Soup AI Engineer take-home | 10 November 2026**  
 Run `20261110T044014005029Z` | **DON'T SHIP**
 
-The dense merge improves exact tool-call correctness from 50.0% to 60.0%. The saved NF4 model scores 49.3%, loses 22 previously correct turns and gains six. Its general tool-call score also regresses. The recorded merge-equivalence gate remains unresolved. Training and export completed, but this 4-bit artifact fails the release criteria.
+- **Dense model improves:** fully correct tool-call responses rise from 50.0% to 60.0%.
+- **4-bit model loses the gain:** NF4 scores 49.3%. It loses 22 responses the dense model got right and fixes six others.
+- **Release is blocked:** the general tool-call score also falls, and a preset merge-accuracy check still fails.
 
-## 1. Experiment and memory
+## 1. Setup and data
 
-Qwen2.5-1.5B-Instruct fits the model-size requirement and supports a tractable English task: emit ordered JSON tool calls. Hermes supplies tool schemas and reference calls. The prepared split contains 1,600 train, 150 validation and 150 test turns, with tool/request families separated. Every row fits 1,024 tokens; assistant content and EOT receive loss. Structural audits cover all 1,900 rows. References were not exhaustively adjudicated for semantic correctness.
+- **Choice:** Qwen2.5-1.5B-Instruct meets the size limit and supports an English task we can score directly: generate ordered JSON tool calls from Hermes prompts and schemas.
+- **Split:** 1,600 training, 150 validation and 150 test turns. Known tool/request families stay in one split. All 1,900 rows pass structural and label-mask checks and fit within 1,024 tokens. Loss covers assistant content and end-of-turn tokens.
+- **Recipe:** Soup `0.77.2`, commit `4cff43bf967e`; frozen FP16 base; LoRA rank 8, alpha 16, dropout 0.05 on seven projections per layer. AdamW, LR `1e-4`, cosine decay, 5% warmup, batch 1 and gradient accumulation 8.
+- **Selection:** seeds 42/43/44 each train for two epochs, or 400 optimizer steps. Validation loss chooses each checkpoint; validation tool-call correctness chooses seed 42. Test results choose neither.
+- **Hardware:** one visible T4 from Kaggle's two-card allocation; measured usable capacity 14.562 GiB. Training uses FP16 LoRA; NF4 is a separate export step.
 
-Soup `0.77.2` at commit `4cff43bf967e` trains a frozen FP16 base with LoRA on seven projections per layer: rank 8, alpha 16, dropout 0.05; AdamW, LR `1e-4`, cosine decay, 5% warmup, batch 1 and accumulation 8. Each of seeds 42/43/44 completes two epochs, or 400 steps. Epoch validation loss selects the checkpoint; validation exact correctness selects seed 42. Test data select neither. One T4 is exposed from Kaggle's two-card allocation; usable capacity is 14.562 GiB.
+## 2. Memory budget and measured peaks
 
-The preserved pre-training estimate contains the following floors and a **12 GiB planning envelope**:
+The saved estimate was written before training. It records these storage floors and a **12 GiB planning budget**.
 
 | Component | Calculation | GiB |
 |---|---|---:|
-| Frozen weights | 1,543,714,304 x 2 bytes | 2.875 |
-| LoRA, gradients, Adam moments | 9,232,384 x (4 + 4 + 8) bytes | 0.138 |
-| One full logits tensor | 1 x 1,024 x 151,936 x 2 / 4 bytes | 0.290 / 0.580 |
-| NF4 storage floor | 1,310,195,712 x 0.5 + 233,373,696 x 2 bytes | 1.045 |
+| Frozen FP16 weights | 1,543,714,304 x 2 bytes | 2.875 |
+| LoRA + gradients + Adam states | 9,232,384 x (4 + 4 + 8) bytes | 0.138 |
+| Full logits, FP16 / FP32 | 1 x 1,024 x 151,936 x 2 / 4 bytes | 0.290 / 0.580 |
+| NF4 weight-storage floor | 1,310,195,712 x 0.5 + 233,373,696 x 2 bytes | 1.045 |
 
-Checkpointed activations, loss workspaces, allocator/context overhead and export staging sit outside these floors. A retained FP16 hidden state per layer alone is about 0.082 GiB; this reconstruction is a lower bound, not a full activation forecast. The original activation allowance was coarse.
-
-| Measured phase | GPU allocated peak | Sampled device peak | Host RSS peak |
+| Measured phase | Allocated GPU peak | Sampled device peak | Host RAM peak (RSS) |
 |---|---:|---:|---:|
 | Training, maximum across seeds | 4.855 GiB | 5.569 GiB | 3.884 GiB |
 | Dense merge | 0.034 GiB | 0.138 GiB | 6.436 GiB |
 | Dense staging and NF4 save | 1.089 GiB | 1.247 GiB | 6.132 GiB |
 
-Global allocator reservation peaks at 5.430 GiB, leaving 8.993 GiB of measured headroom. The allocated peak exceeds the base-plus-state floor by 1.842 GiB; that residual includes activations and workspaces. Two dense copies would require 5.751 GiB of host storage, consistent with the order of the export RSS, but tensor-level host attribution was not measured. CUDA counters and 0.2-second-target device/RSS samples describe different quantities; samples can miss spikes and independent peaks cannot be added. M/Q weight files occupy 2.875/1.065 GiB: 2.70x compression, limited by floating-point embeddings and quantization metadata.
+- **Training gap:** allocation exceeds the 3.013 GiB base-plus-training-state floor by 1.842 GiB. This includes activations and loss workspaces; their separate sizes were not measured. A later calculation gives 0.082 GiB for one retained FP16 hidden state per layer, only a lower bound. The original activation allowance was coarse.
+- **Available margin:** reserved GPU memory peaks at 5.430 GiB; the larger sampled device peak leaves **8.993 GiB headroom**. The 12 GiB budget was conservative. Device/RSS samples target 0.2 seconds and can miss short spikes; separate peaks cannot be added.
+- **Export cost:** two dense weight copies would need 5.751 GiB of host RAM, close in scale to the measured 6.436 GiB RSS. Host buffers were not measured separately. M/Q weight files are 2.875/1.065 GiB: **2.70x compression**, limited by FP16 embeddings and quantization metadata.
 
-## 2. Evidence that the adapter trained
+## 3. Proof that training changed the model
 
-For seed 42, all 392 LoRA tensors change; they contain **9,232,384 scalar weights**. Optimizer membership matches trainable tensors. There are 399 nonzero-LR optimizer steps, one zero-LR warmup step and no AMP skips; the first materialized update is `5.01e-6`. Selected frozen projection hashes remain unchanged. Disabling the adapter restores the base's probe log probabilities exactly; enabling it changes them by up to 18.47. These probes cover four validation rows, 416 reference tokens and 16 distribution positions.
-
-The initial zero-effect adapter is rejected by Soup's adapter check. Substituting the base for M fails the weight test; substituting quantized base Q0 for Q fails identity checks. Cold M/Q reloads block reads from the base/adapter folders. Q contains 196 NF4 linear modules, nested quantization state and FP16 compute. These checks establish an active, changed adapter and real exports; they do not establish desirable behavior or universal equivalence. The training loss of 0.7271 to 0.0023 alone would establish neither.
+- **Weights and optimizer:** all 392 LoRA tensors change, containing **9,232,384 weights**. Optimizer membership matches the trainable tensors. Seed 42 records 399 nonzero-LR steps, one zero-LR warmup step and no AMP skips. The first observed weight change is `5.01e-6`; checked frozen base matrices keep their hashes.
+- **Adapter effect:** turning the adapter off matches the base's probe log probabilities exactly; turning it on changes them by up to 18.47. Coverage is four validation rows, 416 reference tokens and 16 output-distribution positions. Falling training loss, 0.7271 to 0.0023, would not prove this by itself.
+- **Controls and exports:** Soup rejects the initial no-op adapter. Wrong-base and quantized-base substitutions fail our checks. M/Q reload without base/adapter-folder access; Q has 196 NF4 linear modules, nested quantization state and FP16 compute. These checks show changed, active weights and real exports; they do not prove useful behavior on every task.
 
 <!-- PAGE BREAK -->
 
-## 3. Held-out artifact comparison
+## 4. Base, merged and 4-bit results
 
-Complete correctness requires the reference's tool names, JSON argument values, types, call count and order. Invalid or length-stopped responses fail. All 150 test turns remain in the denominator. B is the base, M the dense merge and Q the saved NF4 model.
+- **Scoring:** tool names, argument values/types, call count and order must match the reference. Invalid or length-stopped responses fail. All 150 test turns stay in the denominator. B = base; A = base + adapter; M = dense merge; Q = saved NF4. NLL is reference-token prediction loss; lower is better.
 
-| Artifact | Correct turns | Exact correctness | Parseable | Assistant NLL |
+| Artifact | Fully correct | Correctness | Parseable | NLL |
 |---|---:|---:|---:|---:|
 | B | 75 / 150 | 50.00% | 94.00% | 0.64338 |
 | M | 90 / 150 | 60.00% | 98.00% | 0.04658 |
 | Q | 74 / 150 | 49.33% | 94.67% | 0.05657 |
 
-Paired bootstrap over 150 held-out groups, 10,000 resamples: **M-B +10.00 pp [2.00, 18.00]**; **Q-M -10.67 pp [-17.33, -4.00]**; **Q-B -0.67 pp [-7.33, 6.00]** (95% intervals). The eight bundled general suites include a tool-call regression of 70.0% to 57.5% to 55.0% for B/M/Q. No new critical failure appears on six fixed challenge turns; this small set supports no broad safety claim. Across seeds, validation exact correctness is 56.67%, 54.67% and 54.67%; the final test evaluates only selected seed 42.
+- **Uncertainty:** 10,000 paired bootstrap resamples over 150 held-out groups give these 95% ranges: M-B **+10.00 pp [2.00, 18.00]**; Q-M **-10.67 pp [-17.33, -4.00]**; Q-B **-0.67 pp [-7.33, 6.00]**. Here pp means percentage points.
+- **Other checks:** the bundled general tool-call suite falls from 70.0% to 57.5% to 55.0% for B/M/Q. No new critical failure appears on six fixed challenge turns; six examples cannot establish general safety.
+- **Seed variation:** validation correctness is 56.67%, 54.67% and 54.67%. Only selected seed 42 receives the final test; these are not three independent test results.
 
-## 4. Silent failures and check coverage
+## 5. Silent failures and what caught them
 
-| Boundary | Observed check and result |
+| Stage | Check and observed result |
 |---|---|
-| Data and scoring | Strict parser/schema fixtures reject wrong arguments, duplicate keys, type confusion and extra/reordered calls. Soup format validation accepts the malformed-call fixture; it does not inspect that payload's semantics. |
-| Tokenizer/template | Exact response/EOT masks and padding checks pass on every row. Soup doctor rejects the length-boundary fixture (exit 2) and accepts the missing-tools fixture (exit 0). Format validation accepts the double-template fixture (exit 0). |
-| Training | Fingerprints, actual updates, adapter on/off probes and frozen-weight hashes corroborate training. Soup catches the initialized no-op adapter (exit 2); a falling loss is insufficient evidence. |
-| Merge | Four sampled matrices equal FP16-rounded W + scaled BA, with zero residual. However, A/M maximum reference-logprob error is 0.03867, above the frozen 0.02000 limit; mean KL is 1.08e-6. This is an unresolved numerical-equivalence failure, not proof of a wrong export. |
-| Quantization | Q is a standalone NF4 checkpoint, but loses 10.67 pp against M. Quantization metadata and valid JSON do not guarantee retained task behavior. |
-| Inference/release | Cold-load identity/device checks pass. Soup `ship --evidence` returns DON'T SHIP for both M and Q using saved measured scores; this is offline decision replay, not another model evaluation. |
+| Data / scorer | Strict JSON/schema checks reject wrong arguments, duplicate keys, type errors and extra/reordered calls. Soup format validation accepts our malformed-call fixture; it checks message format rather than that payload's meaning. |
+| Tokenizer / template | Response/EOT masks pass for all 1,900 rows; separate padding/EOS checks pass. Soup doctor rejects the length-boundary fixture (exit 2), but accepts the missing-tools fixture (exit 0). Format validation accepts the double-template fixture (exit 0). |
+| Training | Weight changes, optimizer checks, adapter on/off probes and frozen-weight hashes support actual training. Soup catches the initialized no-op adapter (exit 2). |
+| Merge | Four sampled matrices exactly match FP16-rounded W + scaled BA. However, the largest A/M reference-log-probability gap is **0.03867**, above the preset **0.02000** limit; mean KL is 1.08e-6. This failed check needs investigation and does not, alone, prove a wrong export. |
+| Quantization | The saved NF4 model is real, but loses **10.67 pp** against M. Correct storage settings and valid JSON do not guarantee correct calls. |
+| Inference / release | Standalone load, identity and device checks pass. Soup `ship --evidence` rejects both M and Q using our saved measured scores. This replays its decision rules; it does not run another model evaluation. |
 
-The holdout distribution differs from training: Glaive supplies 1,081/1,600 training turns, while primary Hermes supplies 148/150 test turns. Exact-reference grading can reject alternative valid calls. Four projection checks and four probe rows cannot establish whole-model merge equivalence. Eight small general suites and one selected-seed test leave substantial uncertainty.
+## 6. Limits and changes required before release
 
-## 5. Verdict and required changes
+- **Data limits:** training is 1,081/1,600 Glaive turns; test is 148/150 primary Hermes turns and is generally longer. References were not fully checked by a human for meaning or alternative valid calls. Four matrix checks, four probe rows and eight small general suites leave limited coverage.
+- **DON'T SHIP:** six preset checks fail: merge fidelity, Q/B minimum gain, a positive gain interval, maximum Q/M loss, its confidence bound and general-suite retention.
 
-**DON'T SHIP.** Six frozen gates fail: merge fidelity, minimum Q/B gain, positive gain interval, maximum Q/M loss, its confidence bound and general-suite retention. Soup independently applies its decision rules to the supplied measured scores and also rejects both candidates.
-
-First investigate A/M differences with matched precision and kernels and a wider validation probe set; retain the failed 0.02 gate rather than relax it after seeing the result. Then inspect the 22 M-correct/Q-wrong turns and compare revised export settings on validation. Address general tool-call retention with better development coverage and data balance. Any tuned successor needs a fresh held-out evaluation before release; the current test has been inspected.
+1. Investigate the A/M gap using matched precision/kernels and more validation probes. Keep the failed 0.02 limit visible; do not loosen it after inspecting the result.
+2. Review the 22 M-correct/Q-wrong turns, compare export changes on validation, and improve data balance/general tool-call coverage. These fixes have not yet been demonstrated.
+3. Test the revised candidate on fresh held-out data. The current test has already been inspected.
 
 ## Reflection and AI use
 
-The surprise was how much exact correctness fell after NF4 despite the small NLL increase from 0.0466 to 0.0566. I remain concerned about semantic reference quality and the limited merge probes. I set the fine-tuning settings in the Soup configuration, accepted the three-seed evaluation and rejected a LoRA-versus-QLoRA training comparison because it was outside the requested pipeline. AI assisted the notebooks, instrumentation, debugging and report drafting; the submission's CPU review checks its measurements against the preserved run. My next step would be to investigate export fidelity and quantization errors before further training.
+The surprise was the loss in correct calls after NF4 despite the small NLL increase. I remain concerned about reference quality and limited merge probes. I set the Soup configuration, accepted three-seed evaluation and rejected a LoRA-versus-QLoRA comparison because it was outside the task. AI helped with notebooks, checks, debugging and writing; the CPU review checks this report against saved results. I would investigate export accuracy and quantization errors before more training.
 
-Evidence: `run/verdict.json`, `run/evidence/{training-42,fidelity-and-export-controls,memory-estimate-before}.json`; full mapping in `docs/evidence-map.md`. Repository: https://github.com/here-2007/soup-hermes-t4-takehome. Exact weights: https://www.kaggle.com/models/pernavjain/soup-experiment/PyTorch/experiment-artifacts/1.
+Evidence map: `docs/evidence-map.md`. Reported results and failed checks are unchanged. Full code/evidence: https://github.com/here-2007/soup-hermes-t4-takehome. Exact weights: https://www.kaggle.com/models/pernavjain/soup-experiment/PyTorch/experiment-artifacts/1.

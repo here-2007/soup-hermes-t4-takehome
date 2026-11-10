@@ -61,7 +61,10 @@ Do not overwrite the original `run/` to make a cached stage accept different har
 ```bash
 python -m pip install -r requirements-report.txt
 python tools/build_report.py
+python tools/package_email.py --output ../dist/pernav-jain-soup-email-submission.zip
 python tools/package_submission.py --output ../dist/soup-ai-engineer-submission.zip
 ```
 
 The report source is `REPORT.md`. Its explicit page break separates the two report pages. The package builder writes a SHA-256 manifest, excludes Git metadata/caches/model downloads and checks every archived file. The original run and preparation manifests remain intact inside the final package.
+
+Use the dedicated email ZIP as the attachment. It keeps all raw command/device logs, scores, data, configurations and executed notebooks, while declaring the large binary probes and preparation cache files it omits. After extracting it, `python tools/review.py --email-bundle` verifies the included hashes and repeats the saved-prediction review. The full archive supports the default, complete-manifest review.
