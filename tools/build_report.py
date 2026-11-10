@@ -116,7 +116,7 @@ def build_pdf():
 
     output = ROOT / "report.pdf"
     document = SimpleDocTemplate(str(output), pagesize=A4, leftMargin=40, rightMargin=40,
-                                 topMargin=33, bottomMargin=40, title="Tool-call gains did not survive NF4",
+                                 topMargin=33, bottomMargin=40, title="Qwen2.5 1.5B Instruct FineTuning Report",
                                  author="Pernav Jain", subject="Soup AI Engineer take-home: DON'T SHIP")
     document.build(story, onFirstPage=footer, onLaterPages=footer)
     pages = PdfReader(output).pages

@@ -1,4 +1,4 @@
-# Tool-call gains did not survive NF4
+# Qwen2.5 1.5B Instruct FineTuning Report
 
 **Pernav Jain | Soup AI Engineer take-home | 10 November 2026**  
 Run `20261110T044014005029Z` | **DON'T SHIP**

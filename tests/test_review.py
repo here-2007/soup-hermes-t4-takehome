@@ -57,9 +57,12 @@ class IntegrityTests(unittest.TestCase):
         self.assertEqual(executed, 15)
 
     def test_report_is_two_pages_and_contains_the_failed_decision(self):
-        pages = PdfReader(ROOT / "report.pdf").pages
+        reader = PdfReader(ROOT / "report.pdf")
+        self.assertEqual(reader.metadata.title, "Qwen2.5 1.5B Instruct FineTuning Report")
+        pages = reader.pages
         self.assertEqual(len(pages), 2)
         text = "\n".join(page.extract_text() for page in pages)
+        self.assertIn("Qwen2.5 1.5B Instruct FineTuning Report", text)
         for required in ("DON'T SHIP", "0.03867", "49.33%", "8.993", "Reflection and AI use"):
             self.assertIn(required, text)
         self.assertNotIn("PENDING", text)
