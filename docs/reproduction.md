@@ -20,7 +20,7 @@ python tools/review.py --output /tmp/soup-evidence-review.json
 | Base revision | `989aa7980e4cf806f80c7fef2b1adb7bc71aa306` |
 | Dataset | `NousResearch/hermes-function-calling-v1` |
 | Dataset revision | `dae3e1d28cfbcf4b915c04ea1e072030529b4bda` |
-| Prepared Kaggle dataset | `pernavjain/tool-calling`; exact files are also in `run/data/` |
+| Prepared Kaggle dataset | `pernavjain/tool-calling`; JSONL files are in `run/data/`, YAML in `run/soup-data.yaml` |
 | Soup | `0.77.2`, commit `4cff43bf967e96a484381205e5125e2fc39227f1` |
 | Recorded runtime | Python `3.13.16`, PyTorch `2.11.0+cu130` |
 | Training libraries | Transformers `5.20.2`, PEFT `0.21.2`, TRL `0.29.1`, bitsandbytes `0.50.2`, Accelerate `1.15.0` |
