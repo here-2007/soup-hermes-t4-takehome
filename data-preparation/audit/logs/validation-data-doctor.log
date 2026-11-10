@@ -1,0 +1,42 @@
+                                soup data doctor                                
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Check              ┃ Verdict ┃ Message               ┃ Evidence              ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ chat_template      │ OK      │ tokenizer has a       │ 309 chars             │
+│                    │         │ chat_template         │                       │
+│ template_render    │ OK      │ 0/150 rows failed to  │                       │
+│                    │         │ render through the    │                       │
+│                    │         │ chat template         │                       │
+│ generation_markers │ OK      │ template supports     │                       │
+│                    │         │ return_assistant_toke │                       │
+│                    │         │ ns_mask (exact        │                       │
+│                    │         │ assistant-only        │                       │
+│                    │         │ masking)              │                       │
+│ eos_in_labels      │ OK      │ 0/149 rows (0.0%)     │ eos_token_id=[151645] │
+│                    │         │ never train an        │                       │
+│                    │         │ EOS/EOT token — the   │                       │
+│                    │         │ model will not learn  │                       │
+│                    │         │ to stop generating    │                       │
+│ bos_duplication    │ OK      │ tokenizer has no      │                       │
+│                    │         │ bos_token_id          │                       │
+│ system_role        │ OK      │ template supports the │                       │
+│                    │         │ system role (150 rows │                       │
+│                    │         │ use one)              │                       │
+│ unknown_roles      │ OK      │ 0/150 rows (0.0%)     │                       │
+│                    │         │ contain a message     │                       │
+│                    │         │ role outside          │                       │
+│                    │         │ ['assistant',         │                       │
+│                    │         │ 'function', 'system', │                       │
+│                    │         │ 'tool', 'user']       │                       │
+│ truncation_risk    │ OK      │ p95 length = 991      │ p50=752, max=1024     │
+│                    │         │ tokens vs             │                       │
+│                    │         │ max_length=1024;      │                       │
+│                    │         │ 0/150 rows (0.0%)     │                       │
+│                    │         │ would be truncated    │                       │
+└────────────────────┴─────────┴───────────────────────┴───────────────────────┘
+╭───────── overall ─────────╮
+│ OK — 150/150 rows scanned │
+╰───────────────────────────╯
+Wrote 
+/kaggle/working/hermes-soup-data/20261109T210817498784Z/audit/validation.data-do
+ctor.json

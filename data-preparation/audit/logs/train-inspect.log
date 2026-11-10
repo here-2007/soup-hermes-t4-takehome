@@ -1,0 +1,25 @@
+Inspecting 
+/kaggle/working/hermes-soup-data/20261109T210817498784Z/data/prepared/train.json
+l...
+
+          Dataset Stats          
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Metric             ┃ Value    ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Total samples      │ 1600     │
+│ Columns            │ messages │
+│ Avg length (chars) │ 2284     │
+│ Min length         │ 1419     │
+│ Max length         │ 5111     │
+│ Empty fields       │ 0        │
+│ Duplicates         │ 0        │
+└────────────────────┴──────────┘
+
+Sample rows (2):
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ messages                                                     ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ [{'content': 'You are a function calling AI model. You are p │
+├──────────────────────────────────────────────────────────────┤
+│ [{'content': 'You are a function calling AI model. You are p │
+└──────────────────────────────────────────────────────────────┘

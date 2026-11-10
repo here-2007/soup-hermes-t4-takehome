@@ -1,0 +1,10 @@
+{
+  "utc_before_training": "2026-11-10T04:57:21.420031+00:00",
+  "repeat_base_runs": 3,
+  "repeat_error": 0.0,
+  "initialized_adapter_error": 0.0,
+  "floor": 0.0,
+  "merge_reference_logprob_tolerance": 0.02,
+  "ceiling": 0.1,
+  "scope": "four fixed validation rows; deterministic baseline under actual kernels"
+}

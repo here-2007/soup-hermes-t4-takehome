@@ -1,0 +1,74 @@
+{
+  "stage": "doctor-validation",
+  "request": {
+    "stage": "cli",
+    "label": "doctor-validation",
+    "allowed": "0",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "data",
+      "doctor",
+      "data/validation.jsonl",
+      "--model",
+      "artifacts/base",
+      "--format",
+      "chatml",
+      "--max-length",
+      "1024",
+      "--sample",
+      "150",
+      "--train-on-responses-only",
+      "--train-on-eot",
+      "--output",
+      "evidence/data-doctor-validation.json"
+    ]
+  },
+  "started_utc": "2026-11-10T04:42:23.452310+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "data",
+      "doctor",
+      "data/validation.jsonl",
+      "--model",
+      "artifacts/base",
+      "--format",
+      "chatml",
+      "--max-length",
+      "1024",
+      "--sample",
+      "150",
+      "--train-on-responses-only",
+      "--train-on-eot",
+      "--output",
+      "evidence/data-doctor-validation.json"
+    ],
+    "outputs": [
+      "evidence/data-doctor-validation.json"
+    ]
+  },
+  "output_bindings": {
+    "evidence/data-doctor-validation.json": "4e49fa44027677dde81a70a7178e86d67020a0e94e64a61de96a67cf6ce11701"
+  },
+  "resources": {
+    "elapsed_seconds": 8.987041354999974,
+    "peak_rss_bytes_sampled": 972251136,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 30,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:42:32.449879+00:00",
+        "elapsed_seconds": 8.986656777000007
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T04:42:32.450302+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

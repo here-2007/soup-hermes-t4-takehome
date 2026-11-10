@@ -1,0 +1,174 @@
+{
+  "stage": "evaluate-validation-Q",
+  "request": {
+    "stage": "evaluate",
+    "variant": "Q",
+    "split": "validation",
+    "seed": null,
+    "general": false,
+    "probes_only": false
+  },
+  "started_utc": "2026-11-10T07:45:38.431309+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "evidence/probes/validation-Q.pt",
+      "evidence/predictions/validation-Q.jsonl",
+      "evidence/scores/validation-Q.json",
+      "evidence/identity-Q.json"
+    ],
+    "identity": {
+      "variant": "Q",
+      "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/portable/Q",
+      "class": "Qwen2ForCausalLM",
+      "quantized_linear_count": 196,
+      "quantization_config": {
+        "quant_method": "bitsandbytes",
+        "_load_in_8bit": false,
+        "_load_in_4bit": true,
+        "llm_int8_threshold": 6.0,
+        "llm_int8_skip_modules": null,
+        "llm_int8_enable_fp32_cpu_offload": false,
+        "llm_int8_has_fp16_weight": false,
+        "bnb_4bit_quant_type": "nf4",
+        "bnb_4bit_use_double_quant": true,
+        "bnb_4bit_compute_dtype": "float16",
+        "bnb_4bit_quant_storage": "uint8",
+        "load_in_4bit": true,
+        "load_in_8bit": false
+      },
+      "devices": [
+        "cuda:0"
+      ],
+      "parameter_dtypes": {
+        "torch.float16": 142,
+        "torch.uint8": 196
+      },
+      "portable_base_adapter_reads_blocked": true
+    }
+  },
+  "output_bindings": {
+    "evidence/probes/validation-Q.pt": "10b0f7d1baa5e9d237de163cac5ea2c68a7bd9c634a9dac081c17c5685e4d2f9",
+    "evidence/predictions/validation-Q.jsonl": "d09691f5803a9ebb832fd75cd31c4a114aeacb80b79e997cd09e7989168df3b4",
+    "evidence/scores/validation-Q.json": "1ccfc70520c738d37880b5a79dfb469f0214ebb0c7951daf03ab61650d76a911",
+    "evidence/identity-Q.json": "d4a869b0264f011a3cf8b7c8c8134a59f7dbbd93698eb65e03d46c88aa3231a7"
+  },
+  "resources": {
+    "elapsed_seconds": 753.2801430139989,
+    "peak_rss_bytes_sampled": 2180206592,
+    "peak_device_used_mib_sampled": 1933,
+    "device_samples": 2937,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T07:45:40.031461+00:00",
+        "elapsed_seconds": 1.5890910609996354,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "before_cold_load",
+        "utc": "2026-11-10T07:45:46.751071+00:00",
+        "elapsed_seconds": 8.30870847999904,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "after_cold_load",
+        "utc": "2026-11-10T07:45:52.404336+00:00",
+        "elapsed_seconds": 13.961968960000377,
+        "allocated_bytes": 1143396352,
+        "reserved_bytes": 1166016512,
+        "peak_allocated_bytes": 1143396352,
+        "peak_reserved_bytes": 1166016512
+      },
+      {
+        "name": "before_fixed_validation_distribution_probes",
+        "utc": "2026-11-10T07:45:52.405155+00:00",
+        "elapsed_seconds": 13.962783073999162,
+        "allocated_bytes": 1143396352,
+        "reserved_bytes": 1166016512,
+        "peak_allocated_bytes": 1143396352,
+        "peak_reserved_bytes": 1166016512
+      },
+      {
+        "name": "after_fixed_validation_distribution_probes",
+        "utc": "2026-11-10T07:45:54.617131+00:00",
+        "elapsed_seconds": 16.174765206998927,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1719664640,
+        "peak_allocated_bytes": 1634018816,
+        "peak_reserved_bytes": 1719664640
+      },
+      {
+        "name": "before_generation_warmup_excluded_from_latency",
+        "utc": "2026-11-10T07:45:54.618046+00:00",
+        "elapsed_seconds": 16.175674296999205,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1719664640,
+        "peak_allocated_bytes": 1152964608,
+        "peak_reserved_bytes": 1719664640
+      },
+      {
+        "name": "after_generation_warmup_excluded_from_latency",
+        "utc": "2026-11-10T07:45:55.314357+00:00",
+        "elapsed_seconds": 16.871988957000212,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1725956096,
+        "peak_allocated_bytes": 1209747456,
+        "peak_reserved_bytes": 1725956096
+      },
+      {
+        "name": "before_teacher_forcing_and_greedy_generation",
+        "utc": "2026-11-10T07:45:55.315297+00:00",
+        "elapsed_seconds": 16.872925059999034,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1725956096,
+        "peak_allocated_bytes": 1152964608,
+        "peak_reserved_bytes": 1725956096
+      },
+      {
+        "name": "after_teacher_forcing_and_greedy_generation",
+        "utc": "2026-11-10T07:58:11.617576+00:00",
+        "elapsed_seconds": 753.1752033399989,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1885339648,
+        "peak_allocated_bytes": 1738250240,
+        "peak_reserved_bytes": 1885339648
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T07:58:11.696518+00:00",
+        "elapsed_seconds": 753.2541488719999,
+        "allocated_bytes": 686041088,
+        "reserved_bytes": 1885339648,
+        "peak_allocated_bytes": 1152964608,
+        "peak_reserved_bytes": 1885339648
+      }
+    ],
+    "peak_allocated_bytes": 1738250240,
+    "peak_reserved_bytes": 1885339648,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T07:58:11.722620+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

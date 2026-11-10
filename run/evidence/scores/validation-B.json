@@ -1,0 +1,52 @@
+{
+  "identity": {
+    "variant": "B",
+    "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/base",
+    "class": "Qwen2ForCausalLM",
+    "quantized_linear_count": 0,
+    "quantization_config": null,
+    "devices": [
+      "cuda:0"
+    ],
+    "parameter_dtypes": {
+      "torch.float16": 338
+    },
+    "portable_base_adapter_reads_blocked": false
+  },
+  "split": "validation",
+  "variant": "B",
+  "seed": null,
+  "parse_ok": 0.9466666666666667,
+  "known_tools": 0.9466666666666667,
+  "tool_selection": 0.7133333333333334,
+  "schema_ok": 0.8933333333333333,
+  "arguments_ok": 0.5133333333333333,
+  "complete": 0.5133333333333333,
+  "truncated": 0.02,
+  "extra_calls": 0.18666666666666668,
+  "unknown_calls": 0.0,
+  "n": 150,
+  "mean_assistant_nll": 0.5562220515771825,
+  "slices": {
+    "single_call": {
+      "n": 69,
+      "complete": 0.4492753623188406
+    },
+    "multiple_call": {
+      "n": 81,
+      "complete": 0.5679012345679012
+    },
+    "length_le_512": {
+      "n": 10,
+      "complete": 0.7
+    },
+    "length_gt_512": {
+      "n": 140,
+      "complete": 0.5
+    }
+  },
+  "latency_seconds": {
+    "median": 3.526565174499922,
+    "p95": 8.949254189000044
+  }
+}

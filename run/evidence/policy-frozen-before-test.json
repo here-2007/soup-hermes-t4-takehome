@@ -1,0 +1,214 @@
+{
+  "frozen_utc": "2026-11-10T07:58:37.879222+00:00",
+  "policy_sha256": "17971d6ab3200042e096339d96b195c9a40beaefca9b924a4c246387a8530b32",
+  "policy": {
+    "created_utc": "2026-11-10T04:41:22.314376+00:00",
+    "dataset": "pernavjain/tool-calling",
+    "dataset_hashes": {
+      "train.jsonl": "3e1c19821c79e777c6e1524e3b94880c6ecda03240f630f25b8c945b31e418bf",
+      "validation.jsonl": "d46eee968314585345c6fd50f570ddfdde242f226f828d22b0ad1d32239063da",
+      "test.jsonl": "b7f4c4942fc77e9bf16ab0812be382de458a2077b0eed846824e81b055a7b19f",
+      "soup-data.yaml": "1daab66b6b161b65fc9f2dfe6b63cfd0288750132b8627b5508ac4a67f1fd9f8"
+    },
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "soup_commit": "4cff43bf967e96a484381205e5125e2fc39227f1",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80",
+    "selection": "within seed: lowest epoch validation loss; across seeds: validation complete-turn accuracy, then token-weighted NLL, then seed",
+    "trainer_policy": {
+      "eval_strategy": "epoch",
+      "save_strategy": "epoch",
+      "do_eval": true,
+      "load_best_model_at_end": true,
+      "metric_for_best_model": "eval_loss",
+      "greater_is_better": false,
+      "save_total_limit": 2,
+      "per_device_eval_batch_size": 1,
+      "prediction_loss_only": true,
+      "gradient_checkpointing_kwargs": {
+        "use_reentrant": false
+      },
+      "dataloader_num_workers": 0,
+      "disable_tqdm": true
+    },
+    "generation_max_new_tokens": 320,
+    "generation_cap_source": "validation target lengths only +32, rounded to32",
+    "max_length": 1024,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 42,
+    "gain_min": 0.05,
+    "quant_loss_max": 0.02,
+    "quant_ci_lower_min": -0.05,
+    "general_regression_max": 0.05,
+    "headroom_bytes_min": 1073741824,
+    "merge_logprob_ceiling": 0.1,
+    "merge_logprob_floor_budget": 0.02,
+    "merge_tolerance_formula": "max(0.02,10*measured_repeat_and_noop_floor), capped at0.10; frozen before test",
+    "merge_max_kl": 0.02,
+    "weight_relative_residual_max": 0.25,
+    "weight_absolute_residual_max": 0.001,
+    "base_disabled_logprob_floor": 0.002,
+    "minimum_adapter_or_q_effect": 1e-05,
+    "effect_floor_multiplier": 10,
+    "general_max_new_tokens": 256,
+    "probe_rows": 4,
+    "probe_positions": 4,
+    "controls_required": true,
+    "config_hashes": {
+      "configs/seed-43.yaml": "aa65182d2bc66de1eab48fe17ed2b8b71147467edf7883b8e30443768d126672",
+      "configs/seed-42.yaml": "e588eaf0d53d5c9825d763e3c7aa21cd3b73d7902141075acb18a8d5c1dc50d4",
+      "configs/seed-44.yaml": "bb9775b4cf30755a336bb5ac833ca0a354c8390874365e18edd1c84da4d25f9a"
+    },
+    "source_labels": "not included in the four-file export; no invented per-source result slices",
+    "scope": "call-only single-turn function calling; structural reference audit, not semantic adjudication"
+  },
+  "selection": {
+    "selected": {
+      "seed": 42,
+      "complete": 0.5666666666666667,
+      "nll": 0.04399962883221549,
+      "selected_epoch": 2.0,
+      "best_validation_loss": 0.04345468059182167,
+      "adapter_sha256": "499a827576317d012f222c935a220dc37766d283391456f03d69fbca32bf1ee6"
+    },
+    "all_seeds": [
+      {
+        "seed": 42,
+        "complete": 0.5666666666666667,
+        "nll": 0.04399962883221549,
+        "selected_epoch": 2.0,
+        "best_validation_loss": 0.04345468059182167,
+        "adapter_sha256": "499a827576317d012f222c935a220dc37766d283391456f03d69fbca32bf1ee6"
+      },
+      {
+        "seed": 43,
+        "complete": 0.5466666666666666,
+        "nll": 0.04403539878427007,
+        "selected_epoch": 2.0,
+        "best_validation_loss": 0.0435662567615509,
+        "adapter_sha256": "b6c7128aa6448810cd873af45c276e351e00e0c7f54d6fc56eef30c39f73cc21"
+      },
+      {
+        "seed": 44,
+        "complete": 0.5466666666666666,
+        "nll": 0.044492175792135734,
+        "selected_epoch": 2.0,
+        "best_validation_loss": 0.044592082500457764,
+        "adapter_sha256": "1b54169d4003f6e5525cfdcdabca836aa408a1b9417b84c9a9540166b12f36e3"
+      }
+    ],
+    "selection_uses_test": false,
+    "utc": "2026-11-10T07:34:46.840483+00:00"
+  },
+  "calibration": {
+    "utc_before_training": "2026-11-10T04:57:21.420031+00:00",
+    "repeat_base_runs": 3,
+    "repeat_error": 0.0,
+    "initialized_adapter_error": 0.0,
+    "floor": 0.0,
+    "merge_reference_logprob_tolerance": 0.02,
+    "ceiling": 0.1,
+    "scope": "four fixed validation rows; deterministic baseline under actual kernels"
+  },
+  "artifacts": {
+    "M": {
+      "path": "artifacts/merged-fp16",
+      "files": {
+        "chat_template.jinja": {
+          "sha256": "8b4b6250519bc48a5adf707a9d4b2fa49b90b290034bb9315cbaeae6c2c8304c",
+          "bytes": 309
+        },
+        "config.json": {
+          "sha256": "6274f6c3f360c6dc2390924b772ba11e8708921fada5cfe04160af7705a48ae8",
+          "bytes": 1372
+        },
+        "generation_config.json": {
+          "sha256": "006680c0a21f1e852da11f29d10737a85e9a5765d5566923995b0e812fd6cdc9",
+          "bytes": 242
+        },
+        "model.safetensors": {
+          "sha256": "49f5765f63c386b266a4326c39997a8d12817c652cb1dafa2af2a8cd8f0cf08a",
+          "bytes": 3087466808
+        },
+        "tokenizer.json": {
+          "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+          "bytes": 11421892
+        },
+        "tokenizer_config.json": {
+          "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95",
+          "bytes": 692
+        }
+      },
+      "sha256": "24cfd52e53efb4fa85ea2897e2e2aa7e8e45203f3d6d66bb102d3dc70d0418f4"
+    },
+    "Q": {
+      "path": "artifacts/merged-nf4",
+      "files": {
+        "chat_template.jinja": {
+          "sha256": "8b4b6250519bc48a5adf707a9d4b2fa49b90b290034bb9315cbaeae6c2c8304c",
+          "bytes": 309
+        },
+        "config.json": {
+          "sha256": "0abc094ca5013b5ebaab2597dea4b724769df75ec332d44a0ff7c2cb2a46b798",
+          "bytes": 1852
+        },
+        "generation_config.json": {
+          "sha256": "006680c0a21f1e852da11f29d10737a85e9a5765d5566923995b0e812fd6cdc9",
+          "bytes": 242
+        },
+        "model.safetensors": {
+          "sha256": "61a0d87a0603d3d87352e520f7f03f6f873364cac1551e9b069fc59f87f44c6e",
+          "bytes": 1143327335
+        },
+        "tokenizer.json": {
+          "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+          "bytes": 11421892
+        },
+        "tokenizer_config.json": {
+          "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95",
+          "bytes": 692
+        }
+      },
+      "sha256": "c97131ef177723695badcb8396019409e1e58db403a0cb342e24ae410b8fe2ac"
+    },
+    "Q0": {
+      "path": "artifacts/control-q0",
+      "files": {
+        "chat_template.jinja": {
+          "sha256": "8b4b6250519bc48a5adf707a9d4b2fa49b90b290034bb9315cbaeae6c2c8304c",
+          "bytes": 309
+        },
+        "config.json": {
+          "sha256": "0abc094ca5013b5ebaab2597dea4b724769df75ec332d44a0ff7c2cb2a46b798",
+          "bytes": 1852
+        },
+        "generation_config.json": {
+          "sha256": "006680c0a21f1e852da11f29d10737a85e9a5765d5566923995b0e812fd6cdc9",
+          "bytes": 242
+        },
+        "model.safetensors": {
+          "sha256": "95bb455bbf8aa1e577ee79fe1562519f9a5090f03b1463332d1de928f7e42fc8",
+          "bytes": 1143327352
+        },
+        "tokenizer.json": {
+          "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+          "bytes": 11421892
+        },
+        "tokenizer_config.json": {
+          "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95",
+          "bytes": 692
+        }
+      },
+      "sha256": "2ea9e0d40aa1c7bfe69eb1ceabd26b74fe0be7755768219c0c91baedf3ea71d3"
+    }
+  },
+  "test_hash": "b7f4c4942fc77e9bf16ab0812be382de458a2077b0eed846824e81b055a7b19f",
+  "challenge_hash": "4b7fba4f96aad0f05fb7dcfa3c6ca71ac82c1bc51fbb5866e9e569b363754f17",
+  "references_hash": "a492e79b9e318a1835a3155ba010960009f3c3cf3baca732b40af5d4e17c69be",
+  "rule_changes_after_test_allowed": false
+}

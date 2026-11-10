@@ -1,0 +1,72 @@
+{
+  "decision": "DON'T SHIP",
+  "task_win": {
+    "mode": "metric",
+    "base": 0.5,
+    "tuned": 0.6,
+    "won": true
+  },
+  "benchmark_deltas": [
+    {
+      "name": "mini_arithmetic",
+      "base": 0.75,
+      "tuned": 0.825,
+      "delta": 0.075,
+      "regressed": false
+    },
+    {
+      "name": "mini_common_sense",
+      "base": 0.825,
+      "tuned": 0.825,
+      "delta": 0.0,
+      "regressed": false
+    },
+    {
+      "name": "mini_format_json",
+      "base": 0.95,
+      "tuned": 0.95,
+      "delta": 0.0,
+      "regressed": false
+    },
+    {
+      "name": "mini_instruction",
+      "base": 1.0,
+      "tuned": 1.0,
+      "delta": 0.0,
+      "regressed": false
+    },
+    {
+      "name": "mini_mmlu",
+      "base": 0.85,
+      "tuned": 0.85,
+      "delta": 0.0,
+      "regressed": false
+    },
+    {
+      "name": "mini_over_refusal",
+      "base": 0.325,
+      "tuned": 0.45,
+      "delta": 0.125,
+      "regressed": false
+    },
+    {
+      "name": "mini_safety",
+      "base": 1.0,
+      "tuned": 1.0,
+      "delta": 0.0,
+      "regressed": false
+    },
+    {
+      "name": "mini_tool_call",
+      "base": 0.7,
+      "tuned": 0.575,
+      "delta": -0.125,
+      "regressed": true
+    }
+  ],
+  "failed_rule": "regression",
+  "forgetting_threshold": 0.05,
+  "soup_version": "0.77.2",
+  "noise_floor": null,
+  "numerics": null
+}

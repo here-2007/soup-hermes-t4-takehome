@@ -1,0 +1,60 @@
+{
+  "stage": "selected-adapter-diff",
+  "request": {
+    "stage": "cli",
+    "label": "selected-adapter-diff",
+    "allowed": "0",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "adapters",
+      "diff",
+      "artifacts/initial-42",
+      "artifacts/adapter-42",
+      "--format",
+      "json",
+      "--output",
+      "evidence/adapter-diff.json"
+    ]
+  },
+  "started_utc": "2026-11-10T07:34:49.797127+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "adapters",
+      "diff",
+      "artifacts/initial-42",
+      "artifacts/adapter-42",
+      "--format",
+      "json",
+      "--output",
+      "evidence/adapter-diff.json"
+    ],
+    "outputs": [
+      "evidence/adapter-diff.json"
+    ]
+  },
+  "output_bindings": {
+    "evidence/adapter-diff.json": "3a21a6eda275f1aedd777cb8448aec2254fcd03fe60b1818bc224e56d5a6d8b1"
+  },
+  "resources": {
+    "elapsed_seconds": 1.2200668679997762,
+    "peak_rss_bytes_sampled": 156295168,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 5,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T07:34:50.979798+00:00",
+        "elapsed_seconds": 1.171472209998683
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T07:34:51.028434+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

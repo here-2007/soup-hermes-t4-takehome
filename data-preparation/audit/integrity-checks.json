@@ -1,0 +1,9 @@
+{
+  "cross_split_key_overlap": 0,
+  "all_selected_masks_checked": true,
+  "native_template_equivalence_checked": true,
+  "collator": "trl 0.29.1 DataCollatorForLanguageModeling",
+  "padding_check_passed": true,
+  "pad_equals_eos_check_passed": true,
+  "scope": "structural checks only; semantic reference correctness still requires review"
+}

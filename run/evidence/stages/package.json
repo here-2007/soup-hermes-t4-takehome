@@ -1,0 +1,42 @@
+{
+  "stage": "package",
+  "request": {
+    "stage": "package"
+  },
+  "started_utc": "2026-11-10T09:05:27.152089+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "REPORT.md",
+      "report.pdf",
+      "REFLECTION_AND_AI_USE.md"
+    ],
+    "verdict": "DON'T SHIP",
+    "pdf_pages": 2,
+    "report_status": "automated draft; human reflection/visual inspection pending"
+  },
+  "output_bindings": {
+    "REPORT.md": "6c2845cc45d88f254e01bd03b4c26b0672c46d5929b104b48100404a1daa3688",
+    "report.pdf": "9768037a2b4878d11555846e82acfd525b8d6f50c42796cc33b838f8461eeb0a",
+    "REFLECTION_AND_AI_USE.md": "fb4007bae4af20e61694da12b7e7ef2aaaa2757db938b1024b8ceaa4e84de161"
+  },
+  "resources": {
+    "elapsed_seconds": 0.5816187119999086,
+    "peak_rss_bytes_sampled": 66813952,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 3,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T09:05:27.690214+00:00",
+        "elapsed_seconds": 0.5271010979995481
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T09:05:27.744759+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

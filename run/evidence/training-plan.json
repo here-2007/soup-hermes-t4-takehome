@@ -1,0 +1,61 @@
+{
+  "training": {
+    "epochs": 2,
+    "lr": 0.0001,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "optimizer": "adamw_torch",
+    "scheduler": "cosine",
+    "warmup_ratio": 0.05,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": true,
+    "quantization": "none",
+    "packing": false,
+    "train_on_eot": true,
+    "seed": 42,
+    "data_seed": 42,
+    "logging_steps": 1,
+    "save_steps": 200,
+    "lora": {
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    }
+  },
+  "trainer_policy": {
+    "eval_strategy": "epoch",
+    "save_strategy": "epoch",
+    "do_eval": true,
+    "load_best_model_at_end": true,
+    "metric_for_best_model": "eval_loss",
+    "greater_is_better": false,
+    "save_total_limit": 2,
+    "per_device_eval_batch_size": 1,
+    "prediction_loss_only": true,
+    "gradient_checkpointing_kwargs": {
+      "use_reentrant": false
+    },
+    "dataloader_num_workers": 0,
+    "disable_tqdm": true
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "examples_per_epoch": 1600,
+  "optimizer_steps_per_epoch": 200,
+  "optimizer_steps_per_seed": 400,
+  "rationale": "Two passes over the curated 1600-example set, lower 1e-4 learning rate and 5% warmup; retain the better validation-loss epoch. This recipe is not claimed optimal.",
+  "training_quantization": "none: FP16 base with LoRA; NF4 is a separate post-merge deployment experiment"
+}

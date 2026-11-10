@@ -1,0 +1,15 @@
+{
+  "source": "cached-generation decision replay; no additional model load",
+  "single_call_turns": 86,
+  "result": {
+    "rows": [
+      {
+        "task": "single-call subset, cached measured generations",
+        "before": 0.6627906976744186,
+        "after": 0.5,
+        "delta": -0.16279069767441856,
+        "verdict": "MAJOR"
+      }
+    ]
+  }
+}

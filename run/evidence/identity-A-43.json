@@ -1,0 +1,15 @@
+{
+  "variant": "A",
+  "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-43",
+  "class": "PeftModelForCausalLM",
+  "quantized_linear_count": 0,
+  "quantization_config": null,
+  "devices": [
+    "cuda:0"
+  ],
+  "parameter_dtypes": {
+    "torch.float16": 338,
+    "torch.float32": 392
+  },
+  "portable_base_adapter_reads_blocked": false
+}

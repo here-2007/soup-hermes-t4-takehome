@@ -1,0 +1,51 @@
+{"event":"stage_start","stage":"finalize","utc":"2026-11-10T09:05:09.235432+00:00"}
+╭───────────────────────────────── soup ship ──────────────────────────────────╮
+│ DON'T SHIP                                                                   │
+│ Leg 1 task win (metric): 0.5000 -> 0.6000  [won]                             │
+│ Judge numerics: unstamped                                                    │
+│                                                                              │
+│ Leg 2 general suite (threshold 5.00%)                                        │
+│ ┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━┓                │
+│ ┃ Benchmark         ┃   Base ┃  Tuned ┃       Δ ┃ Verdict   ┃                │
+│ ┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━┩                │
+│ │ mini_arithmetic   │ 0.7500 │ 0.8250 │ +0.0750 │ ok        │                │
+│ │ mini_common_sense │ 0.8250 │ 0.8250 │ +0.0000 │ ok        │                │
+│ │ mini_format_json  │ 0.9500 │ 0.9500 │ +0.0000 │ ok        │                │
+│ │ mini_instruction  │ 1.0000 │ 1.0000 │ +0.0000 │ ok        │                │
+│ │ mini_mmlu         │ 0.8500 │ 0.8500 │ +0.0000 │ ok        │                │
+│ │ mini_over_refusal │ 0.3250 │ 0.4500 │ +0.1250 │ ok        │                │
+│ │ mini_safety       │ 1.0000 │ 1.0000 │ +0.0000 │ ok        │                │
+│ │ mini_tool_call    │ 0.7000 │ 0.5750 │ -0.1250 │ REGRESSED │                │
+│ └───────────────────┴────────┴────────┴─────────┴───────────┘                │
+│                                                                              │
+│ General benchmark(s) regressed past 5.00%: mini_tool_call. Catastrophic      │
+│ forgetting — DON'T SHIP even though the task improved.                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Wrote 
+/kaggle/working/soup-experiment/20261110T044014005029Z/evidence/soup-ship-M.json
+╭───────────────────────────────── soup ship ──────────────────────────────────╮
+│ DON'T SHIP                                                                   │
+│ Leg 1 task win (metric): 0.5000 -> 0.4933  [no win]                          │
+│ Judge numerics: unstamped                                                    │
+│                                                                              │
+│ Leg 2 general suite (threshold 5.00%)                                        │
+│ ┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━┓                │
+│ ┃ Benchmark         ┃   Base ┃  Tuned ┃       Δ ┃ Verdict   ┃                │
+│ ┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━┩                │
+│ │ mini_arithmetic   │ 0.7500 │ 0.8750 │ +0.1250 │ ok        │                │
+│ │ mini_common_sense │ 0.8250 │ 0.8500 │ +0.0250 │ ok        │                │
+│ │ mini_format_json  │ 0.9500 │ 1.0000 │ +0.0500 │ ok        │                │
+│ │ mini_instruction  │ 1.0000 │ 0.9583 │ -0.0417 │ ok        │                │
+│ │ mini_mmlu         │ 0.8500 │ 0.8250 │ -0.0250 │ ok        │                │
+│ │ mini_over_refusal │ 0.3250 │ 0.3750 │ +0.0500 │ ok        │                │
+│ │ mini_safety       │ 1.0000 │ 1.0000 │ +0.0000 │ ok        │                │
+│ │ mini_tool_call    │ 0.7000 │ 0.5500 │ -0.1500 │ REGRESSED │                │
+│ └───────────────────┴────────┴────────┴─────────┴───────────┘                │
+│                                                                              │
+│ Task did not improve (metric: 0.5000 -> 0.4933, got worse). A strict win is  │
+│ required to ship.                                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Wrote 
+/kaggle/working/soup-experiment/20261110T044014005029Z/evidence/soup-ship-Q.json
+{"elapsed_seconds":17.261584128000322,"event":"segment","name":"stage_end","stage":"finalize","utc":"2026-11-10T09:05:26.496993+00:00"}
+{"event":"stage_end","stage":"finalize","status":"passed","utc":"2026-11-10T09:05:26.497691+00:00"}

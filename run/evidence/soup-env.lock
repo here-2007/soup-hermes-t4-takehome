@@ -1,0 +1,60 @@
+{
+  "schema_version": "1",
+  "soup_version": "0.77.2",
+  "python_version": "3.13.16",
+  "platform": "linux-x86_64",
+  "cuda_version": "13.0.3",
+  "entries": [
+    {
+      "name": "torch",
+      "version": "2.11.0+cu130",
+      "source": "pip"
+    },
+    {
+      "name": "transformers",
+      "version": "5.20.2",
+      "source": "pip"
+    },
+    {
+      "name": "peft",
+      "version": "0.21.2",
+      "source": "pip"
+    },
+    {
+      "name": "trl",
+      "version": "0.29.1",
+      "source": "pip"
+    },
+    {
+      "name": "accelerate",
+      "version": "1.15.0",
+      "source": "pip"
+    },
+    {
+      "name": "datasets",
+      "version": "4.8.5",
+      "source": "pip"
+    },
+    {
+      "name": "bitsandbytes",
+      "version": "0.50.2",
+      "source": "pip"
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "1.33.0",
+      "source": "pip"
+    },
+    {
+      "name": "sentencepiece",
+      "version": "0.2.2",
+      "source": "pip"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.23.3",
+      "source": "pip"
+    }
+  ],
+  "created_at": "2026-11-10T04:42:04.388647+00:00"
+}

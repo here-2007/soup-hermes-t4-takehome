@@ -1,0 +1,19 @@
+data:
+  train: ./data/prepared/train.jsonl
+  format: chatml
+  val_split: 0
+  max_length: 1024
+  train_on_responses_only: true
+  chat_template: '{% for m in messages %}{{ ''<|im_start|>'' + m[''role''] + ''
+
+    '' }}{% if m[''role''] == ''assistant'' %}{% generation %}{{ m[''content''] +
+    ''<|im_end|>'' }}{% endgeneration %}{{ ''
+
+    '' }}{% else %}{{ m[''content''] + ''<|im_end|>
+
+    '' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ ''<|im_start|>assistant
+
+    '' }}{% endif %}'
+training:
+  train_on_eot: true
+  packing: false

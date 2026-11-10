@@ -1,0 +1,48 @@
+{"event":"stage_start","stage":"merge-Q","utc":"2026-11-10T07:35:43.323010+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.7479589829999895,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"merge-Q","utc":"2026-11-10T07:35:45.070944+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":10.438683812999443,"event":"segment","name":"before_dense_staging_nf4_save","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"merge-Q","utc":"2026-11-10T07:35:53.761658+00:00"}
+╭───────────────────────────────── Merge Plan ─────────────────────────────────╮
+│ Adapter:                                                                     │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-42  │
+│ Base:                                                                        │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/base        │
+│ Output:                                                                      │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-nf4  │
+│ Dtype:   float16                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Loading base model: 
+/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/base...
+Base revision: unknown (legacy, local source or base override)
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<02:49,  1.98it/s]Loading weights:  33%|███▎      | 113/338 [00:00<00:00, 248.48it/s]Loading weights:  53%|█████▎    | 179/338 [00:00<00:00, 260.75it/s]Loading weights:  67%|██████▋   | 228/338 [00:01<00:00, 268.95it/s]Loading weights:  80%|███████▉  | 269/338 [00:01<00:00, 235.22it/s]Loading weights:  90%|████████▉ | 304/338 [00:01<00:00, 246.95it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 234.06it/s]
+Loading LoRA adapter: 
+/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-42...
+Merging weights...
+Staging fp16 merge in .soup_4bit_merge_ad2jmzlu...
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.03s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+Re-loading + saving BNB-4bit merge (4bit) to 
+/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-nf4...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   1%|          | 2/338 [00:00<00:16, 19.98it/s]Loading weights:   4%|▍         | 15/338 [00:00<00:03, 82.58it/s]Loading weights:  16%|█▌        | 53/338 [00:00<00:01, 210.59it/s]Loading weights:  29%|██▉       | 99/338 [00:00<00:00, 301.30it/s]Loading weights:  41%|████      | 137/338 [00:00<00:00, 320.80it/s]Loading weights:  54%|█████▍    | 183/338 [00:00<00:00, 362.26it/s]Loading weights:  65%|██████▌   | 221/338 [00:00<00:00, 362.47it/s]Loading weights:  79%|███████▉  | 267/338 [00:00<00:00, 384.31it/s]Loading weights:  91%|█████████ | 306/338 [00:00<00:00, 378.17it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 330.51it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.61s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.61s/it]
+╭────────────────────────────── Merge Complete! ───────────────────────────────╮
+│ Output:                                                                      │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-nf4  │
+│ Size:   1.1 GB                                                               │
+│                                                                              │
+│ Next steps:                                                                  │
+│   soup chat --model                                                          │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-nf4  │
+│   soup push --model                                                          │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-nf4  │
+│ --repo user/model                                                            │
+│   soup export --model                                                        │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-nf4  │
+│ --format gguf                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"allocated_bytes":676473856,"elapsed_seconds":37.517545954000525,"event":"segment","name":"after_dense_staging_nf4_save","peak_allocated_bytes":1169781760,"peak_reserved_bytes":1212153856,"reserved_bytes":1212153856,"stage":"merge-Q","utc":"2026-11-10T07:36:20.840528+00:00"}
+╭────────────────────────── Strict safetensors check ──────────────────────────╮
+│ Adapter:    merged-nf4                                                       │
+│ Status:     OK                                                               │
+│ Reason:     all weight files are safetensors                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"allocated_bytes":676473856,"elapsed_seconds":44.45254924999972,"event":"segment","name":"stage_end","peak_allocated_bytes":676473856,"peak_reserved_bytes":1212153856,"reserved_bytes":1212153856,"stage":"merge-Q","utc":"2026-11-10T07:36:27.775528+00:00"}
+{"event":"stage_end","stage":"merge-Q","status":"passed","utc":"2026-11-10T07:36:27.777189+00:00"}

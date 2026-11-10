@@ -1,0 +1,29 @@
+{
+  "variant": "Q",
+  "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/portable/Q",
+  "class": "Qwen2ForCausalLM",
+  "quantized_linear_count": 196,
+  "quantization_config": {
+    "quant_method": "bitsandbytes",
+    "_load_in_8bit": false,
+    "_load_in_4bit": true,
+    "llm_int8_threshold": 6.0,
+    "llm_int8_skip_modules": null,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "float16",
+    "bnb_4bit_quant_storage": "uint8",
+    "load_in_4bit": true,
+    "load_in_8bit": false
+  },
+  "devices": [
+    "cuda:0"
+  ],
+  "parameter_dtypes": {
+    "torch.float16": 142,
+    "torch.uint8": 196
+  },
+  "portable_base_adapter_reads_blocked": true
+}

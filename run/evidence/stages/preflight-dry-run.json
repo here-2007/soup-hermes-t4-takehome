@@ -1,0 +1,48 @@
+{
+  "stage": "preflight-dry-run",
+  "request": {
+    "stage": "cli",
+    "label": "preflight-dry-run",
+    "allowed": "0",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "train",
+      "--config",
+      "configs/seed-42.yaml",
+      "--dry-run"
+    ]
+  },
+  "started_utc": "2026-11-10T04:42:49.111398+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "train",
+      "--config",
+      "configs/seed-42.yaml",
+      "--dry-run"
+    ],
+    "outputs": []
+  },
+  "output_bindings": {},
+  "resources": {
+    "elapsed_seconds": 2.377784949000045,
+    "peak_rss_bytes_sampled": 550268928,
+    "peak_device_used_mib_sampled": 3,
+    "device_samples": 8,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:42:51.499938+00:00",
+        "elapsed_seconds": 2.3773963560000198
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T04:42:51.500362+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

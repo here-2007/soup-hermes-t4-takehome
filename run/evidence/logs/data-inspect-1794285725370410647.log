@@ -1,0 +1,26 @@
+{"event":"stage_start","stage":"data-inspect","utc":"2026-11-10T04:42:05.493489+00:00"}
+Inspecting data/train.jsonl...
+
+          Dataset Stats          
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Metric             ┃ Value    ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Total samples      │ 1600     │
+│ Columns            │ messages │
+│ Avg length (chars) │ 2284     │
+│ Min length         │ 1419     │
+│ Max length         │ 5111     │
+│ Empty fields       │ 0        │
+│ Duplicates         │ 0        │
+└────────────────────┴──────────┘
+
+Sample rows (2):
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ messages                                                     ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ [{'content': 'You are a function calling AI model. You are p │
+├──────────────────────────────────────────────────────────────┤
+│ [{'content': 'You are a function calling AI model. You are p │
+└──────────────────────────────────────────────────────────────┘
+{"elapsed_seconds":0.6654056179999657,"event":"segment","name":"stage_end","stage":"data-inspect","utc":"2026-11-10T04:42:06.158870+00:00"}
+{"event":"stage_end","stage":"data-inspect","status":"passed","utc":"2026-11-10T04:42:06.159899+00:00"}

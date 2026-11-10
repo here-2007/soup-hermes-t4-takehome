@@ -1,0 +1,48 @@
+{
+  "stage": "finalize",
+  "request": {
+    "stage": "finalize"
+  },
+  "started_utc": "2026-11-10T09:05:09.224185+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "verdict.json",
+      "evidence/memory-reconciliation.json",
+      "evidence/silent-failure-coverage.json"
+    ],
+    "verdict": "DON'T SHIP",
+    "blockers": [
+      "merge_fidelity",
+      "task_gain_ge_5pp",
+      "task_gain_ci_positive",
+      "quant_point_loss_le_2pp",
+      "quant_ci_lower_ge_minus5pp",
+      "general_suite_regression_le_5pp"
+    ]
+  },
+  "output_bindings": {
+    "verdict.json": "c1ef4936236fafe7c3c523a72bdac97d5e2b21324e73e05a7924fd88b1cfd059",
+    "evidence/memory-reconciliation.json": "eeb83aaee06fafc199c9f8ddd4c76cce38727cfa50c268050f40543177a21b27",
+    "evidence/silent-failure-coverage.json": "cfb181d8c6759bbf1566c6124d01e007f620ce89315adf5f13994056c2e91fd7"
+  },
+  "resources": {
+    "elapsed_seconds": 17.261918481000976,
+    "peak_rss_bytes_sampled": 71983104,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 63,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T09:05:26.496993+00:00",
+        "elapsed_seconds": 17.261584128000322
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T09:05:26.497351+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

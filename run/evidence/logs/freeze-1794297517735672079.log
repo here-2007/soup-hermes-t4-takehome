@@ -1,0 +1,3 @@
+{"event":"stage_start","stage":"freeze","utc":"2026-11-10T07:58:37.878380+00:00"}
+{"elapsed_seconds":0.02732123500027228,"event":"segment","name":"stage_end","stage":"freeze","utc":"2026-11-10T07:58:37.905680+00:00"}
+{"event":"stage_end","stage":"freeze","status":"passed","utc":"2026-11-10T07:58:37.935541+00:00"}

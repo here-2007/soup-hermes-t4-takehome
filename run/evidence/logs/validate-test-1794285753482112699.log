@@ -1,0 +1,6 @@
+{"event":"stage_start","stage":"validate-test","utc":"2026-11-10T04:42:33.605049+00:00"}
+Dataset is valid!
+
+150/150 rows valid for chatml format
+{"elapsed_seconds":0.5817472410000164,"event":"segment","name":"stage_end","stage":"validate-test","utc":"2026-11-10T04:42:34.186773+00:00"}
+{"event":"stage_end","stage":"validate-test","status":"passed","utc":"2026-11-10T04:42:34.227567+00:00"}

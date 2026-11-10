@@ -1,0 +1,238 @@
+{"event":"stage_start","stage":"doctor-train","utc":"2026-11-10T04:42:08.296866+00:00"}
+                                soup data doctor                                
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Check              ┃ Verdict ┃ Message               ┃ Evidence              ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ chat_template      │ OK      │ tokenizer has a       │ 309 chars             │
+│                    │         │ chat_template         │                       │
+│ template_render    │ OK      │ 0/1600 rows failed to │                       │
+│                    │         │ render through the    │                       │
+│                    │         │ chat template         │                       │
+│ generation_markers │ OK      │ template supports     │                       │
+│                    │         │ return_assistant_toke │                       │
+│                    │         │ ns_mask (exact        │                       │
+│                    │         │ assistant-only        │                       │
+│                    │         │ masking)              │                       │
+│ eos_in_labels      │ OK      │ 0/1600 rows (0.0%)    │ eos_token_id=[151645] │
+│                    │         │ never train an        │                       │
+│                    │         │ EOS/EOT token — the   │                       │
+│                    │         │ model will not learn  │                       │
+│                    │         │ to stop generating    │                       │
+│ bos_duplication    │ OK      │ tokenizer has no      │                       │
+│                    │         │ bos_token_id          │                       │
+│ system_role        │ OK      │ template supports the │                       │
+│                    │         │ system role (1600     │                       │
+│                    │         │ rows use one)         │                       │
+│ unknown_roles      │ OK      │ 0/1600 rows (0.0%)    │                       │
+│                    │         │ contain a message     │                       │
+│                    │         │ role outside          │                       │
+│                    │         │ ['assistant',         │                       │
+│                    │         │ 'function', 'system', │                       │
+│                    │         │ 'tool', 'user']       │                       │
+│ truncation_risk    │ OK      │ p95 length = 918      │ p50=424, max=1022     │
+│                    │         │ tokens vs             │                       │
+│                    │         │ max_length=1024;      │                       │
+│                    │         │ 0/1600 rows (0.0%)    │                       │
+│                    │         │ would be truncated    │                       │
+└────────────────────┴─────────┴───────────────────────┴───────────────────────┘
+╭────────── overall ──────────╮
+│ OK — 1600/1600 rows scanned │
+╰─────────────────────────────╯
+Wrote evidence/data-doctor-train.json
+╭─────────────────────────── row 0 (assistant_only) ───────────────────────────╮
+│ <|im_start|>systemĊYouĠareĠaĠfunctionĠcallingĠAIĠmodel.ĠYouĠareĠprovidedĠwit │
+│ hĠfunctionĠsignaturesĠwithinĠ<tools>Ġ</tools>ĠXMLĠtags.ĠYouĠmayĠcallĠoneĠorĠ │
+│ moreĠfunctionsĠtoĠassistĠwithĠtheĠuserĠquery.ĠDon'tĠmakeĠassumptionsĠaboutĠw │
+│ hatĠvaluesĠtoĠplugĠintoĠfunctions.Ċ<tools>Ċ[{"type":Ġ"function",Ġ"function": │
+│ Ġ{"name":Ġ"fetchPoliceDepartmentMetrics",Ġ"description":Ġ"FetchesĠaĠsetĠofĠm │
+│ etricsĠforĠaĠspecifiedĠpoliceĠdepartmentĠoverĠaĠgivenĠtimeĠperiod.",Ġ"parame │
+│ ters":Ġ{"type":Ġ"object",Ġ"properties":Ġ{"department_id":Ġ{"type":Ġ"string", │
+│ Ġ"description":Ġ"TheĠidentifierĠforĠtheĠpoliceĠdepartment."},Ġ"metrics":Ġ{"t │
+│ ype":Ġ"array",Ġ"description":Ġ"ListĠofĠmetricsĠtoĠbeĠfetched.",Ġ"items":Ġ{"t │
+│ ype":Ġ"string"}},Ġ"time_period":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠtime │
+│ ĠperiodĠforĠwhichĠtoĠfetchĠtheĠmetrics.ĠUseĠ'latest'ĠforĠtheĠmostĠrecentĠdat │
+│ a."}},Ġ"required":Ġ["department_id",Ġ"metrics",Ġ"time_period"]}}}]Ċ</tools>Ċ │
+│ ForĠeachĠfunctionĠcallĠreturnĠaĠjsonĠobjectĠwithĠfunctionĠnameĠandĠarguments │
+│ ĠwithinĠ<tool_call>Ġ</tool_call>ĠtagsĠwithĠtheĠfollowingĠschema:Ċ<tool_call> │
+│ Ċ{"name":Ġ<function-name>,Ġ"arguments":Ġ<args-dict>}Ċ</tool_call>Ċ<|im_end|> │
+│ Ċ<|im_start|>userĊI'mĠanalyzingĠtheĠsocialĠimpactĠofĠlawĠenforcementĠpolicie │
+│ sĠandĠwouldĠlikeĠtoĠexamineĠtheĠNewĠOrleansĠPoliceĠDepartmentĠinĠlightĠofĠth │
+│ eĠdiscussionsĠfollowingĠtheĠdeathĠofĠGeorgeĠFloyd.ĠSpecifically,ĠIĠwantĠtoĠl │
+│ ookĠatĠtheĠlatestĠmetricsĠrelatedĠtoĠpoliceĠfunding,ĠincidentsĠofĠforce,Ġand │
+│ ĠracialĠbiasĠinĠenforcementĠactions.ĠCouldĠyouĠuseĠtheĠ`fetchPoliceDepartmen │
+│ tMetrics`ĠfunctionĠtoĠobtainĠtheĠmostĠrecentĠstatisticsĠfromĠtheĠNewĠOrleans │
+│ ĠPoliceĠDepartment,ĠusingĠtheĠidentifierĠ'NOPD'?ĠI'mĠinterestedĠinĠobtaining │
+│ ĠtheĠfiguresĠforĠpoliceĠfundingĠamounts,ĠtheĠrateĠofĠuse-of-forceĠincidents, │
+│ ĠandĠindicatorsĠofĠracialĠbiasĠinĠenforcement.ĊĊTheĠmetricsĠtoĠbeĠfetchedĠar │
+│ e:Ċ-ĠPoliceĠfundingĊ-ĠUseĠofĠforceĊ-ĠRacialĠbiasĠinĠenforcementĊĊWithĠtheseĠ │
+│ metrics,ĠI'llĠbeĠableĠtoĠbetterĠunderstandĠtheĠcurrentĠstateĠofĠpolicingĠinĠ │
+│ NewĠOrleans,Ġcross-referenceĠthisĠwithĠhistoricalĠdata,ĠandĠidentifyĠavenues │
+│ ĠforĠprogress.ĊĊPleaseĠproceedĠtoĠcallĠtheĠ`fetchPoliceDepartmentMetrics`Ġfu │
+│ nctionĠwithĠtheĠ'NOPD'ĠdepartmentĠID,ĠrequestingĠtheĠlatestĠtimeĠperiodĠtoĠr │
+│ etrieveĠtheĠinformation.<|im_end|>Ċ<|im_start|>assistantĊ<tool_call>Ċ{"argum │
+│ ents":{"department_id":"NOPD","metrics":["PoliceĠfunding","UseĠofĠforce","Ra │
+│ cialĠbiasĠinĠenforcement"],"time_period":"latest"},"name":"fetchPoliceDepart │
+│ mentMetrics"}Ċ</tool_call><|im_end|>Ċ                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────── row 1 (assistant_only) ───────────────────────────╮
+│ <|im_start|>systemĊYouĠareĠaĠfunctionĠcallingĠAIĠmodel.ĠYouĠareĠprovidedĠwit │
+│ hĠfunctionĠsignaturesĠwithinĠ<tools>Ġ</tools>ĠXMLĠtags.ĠYouĠmayĠcallĠoneĠorĠ │
+│ moreĠfunctionsĠtoĠassistĠwithĠtheĠuserĠquery.ĠDon'tĠmakeĠassumptionsĠaboutĠw │
+│ hatĠvaluesĠtoĠplugĠintoĠfunctions.Ċ<tools>Ċ[{"type":Ġ"function",Ġ"function": │
+│ Ġ{"name":Ġ"synchronizeRoomAvailability",Ġ"description":Ġ"SynchronizesĠroomĠa │
+│ vailabilityĠacrossĠmultipleĠbookingĠplatformsĠforĠaĠgivenĠhotelĠandĠdateĠran │
+│ ge.",Ġ"parameters":Ġ{"type":Ġ"object",Ġ"properties":Ġ{"hotel_id":Ġ{"type":Ġ" │
+│ string",Ġ"description":Ġ"TheĠuniqueĠidentifierĠofĠtheĠhotel."},Ġ"booking_pla │
+│ tforms":Ġ{"type":Ġ"array",Ġ"items":Ġ{"type":Ġ"string"},Ġ"description":Ġ"AĠli │
+│ stĠofĠbookingĠplatformsĠtoĠsynchronizeĠwith."},Ġ"date_range":Ġ{"type":Ġ"obje │
+│ ct",Ġ"properties":Ġ{"start_date":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠsta │
+│ rtĠdateĠofĠtheĠsynchronizationĠperiodĠinĠYYYY-MM-DDĠformat."},Ġ"end_date":Ġ{ │
+│ "type":Ġ"string",Ġ"description":Ġ"TheĠendĠdateĠofĠtheĠsynchronizationĠperiod │
+│ ĠinĠYYYY-MM-DDĠformat."}},Ġ"required":Ġ["start_date",Ġ"end_date"]}},Ġ"requir │
+│ ed":Ġ["hotel_id",Ġ"booking_platforms",Ġ"date_range"]}}},Ġ{"type":Ġ"function" │
+│ ,Ġ"function":Ġ{"name":Ġ"automateGuestCheckInOut",Ġ"description":Ġ"AutomatesĠ │
+│ theĠguestĠcheck-inĠandĠcheck-outĠprocessesĠforĠaĠgivenĠhotel.",Ġ"parameters" │
+│ :Ġ{"type":Ġ"object",Ġ"properties":Ġ{"hotel_id":Ġ{"type":Ġ"string",Ġ"descript │
+│ ion":Ġ"TheĠuniqueĠidentifierĠofĠtheĠhotel."},Ġ"check_in_enabled":Ġ{"type":Ġ" │
+│ boolean",Ġ"description":Ġ"FlagĠtoĠenableĠorĠdisableĠautomaticĠguestĠcheck-in │
+│ ."},Ġ"check_out_enabled":Ġ{"type":Ġ"boolean",Ġ"description":Ġ"FlagĠtoĠenable │
+│ ĠorĠdisableĠautomaticĠguestĠcheck-out."}},Ġ"required":Ġ["hotel_id",Ġ"check_i │
+│ n_enabled",Ġ"check_out_enabled"]}}},Ġ{"type":Ġ"function",Ġ"function":Ġ{"name │
+│ ":Ġ"scheduleHousekeeping",Ġ"description":Ġ"SchedulesĠhousekeepingĠtasksĠforĠ │
+│ aĠlistĠofĠroomsĠinĠaĠhotelĠwithĠaĠspecifiedĠpriority.",Ġ"parameters":Ġ{"type │
+│ ":Ġ"object",Ġ"properties":Ġ{"hotel_id":Ġ{"type":Ġ"string",Ġ"description":Ġ"T │
+│ heĠuniqueĠidentifierĠofĠtheĠhotel."},Ġ"room_list":Ġ{"type":Ġ"array",Ġ"items" │
+│ :Ġ{"type":Ġ"string"},Ġ"description":Ġ"AĠlistĠofĠroomĠnumbersĠtoĠscheduleĠfor │
+│ Ġhousekeeping."},Ġ"priority":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠpriorit │
+│ yĠlevelĠforĠschedulingĠhousekeepingĠtasks."}},Ġ"required":Ġ["hotel_id",Ġ"roo │
+│ m_list",Ġ"priority"]}}}]Ċ</tools>ĊForĠeachĠfunctionĠcallĠreturnĠaĠjsonĠobjec │
+│ tĠwithĠfunctionĠnameĠandĠargumentsĠwithinĠ<tool_call>Ġ</tool_call>ĠtagsĠwith │
+│ ĠtheĠfollowingĠschema:Ċ<tool_call>Ċ{"name":Ġ<function-name>,Ġ"arguments":Ġ<a │
+│ rgs-dict>}Ċ</tool_call>Ċ<|im_end|>Ċ<|im_start|>userĊAsĠtheĠoperationsĠmanage │
+│ rĠofĠtheĠGrandeurĠHotelĠ(ID:ĠH1001),ĠI'mĠfocusedĠonĠstreamliningĠourĠservice │
+│ sĠforĠtheĠmonthĠofĠApril.ĠToĠachieveĠthis,ĠIĠrequireĠassistanceĠwithĠmultipl │
+│ eĠtasks:ĊĊ1.ĠSynchronizeĠourĠroomĠinventoryĠacrossĠleadingĠonlineĠbookingĠpl │
+│ atformsâĢĶBooking.com,ĠExpedia,ĠandĠAirbnbâĢĶfromĠAprilĠ1stĠtoĠAprilĠ30th,Ġ2 │
+│ 023.Ċ2.ĠImplementĠanĠautomatedĠsystemĠforĠguestĠcheck-insĠandĠcheck-outsĠtoĠ │
+│ enhanceĠefficiencyĠandĠguestĠsatisfaction.Ċ3.ĠOrganizeĠhousekeepingĠschedule │
+│ s,ĠwithĠpriorityĠgivenĠtoĠtheĠhigh-trafficĠroomsĠ101-104ĠtoĠmaintainĠourĠhig │
+│ hĠstandardsĠofĠcleanlinessĠandĠreadiness.ĊĊCouldĠyouĠpleaseĠexecuteĠtheĠrela │
+│ tedĠfunctionĠcallsĠtoĠaddressĠtheseĠspecificĠrequirementsĠforĠoperationalĠop │
+│ timizationĠatĠtheĠGrandeurĠHotel?<|im_end|>Ċ<|im_start|>assistantĊ<tool_call │
+│ >Ċ{"arguments":{"booking_platforms":["Booking.com","Expedia","Airbnb"],"date │
+│ _range":{"end_date":"2023-04-30","start_date":"2023-04-01"},"hotel_id":"H100 │
+│ 1"},"name":"synchronizeRoomAvailability"}Ċ</tool_call>Ċ<tool_call>Ċ{"argumen │
+│ ts":{"check_in_enabled":true,"check_out_enabled":true,"hotel_id":"H1001"},"n │
+│ ame":"automateGuestCheckInOut"}Ċ</tool_call>Ċ<tool_call>Ċ{"arguments":{"hote │
+│ l_id":"H1001","priority":"high","room_list":["101","102","103","104"]},"name │
+│ ":"scheduleHousekeeping"}Ċ</tool_call><|im_end|>Ċ                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────── row 2 (assistant_only) ───────────────────────────╮
+│ <|im_start|>systemĊYouĠareĠaĠfunctionĠcallingĠAIĠmodel.ĠYouĠareĠprovidedĠwit │
+│ hĠfunctionĠsignaturesĠwithinĠ<tools>Ġ</tools>ĠXMLĠtags.ĠYouĠmayĠcallĠoneĠorĠ │
+│ moreĠfunctionsĠtoĠassistĠwithĠtheĠuserĠquery.ĠDon'tĠmakeĠassumptionsĠaboutĠw │
+│ hatĠvaluesĠtoĠplugĠintoĠfunctions.Ċ<tools>Ċ[{"type":Ġ"function",Ġ"function": │
+│ Ġ{"name":Ġ"fetch_new_releases",Ġ"description":Ġ"FetchesĠaĠlistĠofĠnewĠreleas │
+│ eĠmoviesĠinĠaĠspecifiedĠgenre,ĠsortedĠbyĠaĠspecifiedĠcriterion,ĠandĠlimitedĠ │
+│ toĠaĠspecifiedĠnumberĠofĠresults.",Ġ"parameters":Ġ{"type":Ġ"object",Ġ"proper │
+│ ties":Ġ{"genre":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠgenreĠofĠmoviesĠtoĠf │
+│ etch."},Ġ"release_period":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠperiodĠofĠ │
+│ releaseĠforĠtheĠmovies."},Ġ"sort_by":Ġ{"type":Ġ"string",Ġ"description":Ġ"The │
+│ ĠcriterionĠtoĠsortĠtheĠmoviesĠby."},Ġ"limit":Ġ{"type":Ġ"integer",Ġ"descripti │
+│ on":Ġ"TheĠmaximumĠnumberĠofĠmoviesĠtoĠreturn."}},Ġ"required":Ġ["genre",Ġ"rel │
+│ ease_period",Ġ"sort_by",Ġ"limit"]}}},Ġ{"type":Ġ"function",Ġ"function":Ġ{"nam │
+│ e":Ġ"stream_movie",Ġ"description":Ġ"StreamsĠaĠmovieĠbyĠitsĠtitle.",Ġ"paramet │
+│ ers":Ġ{"type":Ġ"object",Ġ"properties":Ġ{"movie_title":Ġ{"type":Ġ"string",Ġ"d │
+│ escription":Ġ"TheĠtitleĠofĠtheĠmovieĠtoĠstream."}},Ġ"required":Ġ["movie_titl │
+│ e"]}}}]Ċ</tools>ĊForĠeachĠfunctionĠcallĠreturnĠaĠjsonĠobjectĠwithĠfunctionĠn │
+│ ameĠandĠargumentsĠwithinĠ<tool_call>Ġ</tool_call>ĠtagsĠwithĠtheĠfollowingĠsc │
+│ hema:Ċ<tool_call>Ċ{"name":Ġ<function-name>,Ġ"arguments":Ġ<args-dict>}Ċ</tool │
+│ _call>Ċ<|im_end|>Ċ<|im_start|>userĊIĠwouldĠlikeĠtoĠexploreĠtheĠlatestĠmovies │
+│ ĠinĠtheĠactionĠgenreĠthatĠhaveĠbeenĠreleasedĠthisĠmonthĠforĠourĠentertainmen │
+│ tĠstreamingĠapplication.ĠCanĠyouĠfetchĠaĠlistĠofĠnewĠreleaseĠactionĠmoviesĠs │
+│ ortedĠbyĠtheirĠratings,ĠlimitingĠtheĠresultsĠtoĠfive?ĠOnceĠweĠhaveĠtheĠlist, │
+│ ĠpleaseĠbeginĠstreamingĠtheĠhighest-ratedĠnewĠactionĠmovieĠavailable.ĠTheĠst │
+│ reamingĠshouldĠstartĠwithĠtheĠmovieĠtitledĠ'ExplosiveĠSkies'ĠsinceĠitĠhasĠth │
+│ eĠtopĠratingĠamongĠtheĠrecentĠreleases.ĊĊHereĠareĠtheĠdetailedĠargumentsĠfor │
+│ ĠtheĠfunctionĠcalls:Ċ-ĠForĠfetchingĠnewĠreleaseĠmovies,ĠtheĠgenreĠisĠ'action │
+│ ',ĠtheĠreleaseĠperiodĠisĠ'thisĠmonth',ĠtheĠsortingĠcriterionĠisĠ'rating',Ġan │
+│ dĠtheĠlimitĠisĠsetĠtoĠ5.Ċ-ĠToĠstartĠstreaming,ĠtheĠmovieĠtitleĠisĠ'Explosive │
+│ ĠSkies'.ĊĊFollowingĠthisĠrequestĠshouldĠresultĠinĠobtainingĠaĠlistĠofĠrecent │
+│ lyĠreleasedĠactionĠmoviesĠandĠinitiatingĠtheĠstreamingĠofĠtheĠhighest-ratedĠ │
+│ movieĠfromĠthatĠlist.<|im_end|>Ċ<|im_start|>assistantĊ<tool_call>Ċ{"argument │
+│ s":{"genre":"action","limit":5,"release_period":"thisĠmonth","sort_by":"rati │
+│ ng"},"name":"fetch_new_releases"}Ċ</tool_call>Ċ<tool_call>Ċ{"arguments":{"mo │
+│ vie_title":"ExplosiveĠSkies"},"name":"stream_movie"}Ċ</tool_call><|im_end|>Ċ │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────── row 3 (assistant_only) ───────────────────────────╮
+│ <|im_start|>systemĊYouĠareĠaĠfunctionĠcallingĠAIĠmodel.ĠYouĠareĠprovidedĠwit │
+│ hĠfunctionĠsignaturesĠwithinĠ<tools>Ġ</tools>ĠXMLĠtags.ĠYouĠmayĠcallĠoneĠorĠ │
+│ moreĠfunctionsĠtoĠassistĠwithĠtheĠuserĠquery.ĠDon'tĠmakeĠassumptionsĠaboutĠw │
+│ hatĠvaluesĠtoĠplugĠintoĠfunctions.Ċ<tools>Ċ[{"type":Ġ"function",Ġ"function": │
+│ Ġ{"name":Ġ"update_contact_info",Ġ"description":Ġ"UpdateĠtheĠphoneĠnumberĠand │
+│ ĠemailĠaddressĠforĠaĠcontactĠinĠtheĠCRMĠsystem.",Ġ"parameters":Ġ{"type":Ġ"ob │
+│ ject",Ġ"properties":Ġ{"contact_id":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠu │
+│ niqueĠidentifierĠofĠtheĠcontactĠtoĠupdate."},Ġ"new_phone_number":Ġ{"type":Ġ" │
+│ string",Ġ"description":Ġ"TheĠnewĠphoneĠnumberĠforĠtheĠcontact."},Ġ"new_email │
+│ ":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠnewĠemailĠaddressĠforĠtheĠcontact. │
+│ "}},Ġ"required":Ġ["contact_id",Ġ"new_phone_number",Ġ"new_email"]}}},Ġ{"type" │
+│ :Ġ"function",Ġ"function":Ġ{"name":Ġ"retrieve_contact_info",Ġ"description":Ġ" │
+│ RetrieveĠtheĠcurrentĠcontactĠinformationĠforĠaĠcontactĠfromĠtheĠCRMĠsystem." │
+│ ,Ġ"parameters":Ġ{"type":Ġ"object",Ġ"properties":Ġ{"contact_id":Ġ{"type":Ġ"st │
+│ ring",Ġ"description":Ġ"TheĠuniqueĠidentifierĠofĠtheĠcontactĠwhoseĠinformatio │
+│ nĠisĠtoĠbeĠretrieved."}},Ġ"required":Ġ["contact_id"]}}},Ġ{"type":Ġ"function" │
+│ ,Ġ"function":Ġ{"name":Ġ"add_new_contact",Ġ"description":Ġ"AddĠaĠnewĠcontactĠ │
+│ toĠtheĠCRMĠsystemĠwithĠtheirĠbasicĠinformation.",Ġ"parameters":Ġ{"type":Ġ"ob │
+│ ject",Ġ"properties":Ġ{"name":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠfullĠna │
+│ meĠofĠtheĠnewĠcontact."},Ġ"phone_number":Ġ{"type":Ġ"string",Ġ"description":Ġ │
+│ "TheĠphoneĠnumberĠofĠtheĠnewĠcontact."},Ġ"email":Ġ{"type":Ġ"string",Ġ"descri │
+│ ption":Ġ"TheĠemailĠaddressĠofĠtheĠnewĠcontact."},Ġ"address":Ġ{"type":Ġ"strin │
+│ g",Ġ"description":Ġ"TheĠphysicalĠaddressĠofĠtheĠnewĠcontact."}},Ġ"required": │
+│ Ġ["name",Ġ"phone_number",Ġ"email"]}}},Ġ{"type":Ġ"function",Ġ"function":Ġ{"na │
+│ me":Ġ"delete_contact",Ġ"description":Ġ"DeleteĠaĠcontactĠfromĠtheĠCRMĠsystem. │
+│ ",Ġ"parameters":Ġ{"type":Ġ"object",Ġ"properties":Ġ{"contact_id":Ġ{"type":Ġ"s │
+│ tring",Ġ"description":Ġ"TheĠuniqueĠidentifierĠofĠtheĠcontactĠtoĠdelete."}},Ġ │
+│ "required":Ġ["contact_id"]}}}]Ċ</tools>ĊForĠeachĠfunctionĠcallĠreturnĠaĠjson │
+│ ĠobjectĠwithĠfunctionĠnameĠandĠargumentsĠwithinĠ<tool_call>Ġ</tool_call>Ġtag │
+│ sĠwithĠtheĠfollowingĠschema:Ċ<tool_call>Ċ{"name":Ġ<function-name>,Ġ"argument │
+│ s":Ġ<args-dict>}Ċ</tool_call>Ċ<|im_end|>Ċ<|im_start|>userĊIĠamĠupdatingĠourĠ │
+│ CRMĠrecordsĠandĠneedĠtoĠmodifyĠtheĠdetailsĠforĠoneĠofĠourĠcontacts,ĠJaneĠSmi │
+│ th.ĠWeĠhaveĠrecentlyĠreceivedĠherĠupdatedĠcontactĠinformation.ĠHerĠnewĠphone │
+│ ĠnumberĠisĠ555-1234,ĠandĠherĠnewĠemailĠaddressĠisĠjane.smith@example.com.ĠJa │
+│ ne'sĠuniqueĠidentifierĠinĠourĠCRMĠsystemĠisĠC123456.ĠPleaseĠcallĠtheĠappropr │
+│ iateĠfunctionĠtoĠupdateĠJaneĠSmith'sĠCRMĠrecordĠwithĠherĠnewĠcontactĠdetails │
+│ .<|im_end|>Ċ<|im_start|>assistantĊ<tool_call>Ċ{"arguments":{"contact_id":"C1 │
+│ 23456","new_email":"jane.smith@example.com","new_phone_number":"555-1234"}," │
+│ name":"update_contact_info"}Ċ</tool_call><|im_end|>Ċ                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────── row 4 (assistant_only) ───────────────────────────╮
+│ <|im_start|>systemĊYouĠareĠaĠfunctionĠcallingĠAIĠmodel.ĠYouĠareĠprovidedĠwit │
+│ hĠfunctionĠsignaturesĠwithinĠ<tools>Ġ</tools>ĠXMLĠtags.ĠYouĠmayĠcallĠoneĠorĠ │
+│ moreĠfunctionsĠtoĠassistĠwithĠtheĠuserĠquery.ĠDon'tĠmakeĠassumptionsĠaboutĠw │
+│ hatĠvaluesĠtoĠplugĠintoĠfunctions.Ċ<tools>Ċ[{"type":Ġ"function",Ġ"function": │
+│ Ġ{"name":Ġ"recover_deleted_file",Ġ"description":Ġ"RecoverĠaĠdeletedĠfileĠfro │
+│ mĠaĠspecifiedĠstorageĠdevice.",Ġ"parameters":Ġ{"type":Ġ"object",Ġ"properties │
+│ ":Ġ{"device_type":Ġ{"type":Ġ"string",Ġ"description":Ġ"TheĠtypeĠofĠstorageĠde │
+│ viceĠfromĠwhichĠtoĠrecoverĠtheĠfile.",Ġ"enum":Ġ["USBĠflashĠdrive",Ġ"hardĠdis │
+│ kĠdrive",Ġ"solid-stateĠdrive"]},Ġ"file_name":Ġ{"type":Ġ"string",Ġ"descriptio │
+│ n":Ġ"TheĠnameĠofĠtheĠfileĠtoĠbeĠrecovered."},Ġ"file_type":Ġ{"type":Ġ"string" │
+│ ,Ġ"description":Ġ"TheĠtypeĠofĠtheĠfileĠtoĠbeĠrecovered.",Ġ"enum":Ġ["PowerPoi │
+│ ntĠpresentation",Ġ"WordĠdocument",Ġ"ExcelĠspreadsheet",Ġ"ImageĠfile"]}},Ġ"re │
+│ quired":Ġ["device_type",Ġ"file_name",Ġ"file_type"]}}}]Ċ</tools>ĊForĠeachĠfun │
+│ ctionĠcallĠreturnĠaĠjsonĠobjectĠwithĠfunctionĠnameĠandĠargumentsĠwithinĠ<too │
+│ l_call>Ġ</tool_call>ĠtagsĠwithĠtheĠfollowingĠschema:Ċ<tool_call>Ċ{"name":Ġ<f │
+│ unction-name>,Ġ"arguments":Ġ<args-dict>}Ċ</tool_call>Ċ<|im_end|>Ċ<|im_start| │
+│ >userĊIĠrecentlyĠexperiencedĠanĠunexpectedĠlossĠofĠaĠcriticalĠPowerPointĠpre │
+│ sentationĠfromĠmyĠUSBĠflashĠdrive.ĠTheĠfileĠisĠnamedĠ'Q1_Sales_Report.pptx'Ġ │
+│ andĠitĠisĠessentialĠforĠanĠupcomingĠmeeting.ĠUnfortunately,ĠIĠdoĠnotĠhaveĠaĠ │
+│ backupĠofĠthisĠfile.ĠIĠurgentlyĠrequireĠassistanceĠinĠretrievingĠthisĠdelete │
+│ dĠpresentationĠfile.ĠBasedĠonĠmyĠunderstanding,ĠthereĠareĠdataĠrecoveryĠmeth │
+│ odsĠthatĠcanĠrestoreĠsuchĠaĠfileĠfromĠaĠUSBĠflashĠdrive.ĠCanĠyouĠinitiateĠth │
+│ eĠdataĠrecoveryĠprocessĠusingĠtheseĠmethodsĠtoĠhelpĠmeĠretrieveĠtheĠ'Q1_Sale │
+│ s_Report.pptx'ĠPowerPointĠpresentationĠfromĠmyĠUSBĠflashĠdrive?<|im_end|>Ċ<| │
+│ im_start|>assistantĊ<tool_call>Ċ{"arguments":{"device_type":"USBĠflashĠdrive │
+│ ","file_name":"Q1_Sales_Report.pptx","file_type":"PowerPointĠpresentation"}, │
+│ "name":"recover_deleted_file"}Ċ</tool_call><|im_end|>Ċ                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"elapsed_seconds":13.159478203999981,"event":"segment","name":"stage_end","stage":"doctor-train","utc":"2026-11-10T04:42:21.456312+00:00"}
+{"event":"stage_end","stage":"doctor-train","status":"passed","utc":"2026-11-10T04:42:21.516377+00:00"}

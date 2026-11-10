@@ -1,0 +1,5 @@
+{"event":"stage_start","stage":"prepare","utc":"2026-11-10T04:40:36.082386+00:00"}
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 9 files:  11%|█         | 1/9 [00:00<00:01,  4.98it/s]Fetching 9 files:  67%|██████▋   | 6/9 [00:00<00:00, 21.64it/s]Fetching 9 files: 100%|██████████| 9/9 [00:09<00:00,  1.31s/it]Fetching 9 files: 100%|██████████| 9/9 [00:09<00:00,  1.03s/it]
+{"elapsed_seconds":65.05909143299999,"event":"segment","name":"stage_end","stage":"prepare","utc":"2026-11-10T04:41:41.141448+00:00"}
+{"event":"stage_end","stage":"prepare","status":"passed","utc":"2026-11-10T04:41:41.142365+00:00"}

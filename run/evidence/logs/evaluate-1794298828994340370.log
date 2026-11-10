@@ -1,0 +1,36 @@
+{"event":"stage_start","stage":"evaluate-test-M","utc":"2026-11-10T08:20:29.132637+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.5961973430003127,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-test-M","utc":"2026-11-10T08:20:30.728811+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":8.473090372001025,"event":"segment","name":"before_cold_load","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-test-M","utc":"2026-11-10T08:20:37.605694+00:00"}
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   8%|▊         | 27/338 [00:00<00:01, 257.14it/s]Loading weights:  22%|██▏       | 76/338 [00:00<00:00, 380.79it/s]Loading weights:  39%|███▉      | 131/338 [00:00<00:00, 455.27it/s]Loading weights:  54%|█████▍    | 184/338 [00:00<00:00, 463.58it/s]Loading weights:  71%|███████▏  | 241/338 [00:00<00:00, 478.23it/s]Loading weights:  88%|████████▊ | 299/338 [00:00<00:00, 509.97it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 479.67it/s]
+{"allocated_bytes":3087429632,"elapsed_seconds":19.055527796001115,"event":"segment","name":"after_cold_load","peak_allocated_bytes":3087429632,"peak_reserved_bytes":3149922304,"reserved_bytes":3149922304,"stage":"evaluate-test-M","utc":"2026-11-10T08:20:48.188140+00:00"}
+{"allocated_bytes":3087429632,"elapsed_seconds":19.05673134800054,"event":"segment","name":"before_generation_warmup_excluded_from_latency","peak_allocated_bytes":3087429632,"peak_reserved_bytes":3149922304,"reserved_bytes":3149922304,"stage":"evaluate-test-M","utc":"2026-11-10T08:20:48.189329+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":20.03674835700076,"event":"segment","name":"after_generation_warmup_excluded_from_latency","peak_allocated_bytes":3135455232,"peak_reserved_bytes":3164602368,"reserved_bytes":3164602368,"stage":"evaluate-test-M","utc":"2026-11-10T08:20:49.169360+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":20.03772838400073,"event":"segment","name":"before_teacher_forcing_and_greedy_generation","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3164602368,"reserved_bytes":3164602368,"stage":"evaluate-test-M","utc":"2026-11-10T08:20:49.170343+00:00"}
+{"completed":10,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:21:20.760382+00:00"}
+{"completed":20,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:21:49.477597+00:00"}
+{"completed":30,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:22:10.756428+00:00"}
+{"completed":40,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:22:40.870609+00:00"}
+{"completed":50,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:23:08.144695+00:00"}
+{"completed":60,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:23:32.148079+00:00"}
+{"completed":70,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:24:01.449680+00:00"}
+{"completed":80,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:24:31.865880+00:00"}
+{"completed":90,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:25:03.821170+00:00"}
+{"completed":100,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:25:30.042839+00:00"}
+{"completed":110,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:26:03.252698+00:00"}
+{"completed":120,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:26:30.821354+00:00"}
+{"completed":130,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:27:01.906043+00:00"}
+{"completed":140,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:27:35.125412+00:00"}
+{"completed":150,"event":"progress","stage":"eval-test-M","total":150,"utc":"2026-11-10T08:28:06.071524+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":456.9390816520008,"event":"segment","name":"after_teacher_forcing_and_greedy_generation","peak_allocated_bytes":3642477056,"peak_reserved_bytes":3760193536,"reserved_bytes":3760193536,"stage":"evaluate-test-M","utc":"2026-11-10T08:28:06.071699+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":456.9433186760016,"event":"segment","name":"before_bundled_general_suites","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3760193536,"reserved_bytes":3760193536,"stage":"evaluate-test-M","utc":"2026-11-10T08:28:06.075934+00:00"}
+{"event":"progress","score":0.85,"stage":"general-M","suite":"mini_mmlu","utc":"2026-11-10T08:28:09.705987+00:00"}
+{"event":"progress","score":0.825,"stage":"general-M","suite":"mini_common_sense","utc":"2026-11-10T08:28:13.248247+00:00"}
+{"event":"progress","score":1.0,"stage":"general-M","suite":"mini_instruction","utc":"2026-11-10T08:28:15.308180+00:00"}
+{"event":"progress","score":0.825,"stage":"general-M","suite":"mini_arithmetic","utc":"2026-11-10T08:30:29.772185+00:00"}
+{"event":"progress","score":0.575,"stage":"general-M","suite":"mini_tool_call","utc":"2026-11-10T08:30:51.568391+00:00"}
+{"event":"progress","score":0.95,"stage":"general-M","suite":"mini_format_json","utc":"2026-11-10T08:31:35.973558+00:00"}
+{"event":"progress","score":1.0,"stage":"general-M","suite":"mini_safety","utc":"2026-11-10T08:32:36.380280+00:00"}
+{"event":"progress","score":0.45,"stage":"general-M","suite":"mini_over_refusal","utc":"2026-11-10T08:37:45.111673+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":1035.9792579630011,"event":"segment","name":"after_bundled_general_suites","peak_allocated_bytes":3119101952,"peak_reserved_bytes":3760193536,"reserved_bytes":3760193536,"stage":"evaluate-test-M","utc":"2026-11-10T08:37:45.111874+00:00"}
+{"allocated_bytes":9568256,"elapsed_seconds":1036.0415894200014,"event":"segment","name":"stage_end","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3760193536,"reserved_bytes":3760193536,"stage":"evaluate-test-M","utc":"2026-11-10T08:37:45.174202+00:00"}
+{"event":"stage_end","stage":"evaluate-test-M","status":"passed","utc":"2026-11-10T08:37:45.175940+00:00"}

@@ -1,0 +1,21 @@
+{
+  "created_before_training": "2026-11-10T04:41:30.545859+00:00",
+  "unique_parameters": 1543714304,
+  "lora_parameters_expected": 9232384,
+  "base_fp16_gib": 2.875391960144043,
+  "lora_fp32_parameter_gradient_adam_gib": 0.1375732421875,
+  "one_fp16_full_logits_gib": 0.289794921875,
+  "one_fp32_full_logits_gib": 0.57958984375,
+  "kv_cache_bytes_per_token_batch1": 28672,
+  "nf4_storage_floor_gib": 1.0447998046875,
+  "not_in_floor": [
+    "checkpointed/recomputed activations",
+    "attention/logit/loss workspaces",
+    "allocator caches/context",
+    "NF4 metadata",
+    "host staging"
+  ],
+  "training_memory_preflight_budget_gib": 12.0,
+  "budget_label": "conservative planning envelope, not a prediction of actual peak",
+  "phase_model": "baseline/base+LoRA residency; forward/backward; lazy Adam state; eval/save; CPU merge; GPU NF4; cold load+KV inference"
+}

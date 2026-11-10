@@ -1,0 +1,46 @@
+{"event":"stage_start","stage":"merge-M","utc":"2026-11-10T07:34:51.302843+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.678950628000166,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"merge-M","utc":"2026-11-10T07:34:52.981767+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":10.259912944000462,"event":"segment","name":"before_cpu_dense_merge","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"merge-M","utc":"2026-11-10T07:35:01.562730+00:00"}
+╭───────────────────────────────── Merge Plan ─────────────────────────────────╮
+│ Adapter:                                                                     │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-42  │
+│ Base:                                                                        │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/base        │
+│ Output:                                                                      │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-fp16 │
+│ Dtype:   float16                                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Loading base model: 
+/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/base...
+Base revision: unknown (legacy, local source or base override)
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<02:22,  2.37it/s]Loading weights:  30%|██▉       | 100/338 [00:00<00:01, 230.68it/s]Loading weights:  42%|████▏     | 143/338 [00:00<00:00, 271.24it/s]Loading weights:  54%|█████▍    | 184/338 [00:00<00:00, 259.92it/s]Loading weights:  65%|██████▍   | 219/338 [00:00<00:00, 260.66it/s]Loading weights:  75%|███████▌  | 255/338 [00:01<00:00, 264.28it/s]Loading weights:  86%|████████▌ | 291/338 [00:01<00:00, 272.53it/s]Loading weights:  95%|█████████▍| 321/338 [00:01<00:00, 278.87it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 246.63it/s]
+Loading LoRA adapter: 
+/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-42...
+Merging weights...
+Saving merged model to 
+/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-fp16...
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+Saving tokenizer...
+╭────────────────────────────── Merge Complete! ───────────────────────────────╮
+│ Output:                                                                      │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-fp16 │
+│ Size:   2.9 GB                                                               │
+│                                                                              │
+│ Next steps:                                                                  │
+│   soup chat --model                                                          │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-fp16 │
+│   soup push --model                                                          │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-fp16 │
+│ --repo user/model                                                            │
+│   soup export --model                                                        │
+│ /kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/merged-fp16 │
+│ --format gguf                                                                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"allocated_bytes":0,"elapsed_seconds":32.98347600700072,"event":"segment","name":"after_cpu_dense_merge","peak_allocated_bytes":36929536,"peak_reserved_bytes":37748736,"reserved_bytes":37748736,"stage":"merge-M","utc":"2026-11-10T07:35:24.286273+00:00"}
+╭────────────────────────── Strict safetensors check ──────────────────────────╮
+│ Adapter:    merged-fp16                                                      │
+│ Status:     OK                                                               │
+│ Reason:     all weight files are safetensors                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"allocated_bytes":0,"elapsed_seconds":50.379553619000944,"event":"segment","name":"stage_end","peak_allocated_bytes":0,"peak_reserved_bytes":37748736,"reserved_bytes":37748736,"stage":"merge-M","utc":"2026-11-10T07:35:41.682369+00:00"}
+{"event":"stage_end","stage":"merge-M","status":"passed","utc":"2026-11-10T07:35:41.683941+00:00"}

@@ -1,0 +1,3 @@
+{"event":"stage_start","stage":"selftest","utc":"2026-11-10T04:42:52.174470+00:00"}
+{"elapsed_seconds":9.40846073399996,"event":"segment","name":"stage_end","stage":"selftest","utc":"2026-11-10T04:43:01.582904+00:00"}
+{"event":"stage_end","stage":"selftest","status":"passed","utc":"2026-11-10T04:43:01.643709+00:00"}

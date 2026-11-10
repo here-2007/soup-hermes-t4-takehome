@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "train": 1600,
+    "validation": 150,
+    "test": 150
+  },
+  "max_length": 1024,
+  "generation_cap": 320,
+  "all_reference_masks_exact": true,
+  "reserved_token_check": true,
+  "split_overlap": 0,
+  "collator_padding_checks": true,
+  "native_template_sha256": "2e2d2512cfe46af53dc1eed45368ecaab26ac4461c480e6b69fe571cf0ceaa75",
+  "training_template_sha256": "9f7753045eff11c1260c847986095b0518eaa7e748811aeb5f1a5bc66dde5cd3",
+  "group_counts": {
+    "train": 402,
+    "validation": 150,
+    "test": 150
+  }
+}

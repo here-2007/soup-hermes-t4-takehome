@@ -1,0 +1,4 @@
+{"event":"stage_start","stage":"fidelity","utc":"2026-11-10T07:58:31.874948+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.6596292849990277,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"fidelity","utc":"2026-11-10T07:58:33.534554+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":5.33709315499982,"event":"segment","name":"stage_end","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"fidelity","utc":"2026-11-10T07:58:37.212016+00:00"}
+{"event":"stage_end","stage":"fidelity","status":"passed","utc":"2026-11-10T07:58:37.213501+00:00"}

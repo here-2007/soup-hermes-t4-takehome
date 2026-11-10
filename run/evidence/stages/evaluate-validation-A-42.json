@@ -1,0 +1,160 @@
+{
+  "stage": "evaluate-validation-A-42",
+  "request": {
+    "stage": "evaluate",
+    "variant": "A",
+    "split": "validation",
+    "seed": 42,
+    "general": false,
+    "probes_only": false
+  },
+  "started_utc": "2026-11-10T05:33:49.764769+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "evidence/probes/validation-A-42.pt",
+      "evidence/predictions/validation-A-42.jsonl",
+      "evidence/scores/validation-A-42.json",
+      "evidence/identity-A-42.json"
+    ],
+    "identity": {
+      "variant": "A",
+      "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-42",
+      "class": "PeftModelForCausalLM",
+      "quantized_linear_count": 0,
+      "quantization_config": null,
+      "devices": [
+        "cuda:0"
+      ],
+      "parameter_dtypes": {
+        "torch.float16": 338,
+        "torch.float32": 392
+      },
+      "portable_base_adapter_reads_blocked": false
+    }
+  },
+  "output_bindings": {
+    "evidence/probes/validation-A-42.pt": "1b76e86a50c9ea0d1a612c9a6bc32833b24d815c00078ef09fc5b193425c6893",
+    "evidence/predictions/validation-A-42.jsonl": "ab484f43970075c0c210db6f9acade1f15e48d99681b5011138ac7330034dba9",
+    "evidence/scores/validation-A-42.json": "d8b34f6b01cb055a11b76bc853eca1d118b9d63bce6b819298ce7fe06d93f186",
+    "evidence/identity-A-42.json": "898915acb46a275173dfa222f525d0f416df416dc259d29041ff6c12e31334a3"
+  },
+  "resources": {
+    "elapsed_seconds": 909.0549547750002,
+    "peak_rss_bytes_sampled": 4109623296,
+    "peak_device_used_mib_sampled": 3815,
+    "device_samples": 3548,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T05:33:51.444333+00:00",
+        "elapsed_seconds": 1.6676547209999626,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "before_cold_load",
+        "utc": "2026-11-10T05:33:58.267795+00:00",
+        "elapsed_seconds": 8.491124909000064,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "after_cold_load",
+        "utc": "2026-11-10T05:34:10.706443+00:00",
+        "elapsed_seconds": 20.929770803999872,
+        "allocated_bytes": 3124359168,
+        "reserved_bytes": 3223322624,
+        "peak_allocated_bytes": 3161288704,
+        "peak_reserved_bytes": 3223322624
+      },
+      {
+        "name": "before_fixed_validation_distribution_probes",
+        "utc": "2026-11-10T05:34:10.707878+00:00",
+        "elapsed_seconds": 20.931200346999958,
+        "allocated_bytes": 3124359168,
+        "reserved_bytes": 3223322624,
+        "peak_allocated_bytes": 3124359168,
+        "peak_reserved_bytes": 3223322624
+      },
+      {
+        "name": "after_fixed_validation_distribution_probes",
+        "utc": "2026-11-10T05:34:12.875713+00:00",
+        "elapsed_seconds": 23.09904119599969,
+        "allocated_bytes": 3133927424,
+        "reserved_bytes": 3726639104,
+        "peak_allocated_bytes": 3614981632,
+        "peak_reserved_bytes": 3726639104
+      },
+      {
+        "name": "before_generation_warmup_excluded_from_latency",
+        "utc": "2026-11-10T05:34:12.876610+00:00",
+        "elapsed_seconds": 23.0999277789997,
+        "allocated_bytes": 3133927424,
+        "reserved_bytes": 3726639104,
+        "peak_allocated_bytes": 3133927424,
+        "peak_reserved_bytes": 3726639104
+      },
+      {
+        "name": "after_generation_warmup_excluded_from_latency",
+        "utc": "2026-11-10T05:34:13.797210+00:00",
+        "elapsed_seconds": 24.020533370000066,
+        "allocated_bytes": 3133927424,
+        "reserved_bytes": 3726639104,
+        "peak_allocated_bytes": 3189170176,
+        "peak_reserved_bytes": 3726639104
+      },
+      {
+        "name": "before_teacher_forcing_and_greedy_generation",
+        "utc": "2026-11-10T05:34:13.799120+00:00",
+        "elapsed_seconds": 24.022439264999775,
+        "allocated_bytes": 3133927424,
+        "reserved_bytes": 3726639104,
+        "peak_allocated_bytes": 3133927424,
+        "peak_reserved_bytes": 3726639104
+      },
+      {
+        "name": "after_teacher_forcing_and_greedy_generation",
+        "utc": "2026-11-10T05:48:58.800599+00:00",
+        "elapsed_seconds": 909.0239169760002,
+        "allocated_bytes": 3133927424,
+        "reserved_bytes": 3858759680,
+        "peak_allocated_bytes": 3719213056,
+        "peak_reserved_bytes": 3858759680
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T05:48:58.830644+00:00",
+        "elapsed_seconds": 909.0539651799995,
+        "allocated_bytes": 3133927424,
+        "reserved_bytes": 3858759680,
+        "peak_allocated_bytes": 3133927424,
+        "peak_reserved_bytes": 3858759680
+      }
+    ],
+    "peak_allocated_bytes": 3719213056,
+    "peak_reserved_bytes": 3858759680,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T05:48:58.831737+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

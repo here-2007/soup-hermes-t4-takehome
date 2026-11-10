@@ -1,0 +1,7 @@
+{"event":"stage_start","stage":"env-lock","utc":"2026-11-10T04:42:03.808320+00:00"}
+╭────────────────────────────────── env lock ──────────────────────────────────╮
+│ Locked 10 packages to evidence/soup-env.lock                                 │
+│ Python: 3.13.16 | Platform: linux-x86_64 | CUDA: 13.0.3                      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"elapsed_seconds":0.5818780640000227,"event":"segment","name":"stage_end","stage":"env-lock","utc":"2026-11-10T04:42:04.390178+00:00"}
+{"event":"stage_end","stage":"env-lock","status":"passed","utc":"2026-11-10T04:42:04.427098+00:00"}

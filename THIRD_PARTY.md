@@ -1,0 +1,8 @@
+# Sources and attribution
+
+- **Dataset:** NousResearch, [Hermes Function Calling V1](https://huggingface.co/datasets/NousResearch/hermes-function-calling-v1/tree/dae3e1d28cfbcf4b915c04ea1e072030529b4bda), revision `dae3e1d28cfbcf4b915c04ea1e072030529b4bda`. The dataset card declares Apache-2.0. Prepared JSONL files are filtered and reformatted derivatives; the normalization/exclusion ledgers and split manifest document those changes. The original card is retained in `data-preparation/audit/dataset-card.md`.
+- **Base model:** Qwen team, [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/tree/989aa7980e4cf806f80c7fef2b1adb7bc71aa306), revision `989aa7980e4cf806f80c7fef2b1adb7bc71aa306`, Apache-2.0. Model weights are linked from Kaggle rather than included here. The original license text is included under `licenses/`.
+- **Training and checks:** [MakazhanAlpamys/Soup](https://github.com/MakazhanAlpamys/Soup/tree/4cff43bf967e96a484381205e5125e2fc39227f1), version 0.77.2 at the pinned commit. The project uses Soup's loader, trainer, collator, benchmark collector, merge/quantized-save paths, checks and decision logic. The verifier is project-specific code calling those interfaces.
+- **Submission reference:** [harshitthek/soup-dpo-takehome](https://github.com/harshitthek/soup-dpo-takehome) informed repository organization. No measurements, model claims or personal reflections from that submission are presented as this candidate's work.
+
+Third-party licenses and attribution apply to their respective materials. The included dataset/model license text does not relicense the original submission's other contents.

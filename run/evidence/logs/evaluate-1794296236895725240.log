@@ -1,0 +1,28 @@
+{"event":"stage_start","stage":"evaluate-validation-M","utc":"2026-11-10T07:37:17.049942+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.822930414999064,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:18.872846+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":8.965989289999925,"event":"segment","name":"before_cold_load","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:26.015898+00:00"}
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   8%|▊         | 27/338 [00:00<00:01, 238.51it/s]Loading weights:  25%|██▌       | 85/338 [00:00<00:00, 428.93it/s]Loading weights:  40%|███▉      | 135/338 [00:00<00:00, 443.47it/s]Loading weights:  58%|█████▊    | 195/338 [00:00<00:00, 482.41it/s]Loading weights:  73%|███████▎  | 246/338 [00:00<00:00, 491.59it/s]Loading weights:  90%|████████▉ | 303/338 [00:00<00:00, 509.95it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 482.13it/s]
+{"allocated_bytes":3087429632,"elapsed_seconds":19.627386194999417,"event":"segment","name":"after_cold_load","peak_allocated_bytes":3087429632,"peak_reserved_bytes":3149922304,"reserved_bytes":3149922304,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:36.677303+00:00"}
+{"allocated_bytes":3087429632,"elapsed_seconds":19.628597516999434,"event":"segment","name":"before_fixed_validation_distribution_probes","peak_allocated_bytes":3087429632,"peak_reserved_bytes":3149922304,"reserved_bytes":3149922304,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:36.678516+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":21.57520753999961,"event":"segment","name":"after_fixed_validation_distribution_probes","peak_allocated_bytes":3578052096,"peak_reserved_bytes":3661627392,"reserved_bytes":3661627392,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:38.625120+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":21.57609489999959,"event":"segment","name":"before_generation_warmup_excluded_from_latency","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3661627392,"reserved_bytes":3661627392,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:38.626015+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":22.42753729099968,"event":"segment","name":"after_generation_warmup_excluded_from_latency","peak_allocated_bytes":3135455232,"peak_reserved_bytes":3667918848,"reserved_bytes":3667918848,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:39.477452+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":22.42849805699916,"event":"segment","name":"before_teacher_forcing_and_greedy_generation","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3667918848,"reserved_bytes":3667918848,"stage":"evaluate-validation-M","utc":"2026-11-10T07:37:39.478418+00:00"}
+{"completed":10,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:38:11.770107+00:00"}
+{"completed":20,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:38:45.146784+00:00"}
+{"completed":30,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:39:13.193413+00:00"}
+{"completed":40,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:39:47.557610+00:00"}
+{"completed":50,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:40:17.016380+00:00"}
+{"completed":60,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:40:51.722488+00:00"}
+{"completed":70,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:41:17.780652+00:00"}
+{"completed":80,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:41:54.210761+00:00"}
+{"completed":90,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:42:29.005767+00:00"}
+{"completed":100,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:42:59.481824+00:00"}
+{"completed":110,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:43:34.651873+00:00"}
+{"completed":120,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:44:01.146184+00:00"}
+{"completed":130,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:44:34.584394+00:00"}
+{"completed":140,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:45:02.635841+00:00"}
+{"completed":150,"event":"progress","stage":"eval-validation-M","total":150,"utc":"2026-11-10T07:45:36.612198+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":499.5624575769998,"event":"segment","name":"after_teacher_forcing_and_greedy_generation","peak_allocated_bytes":3682283520,"peak_reserved_bytes":3821010944,"reserved_bytes":3821010944,"stage":"evaluate-validation-M","utc":"2026-11-10T07:45:36.612379+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":499.591963633,"event":"segment","name":"stage_end","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3821010944,"reserved_bytes":3821010944,"stage":"evaluate-validation-M","utc":"2026-11-10T07:45:36.641883+00:00"}
+{"event":"stage_end","stage":"evaluate-validation-M","status":"passed","utc":"2026-11-10T07:45:36.643661+00:00"}

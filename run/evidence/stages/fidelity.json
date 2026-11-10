@@ -1,0 +1,63 @@
+{
+  "stage": "fidelity",
+  "request": {
+    "stage": "fidelity"
+  },
+  "started_utc": "2026-11-10T07:58:31.863649+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "evidence/fidelity-and-export-controls.json"
+    ],
+    "merge_faithful": false
+  },
+  "output_bindings": {
+    "evidence/fidelity-and-export-controls.json": "f02cbb070ceccd3d640e85906b9e4c967b9ac1494fc77035e40a55821b860464"
+  },
+  "resources": {
+    "elapsed_seconds": 5.338062937000359,
+    "peak_rss_bytes_sampled": 727834624,
+    "peak_device_used_mib_sampled": 105,
+    "device_samples": 20,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T07:58:33.534554+00:00",
+        "elapsed_seconds": 1.6596292849990277,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T07:58:37.212016+00:00",
+        "elapsed_seconds": 5.33709315499982,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T07:58:37.213078+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

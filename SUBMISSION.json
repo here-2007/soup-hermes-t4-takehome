@@ -1,0 +1,17 @@
+{
+  "candidate": "Pernav Jain",
+  "run_id": "20261110T044014005029Z",
+  "repository": "https://github.com/here-2007/soup-hermes-t4-takehome",
+  "model_version": "pernavjain/soup-experiment/pytorch/experiment-artifacts/1",
+  "model_weights_included": false,
+  "input_sha256": {
+    "evidence-and-code.zip": "e0b7ef81ad49552ce15d04558243efaa8ab5c02501f97ce613bb4afec66a6ade",
+    "executed_training_notebook": "bcfaaa603b7a9bc55437e13a2b7041cbe2bbd2343158e91e3803528b798b396e",
+    "executed_preparation_notebook": "601b070c80ad222cff53b33029bc88efda3e5f1f65240f3dfb69f3d664fee059",
+    "data_preparation_manifest": "1da8fb40e8c9526aa8f98abfbbe91508f0b5432cabead747249030a442e8864c",
+    "task_pdf": "ee9fdefa13b27b990b0af963828563c4dcdacd32abe6b96cdd8b53f750a521df"
+  },
+  "original_records": "run/ and data-preparation/ preserve the supplied indexed bytes; final report and CPU review are added outside those trees.",
+  "report_scope": "At most two pages. User corrections remove the 4-6 hour work cap and the live discussion.",
+  "review_scope": "Saved predictions and records replayed on CPU; no training or model inference rerun during submission preparation."
+}

@@ -1,0 +1,8 @@
+bigframes 2.51.0 requires google-cloud-bigquery-storage, which is not installed.
+google-colab 1.0.0 has requirement jupyter-server==2.20.0, but you have jupyter-server 2.12.5.
+google-colab 1.0.0 has requirement pandas==2.2.3, but you have pandas 2.3.3.
+google-colab 1.0.0 has requirement requests==2.32.4, but you have requests 2.34.2.
+dopamine-rl 4.1.2 has requirement gym<=0.25.2, but you have gym 0.26.2.
+moviepy 1.0.3 has requirement decorator<5.0,>=4.0.2, but you have decorator 5.3.1.
+ydf 0.15.0 has requirement protobuf<7.0.0,>=5.29.1, but you have protobuf 7.36.2.
+gradio 6.30.0 has requirement pillow<13.0,>=8.0, but you have pillow 13.0.0.

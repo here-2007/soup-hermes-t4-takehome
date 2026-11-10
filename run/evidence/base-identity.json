@@ -1,0 +1,38 @@
+{
+  "path": "artifacts/base",
+  "files": {
+    "chat_template.jinja": {
+      "sha256": "8b4b6250519bc48a5adf707a9d4b2fa49b90b290034bb9315cbaeae6c2c8304c",
+      "bytes": 309
+    },
+    "config.json": {
+      "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+      "bytes": 660
+    },
+    "generation_config.json": {
+      "sha256": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+      "bytes": 242
+    },
+    "merges.txt": {
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "bytes": 1671839
+    },
+    "model.safetensors": {
+      "sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+      "bytes": 3087467144
+    },
+    "tokenizer.json": {
+      "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8",
+      "bytes": 11421892
+    },
+    "tokenizer_config.json": {
+      "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95",
+      "bytes": 692
+    },
+    "vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    }
+  },
+  "sha256": "6eb6a810cc20a82d7d25b5dea537844ac1804eed2c80ffe0a5af87329def4aaf"
+}

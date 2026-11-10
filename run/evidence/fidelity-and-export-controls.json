@@ -1,0 +1,127 @@
+{
+  "calibration": {
+    "utc_before_training": "2026-11-10T04:57:21.420031+00:00",
+    "repeat_base_runs": 3,
+    "repeat_error": 0.0,
+    "initialized_adapter_error": 0.0,
+    "floor": 0.0,
+    "merge_reference_logprob_tolerance": 0.02,
+    "ceiling": 0.1,
+    "scope": "four fixed validation rows; deterministic baseline under actual kernels"
+  },
+  "A_to_M": {
+    "max_reference_logprob_error": 0.03867495059967041,
+    "mean_reference_logprob_error": 0.00042846951924151275,
+    "max_row_nll_difference": 0.0005174875259399414,
+    "mean_kl_before_after": 1.0755444194709973e-06,
+    "max_kl_before_after": 9.978975867852569e-06,
+    "rows": 4,
+    "reference_tokens": 416,
+    "distribution_positions": 16
+  },
+  "M_to_Q": {
+    "max_reference_logprob_error": 2.6883816719055176,
+    "mean_reference_logprob_error": 0.029685673389825144,
+    "max_row_nll_difference": 0.014669360592961311,
+    "mean_kl_before_after": 0.020366224918952014,
+    "max_kl_before_after": 0.13066469132900238,
+    "rows": 4,
+    "reference_tokens": 416,
+    "distribution_positions": 16
+  },
+  "B_to_Q0": {
+    "max_reference_logprob_error": 5.677399635314941,
+    "mean_reference_logprob_error": 0.15329695328919535,
+    "max_row_nll_difference": 0.3223176598548889,
+    "mean_kl_before_after": 0.24658421975374978,
+    "max_kl_before_after": 2.686525583267212,
+    "rows": 4,
+    "reference_tokens": 416,
+    "distribution_positions": 16
+  },
+  "Q0_to_Q": {
+    "max_reference_logprob_error": 16.921632447949378,
+    "mean_reference_logprob_error": 0.37920801919734576,
+    "max_row_nll_difference": 0.7553885281085968,
+    "mean_kl_before_after": 0.3584870009928842,
+    "max_kl_before_after": 1.8646063804626465,
+    "rows": 4,
+    "reference_tokens": 416,
+    "distribution_positions": 16
+  },
+  "weights": {
+    "passed": true,
+    "selected_projections": [
+      {
+        "projection": "model.layers.0.self_attn.q_proj",
+        "expected_effect_norm": 0.1444428265094757,
+        "residual_norm": 0.0,
+        "relative_residual": 0.0,
+        "max_abs_residual": 0.0
+      },
+      {
+        "projection": "model.layers.0.self_attn.v_proj",
+        "expected_effect_norm": 0.05575955659151077,
+        "residual_norm": 0.0,
+        "relative_residual": 0.0,
+        "max_abs_residual": 0.0
+      },
+      {
+        "projection": "model.layers.27.self_attn.q_proj",
+        "expected_effect_norm": 0.18074624240398407,
+        "residual_norm": 0.0,
+        "relative_residual": 0.0,
+        "max_abs_residual": 0.0
+      },
+      {
+        "projection": "model.layers.27.self_attn.v_proj",
+        "expected_effect_norm": 0.07192840427160263,
+        "residual_norm": 0.0,
+        "relative_residual": 0.0,
+        "max_abs_residual": 0.0
+      }
+    ],
+    "scope": "four projections; float32 BA then FP16 rounding; 25% relative and0.001 absolute ceilings"
+  },
+  "merge_faithful": false,
+  "controls": {
+    "base_substituted_for_merged_rejected": true,
+    "wrong_base_weight_details": {
+      "passed": false,
+      "selected_projections": [
+        {
+          "projection": "model.layers.0.self_attn.q_proj",
+          "expected_effect_norm": 0.1444428265094757,
+          "residual_norm": 0.1444428265094757,
+          "relative_residual": 1.0,
+          "max_abs_residual": 0.000690460205078125
+        },
+        {
+          "projection": "model.layers.0.self_attn.v_proj",
+          "expected_effect_norm": 0.05575955659151077,
+          "residual_norm": 0.055759552866220474,
+          "relative_residual": 0.9999999331901018,
+          "max_abs_residual": 0.00048828125
+        },
+        {
+          "projection": "model.layers.27.self_attn.q_proj",
+          "expected_effect_norm": 0.18074624240398407,
+          "residual_norm": 0.18074624240398407,
+          "relative_residual": 1.0,
+          "max_abs_residual": 0.000946044921875
+        },
+        {
+          "projection": "model.layers.27.self_attn.v_proj",
+          "expected_effect_norm": 0.07192840427160263,
+          "residual_norm": 0.07192840427160263,
+          "relative_residual": 1.0,
+          "max_abs_residual": 0.0006103515625
+        }
+      ],
+      "scope": "four projections; float32 BA then FP16 rounding; 25% relative and0.001 absolute ceilings"
+    },
+    "q0_substituted_for_q_identity_rejected": true,
+    "q_distinguishable_from_q0": true,
+    "q0_is_not_a_quantization_correction": "B/Q0 and M/Q are reported independently; errors are nonlinear"
+  }
+}

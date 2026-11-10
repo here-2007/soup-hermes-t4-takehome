@@ -1,0 +1,65 @@
+{
+  "stage": "prepare",
+  "request": {
+    "stage": "prepare"
+  },
+  "started_utc": "2026-11-10T04:40:36.070219+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "evidence/data-ready.json",
+      "evidence/base-identity.json",
+      "run_policy.json",
+      "evidence/references.jsonl",
+      "data/challenge.jsonl",
+      "evidence/memory-estimate-before.json",
+      "evidence/training-plan.json"
+    ],
+    "counts": {
+      "train": 1600,
+      "validation": 150,
+      "test": 150
+    },
+    "max_length": 1024,
+    "generation_cap": 320,
+    "all_reference_masks_exact": true,
+    "reserved_token_check": true,
+    "split_overlap": 0,
+    "collator_padding_checks": true,
+    "native_template_sha256": "2e2d2512cfe46af53dc1eed45368ecaab26ac4461c480e6b69fe571cf0ceaa75",
+    "training_template_sha256": "9f7753045eff11c1260c847986095b0518eaa7e748811aeb5f1a5bc66dde5cd3",
+    "group_counts": {
+      "train": 402,
+      "validation": 150,
+      "test": 150
+    }
+  },
+  "output_bindings": {
+    "evidence/data-ready.json": "454ab5d4b248008bd1ca8b80435cbe6da00dc16dc7539b1081262a65af81fbd9",
+    "evidence/base-identity.json": "cae3c38660b3ffeededd6a5339cbc132e25c345cf63225f888fe60e2b1b52d8a",
+    "run_policy.json": "17971d6ab3200042e096339d96b195c9a40beaefca9b924a4c246387a8530b32",
+    "evidence/references.jsonl": "a492e79b9e318a1835a3155ba010960009f3c3cf3baca732b40af5d4e17c69be",
+    "data/challenge.jsonl": "4b7fba4f96aad0f05fb7dcfa3c6ca71ac82c1bc51fbb5866e9e569b363754f17",
+    "evidence/memory-estimate-before.json": "e9e5c0b3690f7f81adccabe0759c888de94cb1f3a2aea20511f8380f9b15b5de",
+    "evidence/training-plan.json": "b828022ff461b3238f61a5118b2bb53b25d8de282828b1d31a61ae5533294b1a"
+  },
+  "resources": {
+    "elapsed_seconds": 65.05952008999998,
+    "peak_rss_bytes_sampled": 1686454272,
+    "peak_device_used_mib_sampled": 3,
+    "device_samples": 222,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:41:41.141448+00:00",
+        "elapsed_seconds": 65.05909143299999
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T04:41:41.141914+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

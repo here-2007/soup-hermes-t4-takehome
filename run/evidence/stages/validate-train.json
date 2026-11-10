@@ -1,0 +1,54 @@
+{
+  "stage": "validate-train",
+  "request": {
+    "stage": "cli",
+    "label": "validate-train",
+    "allowed": "0",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "data",
+      "validate",
+      "data/train.jsonl",
+      "--format",
+      "chatml",
+      "--min-valid-fraction",
+      "1"
+    ]
+  },
+  "started_utc": "2026-11-10T04:42:07.418062+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "data",
+      "validate",
+      "data/train.jsonl",
+      "--format",
+      "chatml",
+      "--min-valid-fraction",
+      "1"
+    ],
+    "outputs": []
+  },
+  "output_bindings": {},
+  "resources": {
+    "elapsed_seconds": 0.6537779880000016,
+    "peak_rss_bytes_sampled": 67145728,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 3,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:42:08.082930+00:00",
+        "elapsed_seconds": 0.6533612829999811
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T04:42:08.083374+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

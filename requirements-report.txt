@@ -1,0 +1,3 @@
+-r requirements-review.txt
+matplotlib==3.11.2
+reportlab==5.1.0

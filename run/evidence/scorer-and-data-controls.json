@@ -1,0 +1,153 @@
+{
+  "all_passed": true,
+  "scorer_fixtures": {
+    "correct": {
+      "parse_ok": true,
+      "known_tools": true,
+      "tool_selection": true,
+      "schema_ok": true,
+      "arguments_ok": true,
+      "complete": true,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false
+    },
+    "numeric_json_semantics": {
+      "parse_ok": true,
+      "known_tools": true,
+      "tool_selection": true,
+      "schema_ok": true,
+      "arguments_ok": true,
+      "complete": true,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false
+    },
+    "wrong_argument": {
+      "parse_ok": true,
+      "known_tools": true,
+      "tool_selection": true,
+      "schema_ok": true,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false
+    },
+    "boolean_to_number": {
+      "parse_ok": true,
+      "known_tools": true,
+      "tool_selection": true,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "schema_error": "1 is not of type 'boolean'\n\nFailed validating 'type' in schema['properties']['enabled']:\n    {'type': 'boolean'}\n\nOn instance['enabled']:\n    1"
+    },
+    "number_to_string": {
+      "parse_ok": true,
+      "known_tools": true,
+      "tool_selection": true,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "schema_error": "'1' is not of type 'integer'\n\nFailed validating 'type' in schema['properties']['x']:\n    {'type': 'integer'}\n\nOn instance['x']:\n    '1'"
+    },
+    "extra_call": {
+      "parse_ok": true,
+      "known_tools": true,
+      "tool_selection": false,
+      "schema_ok": true,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": true,
+      "unknown_calls": false
+    },
+    "prose": {
+      "parse_ok": false,
+      "known_tools": false,
+      "tool_selection": false,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "error": "unexpected text/incomplete tag at 0"
+    },
+    "unknown_tool": {
+      "parse_ok": true,
+      "known_tools": false,
+      "tool_selection": false,
+      "schema_ok": false,
+      "arguments_ok": true,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": true
+    },
+    "duplicate_key": {
+      "parse_ok": false,
+      "known_tools": false,
+      "tool_selection": false,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "error": "duplicate key: name"
+    },
+    "nonfinite": {
+      "parse_ok": false,
+      "known_tools": false,
+      "tool_selection": false,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "error": "nonstandard JSON constant: NaN"
+    },
+    "escaped_newline": {
+      "parse_ok": false,
+      "known_tools": false,
+      "tool_selection": false,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    "incomplete": {
+      "parse_ok": false,
+      "known_tools": false,
+      "tool_selection": false,
+      "schema_ok": false,
+      "arguments_ok": false,
+      "complete": false,
+      "truncated": false,
+      "extra_calls": false,
+      "unknown_calls": false,
+      "error": "unexpected text/incomplete tag at 0"
+    }
+  },
+  "independent_data_controls": {
+    "malformed_call": "observed_caught",
+    "missing_tools": "observed_caught",
+    "double_template": "observed_caught",
+    "length_boundary": "observed_caught"
+  },
+  "multiple_call_order_control": true,
+  "stop_failure_control": true,
+  "Soup_scorer_reused": true
+}

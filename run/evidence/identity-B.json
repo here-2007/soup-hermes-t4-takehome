@@ -1,0 +1,14 @@
+{
+  "variant": "B",
+  "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/base",
+  "class": "Qwen2ForCausalLM",
+  "quantized_linear_count": 0,
+  "quantization_config": null,
+  "devices": [
+    "cuda:0"
+  ],
+  "parameter_dtypes": {
+    "torch.float16": 338
+  },
+  "portable_base_adapter_reads_blocked": false
+}

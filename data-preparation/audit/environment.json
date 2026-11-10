@@ -1,0 +1,21 @@
+{
+  "python": "3.13.18 (main, Oct 26 2026, 15:28:15) [GCC 13.3.0]",
+  "platform": "linux",
+  "pip_check_exit_code": 1,
+  "versions": {
+    "soup-cli": "0.77.2",
+    "torch": "2.11.0+cpu",
+    "transformers": "5.20.2",
+    "trl": "0.29.1",
+    "huggingface-hub": "1.33.0",
+    "jsonschema": "4.26.0"
+  },
+  "soup_install": {
+    "url": "https://github.com/MakazhanAlpamys/Soup.git",
+    "vcs_info": {
+      "commit_id": "4cff43bf967e96a484381205e5125e2fc39227f1",
+      "requested_revision": "4cff43bf967e96a484381205e5125e2fc39227f1",
+      "vcs": "git"
+    }
+  }
+}

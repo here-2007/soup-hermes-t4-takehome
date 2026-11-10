@@ -1,0 +1,17 @@
+{"event":"stage_start","stage":"preflight-dry-run","utc":"2026-11-10T04:42:49.122570+00:00"}
+Loading config from configs/seed-42.yaml...
+╭─────────────────────────────── Training Setup ───────────────────────────────╮
+│ Device:  Tesla T4                                                            │
+│ Memory:  14.6 GB                                                             │
+│ Model:   ./artifacts/base                                                    │
+│ Task:    sft                                                                 │
+│ Backend: transformers                                                        │
+│ LoRA:    r=8, alpha=16                                                       │
+│ Quant:   none                                                                │
+│ Seed:    42, data_seed=42                                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Dry run - validating data...
+Data OK: 1600 train samples
+Config valid. Ready to train!
+{"elapsed_seconds":2.3773963560000198,"event":"segment","name":"stage_end","stage":"preflight-dry-run","utc":"2026-11-10T04:42:51.499938+00:00"}
+{"event":"stage_end","stage":"preflight-dry-run","status":"passed","utc":"2026-11-10T04:42:51.500790+00:00"}

@@ -1,0 +1,36 @@
+{"event":"stage_start","stage":"evaluate-test-Q","utc":"2026-11-10T08:38:13.701115+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.5924627630010946,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-test-Q","utc":"2026-11-10T08:38:15.293552+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":8.28488233400094,"event":"segment","name":"before_cold_load","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-test-Q","utc":"2026-11-10T08:38:21.985953+00:00"}
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 59/338 [00:00<00:00, 589.53it/s]Loading weights:  35%|███▍      | 118/338 [00:00<00:00, 552.80it/s]Loading weights:  51%|█████▏    | 174/338 [00:00<00:00, 549.71it/s]Loading weights:  68%|██████▊   | 230/338 [00:00<00:00, 547.86it/s]Loading weights:  85%|████████▍ | 287/338 [00:00<00:00, 552.42it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 557.66it/s]
+{"allocated_bytes":1143396352,"elapsed_seconds":13.906018068999401,"event":"segment","name":"after_cold_load","peak_allocated_bytes":1143396352,"peak_reserved_bytes":1166016512,"reserved_bytes":1166016512,"stage":"evaluate-test-Q","utc":"2026-11-10T08:38:27.607107+00:00"}
+{"allocated_bytes":1143396352,"elapsed_seconds":13.906846562000283,"event":"segment","name":"before_generation_warmup_excluded_from_latency","peak_allocated_bytes":1143396352,"peak_reserved_bytes":1166016512,"reserved_bytes":1166016512,"stage":"evaluate-test-Q","utc":"2026-11-10T08:38:27.607941+00:00"}
+{"allocated_bytes":1152964608,"elapsed_seconds":15.257130210000469,"event":"segment","name":"after_generation_warmup_excluded_from_latency","peak_allocated_bytes":1209747456,"peak_reserved_bytes":1222639616,"reserved_bytes":1222639616,"stage":"evaluate-test-Q","utc":"2026-11-10T08:38:28.958212+00:00"}
+{"allocated_bytes":1152964608,"elapsed_seconds":15.258165634999386,"event":"segment","name":"before_teacher_forcing_and_greedy_generation","peak_allocated_bytes":1152964608,"peak_reserved_bytes":1222639616,"reserved_bytes":1222639616,"stage":"evaluate-test-Q","utc":"2026-11-10T08:38:28.959258+00:00"}
+{"completed":10,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:39:27.366072+00:00"}
+{"completed":20,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:40:13.948926+00:00"}
+{"completed":30,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:40:57.557330+00:00"}
+{"completed":40,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:41:39.458492+00:00"}
+{"completed":50,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:42:16.453840+00:00"}
+{"completed":60,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:42:55.423351+00:00"}
+{"completed":70,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:43:40.474276+00:00"}
+{"completed":80,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:44:25.418725+00:00"}
+{"completed":90,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:45:20.736181+00:00"}
+{"completed":100,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:45:56.064488+00:00"}
+{"completed":110,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:46:49.178836+00:00"}
+{"completed":120,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:47:39.992464+00:00"}
+{"completed":130,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:48:35.826854+00:00"}
+{"completed":140,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:49:34.910633+00:00"}
+{"completed":150,"event":"progress","stage":"eval-test-Q","total":150,"utc":"2026-11-10T08:50:21.675065+00:00"}
+{"allocated_bytes":1152964608,"elapsed_seconds":727.9741733179999,"event":"segment","name":"after_teacher_forcing_and_greedy_generation","peak_allocated_bytes":1698443776,"peak_reserved_bytes":1818230784,"reserved_bytes":1818230784,"stage":"evaluate-test-Q","utc":"2026-11-10T08:50:21.675267+00:00"}
+{"allocated_bytes":1152964608,"elapsed_seconds":727.978393024001,"event":"segment","name":"before_bundled_general_suites","peak_allocated_bytes":1152964608,"peak_reserved_bytes":1818230784,"reserved_bytes":1818230784,"stage":"evaluate-test-Q","utc":"2026-11-10T08:50:21.679486+00:00"}
+{"event":"progress","score":0.825,"stage":"general-Q","suite":"mini_mmlu","utc":"2026-11-10T08:50:26.861600+00:00"}
+{"event":"progress","score":0.85,"stage":"general-Q","suite":"mini_common_sense","utc":"2026-11-10T08:50:32.556115+00:00"}
+{"event":"progress","score":0.9583333333333334,"stage":"general-Q","suite":"mini_instruction","utc":"2026-11-10T08:50:35.387915+00:00"}
+{"event":"progress","score":0.875,"stage":"general-Q","suite":"mini_arithmetic","utc":"2026-11-10T08:53:50.335902+00:00"}
+{"event":"progress","score":0.55,"stage":"general-Q","suite":"mini_tool_call","utc":"2026-11-10T08:54:20.737262+00:00"}
+{"event":"progress","score":1.0,"stage":"general-Q","suite":"mini_format_json","utc":"2026-11-10T08:55:27.176759+00:00"}
+{"event":"progress","score":1.0,"stage":"general-Q","suite":"mini_safety","utc":"2026-11-10T08:56:59.397701+00:00"}
+{"event":"progress","score":0.375,"stage":"general-Q","suite":"mini_over_refusal","utc":"2026-11-10T09:04:19.142940+00:00"}
+{"allocated_bytes":1152964608,"elapsed_seconds":1565.442133382001,"event":"segment","name":"after_bundled_general_suites","peak_allocated_bytes":1200156672,"peak_reserved_bytes":1818230784,"reserved_bytes":1818230784,"stage":"evaluate-test-Q","utc":"2026-11-10T09:04:19.143226+00:00"}
+{"allocated_bytes":686041088,"elapsed_seconds":1565.504839149,"event":"segment","name":"stage_end","peak_allocated_bytes":1152964608,"peak_reserved_bytes":1818230784,"reserved_bytes":1818230784,"stage":"evaluate-test-Q","utc":"2026-11-10T09:04:19.205928+00:00"}
+{"event":"stage_end","stage":"evaluate-test-Q","status":"passed","utc":"2026-11-10T09:04:19.207710+00:00"}

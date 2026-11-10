@@ -1,0 +1,67 @@
+{
+  "identity": {
+    "variant": "Q",
+    "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/portable/Q",
+    "class": "Qwen2ForCausalLM",
+    "quantized_linear_count": 196,
+    "quantization_config": {
+      "quant_method": "bitsandbytes",
+      "_load_in_8bit": false,
+      "_load_in_4bit": true,
+      "llm_int8_threshold": 6.0,
+      "llm_int8_skip_modules": null,
+      "llm_int8_enable_fp32_cpu_offload": false,
+      "llm_int8_has_fp16_weight": false,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "bnb_4bit_compute_dtype": "float16",
+      "bnb_4bit_quant_storage": "uint8",
+      "load_in_4bit": true,
+      "load_in_8bit": false
+    },
+    "devices": [
+      "cuda:0"
+    ],
+    "parameter_dtypes": {
+      "torch.float16": 142,
+      "torch.uint8": 196
+    },
+    "portable_base_adapter_reads_blocked": true
+  },
+  "split": "challenge",
+  "variant": "Q",
+  "seed": null,
+  "parse_ok": 0.0,
+  "known_tools": 0.0,
+  "tool_selection": 0.0,
+  "schema_ok": 0.0,
+  "arguments_ok": 0.0,
+  "complete": 0.0,
+  "truncated": 0.0,
+  "extra_calls": 0.0,
+  "unknown_calls": 0.0,
+  "n": 6,
+  "mean_assistant_nll": 2.658682754074318,
+  "slices": {
+    "single_call": {
+      "n": 5,
+      "complete": 0.0
+    },
+    "multiple_call": {
+      "n": 1,
+      "complete": 0.0
+    },
+    "length_le_512": {
+      "n": 6,
+      "complete": 0.0
+    },
+    "length_gt_512": {
+      "n": 0,
+      "complete": null
+    }
+  },
+  "latency_seconds": {
+    "median": 0.6753507230005198,
+    "p95": 1.1558327510010713
+  }
+}

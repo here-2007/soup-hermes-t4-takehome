@@ -1,0 +1,44 @@
+{
+  "source_files": [
+    {
+      "file": "func-calling-singleturn.json",
+      "revision": "dae3e1d28cfbcf4b915c04ea1e072030529b4bda",
+      "sha256": "fb2df9fe3f295dfd65b223c2dbf04d6b90006357d737f8f8927749f0bea09527",
+      "bytes": 17793686,
+      "rows": 1893
+    },
+    {
+      "file": "glaive-function-calling-5k.json",
+      "revision": "dae3e1d28cfbcf4b915c04ea1e072030529b4bda",
+      "sha256": "b98eb3f160359f27ad15018e974ce6db444f566eb5be4aa9e4aa690b34d50832",
+      "bytes": 20416419,
+      "rows": 5209
+    }
+  ],
+  "strict_candidates_before_dedup": 4237,
+  "unique_schema_valid_rows": 4218,
+  "components": 817,
+  "largest_component": 3280,
+  "retention": [
+    {
+      "max_length": 512,
+      "retained_rows": 3248,
+      "feasible_grouped_split": false
+    },
+    {
+      "max_length": 1024,
+      "retained_rows": 4004,
+      "feasible_grouped_split": true
+    },
+    {
+      "max_length": 1536,
+      "retained_rows": 4197,
+      "feasible_grouped_split": true
+    },
+    {
+      "max_length": 2048,
+      "retained_rows": 4218,
+      "feasible_grouped_split": true
+    }
+  ]
+}

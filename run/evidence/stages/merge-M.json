@@ -1,0 +1,87 @@
+{
+  "stage": "merge-M",
+  "request": {
+    "stage": "merge",
+    "variant": "M"
+  },
+  "started_utc": "2026-11-10T07:34:51.292091+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "evidence/artifact-M.json",
+      "artifacts/merged-fp16/provenance.json",
+      "artifacts/merged-fp16/model.safetensors"
+    ],
+    "variant": "M",
+    "artifact_sha256": "24cfd52e53efb4fa85ea2897e2e2aa7e8e45203f3d6d66bb102d3dc70d0418f4"
+  },
+  "output_bindings": {
+    "evidence/artifact-M.json": "17f04ca99d93ba498344a08a2a58bace5abf2d04afa8faf3887087dbadc3fb05",
+    "artifacts/merged-fp16/provenance.json": "17f04ca99d93ba498344a08a2a58bace5abf2d04afa8faf3887087dbadc3fb05",
+    "artifacts/merged-fp16/model.safetensors": "49f5765f63c386b266a4326c39997a8d12817c652cb1dafa2af2a8cd8f0cf08a"
+  },
+  "resources": {
+    "elapsed_seconds": 50.38057842000126,
+    "peak_rss_bytes_sampled": 6910361600,
+    "peak_device_used_mib_sampled": 141,
+    "device_samples": 187,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T07:34:52.981767+00:00",
+        "elapsed_seconds": 1.678950628000166,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "before_cpu_dense_merge",
+        "utc": "2026-11-10T07:35:01.562730+00:00",
+        "elapsed_seconds": 10.259912944000462,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "after_cpu_dense_merge",
+        "utc": "2026-11-10T07:35:24.286273+00:00",
+        "elapsed_seconds": 32.98347600700072,
+        "allocated_bytes": 0,
+        "reserved_bytes": 37748736,
+        "peak_allocated_bytes": 36929536,
+        "peak_reserved_bytes": 37748736
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T07:35:41.682369+00:00",
+        "elapsed_seconds": 50.379553619000944,
+        "allocated_bytes": 0,
+        "reserved_bytes": 37748736,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 37748736
+      }
+    ],
+    "peak_allocated_bytes": 36929536,
+    "peak_reserved_bytes": 37748736,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T07:35:41.683510+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

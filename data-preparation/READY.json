@@ -1,0 +1,28 @@
+{
+  "automated_preparation_passed": true,
+  "run_id": "20261109T210817498784Z",
+  "finished_utc": "2026-11-09T21:21:08.761892+00:00",
+  "counts": {
+    "train": 1600,
+    "validation": 150,
+    "test": 150
+  },
+  "max_length": 1024,
+  "soup_data_doctor": {
+    "train": {
+      "overall": "OK",
+      "rows_scanned": 1600
+    },
+    "validation": {
+      "overall": "OK",
+      "rows_scanned": 150
+    },
+    "test": {
+      "overall": "OK",
+      "rows_scanned": 150
+    }
+  },
+  "semantic_review": "Required human review is outside automated structural checks; sample supplied.",
+  "training_ran": false,
+  "model_weights_downloaded": false
+}

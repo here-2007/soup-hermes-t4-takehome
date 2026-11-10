@@ -1,0 +1,37 @@
+[
+  {
+    "failure": "malformed_call",
+    "Soup_status": "observed_missed",
+    "Soup_exit_code": 0,
+    "stage_report": "evidence/stages/fixture-malformed-validate.json",
+    "scope_note": "Format validation does not validate embedded function-call semantics; narrow checks are not automatically Soup bugs."
+  },
+  {
+    "failure": "missing_tools",
+    "Soup_status": "observed_missed",
+    "Soup_exit_code": 0,
+    "stage_report": "evidence/stages/fixture-missing-doctor.json",
+    "scope_note": "Format validation does not validate embedded function-call semantics; narrow checks are not automatically Soup bugs."
+  },
+  {
+    "failure": "double_template",
+    "Soup_status": "observed_missed",
+    "Soup_exit_code": 0,
+    "stage_report": "evidence/stages/fixture-double-validate.json",
+    "scope_note": "Format validation does not validate embedded function-call semantics; narrow checks are not automatically Soup bugs."
+  },
+  {
+    "failure": "length_boundary",
+    "Soup_status": "observed_caught",
+    "Soup_exit_code": 2,
+    "stage_report": "evidence/stages/fixture-length-doctor.json",
+    "scope_note": "Format validation does not validate embedded function-call semantics; narrow checks are not automatically Soup bugs."
+  },
+  {
+    "failure": "no_op_adapter",
+    "Soup_status": "observed_caught",
+    "Soup_exit_code": 2,
+    "stage_report": "evidence/stages/initial-adapter-check.json",
+    "scope_note": "Format validation does not validate embedded function-call semantics; narrow checks are not automatically Soup bugs."
+  }
+]

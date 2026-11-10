@@ -1,0 +1,154 @@
+{
+  "stage": "evaluate-challenge-Q",
+  "request": {
+    "stage": "evaluate",
+    "variant": "Q",
+    "split": "challenge",
+    "seed": null,
+    "general": false,
+    "probes_only": false
+  },
+  "started_utc": "2026-11-10T09:04:20.977141+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "outputs": [
+      "evidence/predictions/challenge-Q.jsonl",
+      "evidence/scores/challenge-Q.json",
+      "evidence/identity-Q.json"
+    ],
+    "identity": {
+      "variant": "Q",
+      "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/portable/Q",
+      "class": "Qwen2ForCausalLM",
+      "quantized_linear_count": 196,
+      "quantization_config": {
+        "quant_method": "bitsandbytes",
+        "_load_in_8bit": false,
+        "_load_in_4bit": true,
+        "llm_int8_threshold": 6.0,
+        "llm_int8_skip_modules": null,
+        "llm_int8_enable_fp32_cpu_offload": false,
+        "llm_int8_has_fp16_weight": false,
+        "bnb_4bit_quant_type": "nf4",
+        "bnb_4bit_use_double_quant": true,
+        "bnb_4bit_compute_dtype": "float16",
+        "bnb_4bit_quant_storage": "uint8",
+        "load_in_4bit": true,
+        "load_in_8bit": false
+      },
+      "devices": [
+        "cuda:0"
+      ],
+      "parameter_dtypes": {
+        "torch.float16": 142,
+        "torch.uint8": 196
+      },
+      "portable_base_adapter_reads_blocked": true
+    }
+  },
+  "output_bindings": {
+    "evidence/predictions/challenge-Q.jsonl": "516ff67bacb9aac8ec5c228dd0ff8632518f83e9b5300362729b1950f77d653f",
+    "evidence/scores/challenge-Q.json": "cf4665ec83e189d333594bbe91e7e95c72001949f1f92ef5578ba7dcb0f3f1d4",
+    "evidence/identity-Q.json": "d4a869b0264f011a3cf8b7c8c8134a59f7dbbd93698eb65e03d46c88aa3231a7"
+  },
+  "resources": {
+    "elapsed_seconds": 21.1259774629998,
+    "peak_rss_bytes_sampled": 2275282944,
+    "peak_device_used_mib_sampled": 1381,
+    "device_samples": 75,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T09:04:22.596125+00:00",
+        "elapsed_seconds": 1.6081221460008237,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "before_cold_load",
+        "utc": "2026-11-10T09:04:30.570589+00:00",
+        "elapsed_seconds": 9.582585488000404,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "after_cold_load",
+        "utc": "2026-11-10T09:04:36.433255+00:00",
+        "elapsed_seconds": 15.445252418001473,
+        "allocated_bytes": 1143396352,
+        "reserved_bytes": 1166016512,
+        "peak_allocated_bytes": 1143396352,
+        "peak_reserved_bytes": 1166016512
+      },
+      {
+        "name": "before_generation_warmup_excluded_from_latency",
+        "utc": "2026-11-10T09:04:36.434071+00:00",
+        "elapsed_seconds": 15.446065773001465,
+        "allocated_bytes": 1143396352,
+        "reserved_bytes": 1166016512,
+        "peak_allocated_bytes": 1143396352,
+        "peak_reserved_bytes": 1166016512
+      },
+      {
+        "name": "after_generation_warmup_excluded_from_latency",
+        "utc": "2026-11-10T09:04:37.557197+00:00",
+        "elapsed_seconds": 16.56919392800046,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1222639616,
+        "peak_allocated_bytes": 1209747456,
+        "peak_reserved_bytes": 1222639616
+      },
+      {
+        "name": "before_teacher_forcing_and_greedy_generation",
+        "utc": "2026-11-10T09:04:37.558221+00:00",
+        "elapsed_seconds": 16.5702151100013,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1222639616,
+        "peak_allocated_bytes": 1152964608,
+        "peak_reserved_bytes": 1222639616
+      },
+      {
+        "name": "after_teacher_forcing_and_greedy_generation",
+        "utc": "2026-11-10T09:04:42.068535+00:00",
+        "elapsed_seconds": 21.08053228600147,
+        "allocated_bytes": 1152964608,
+        "reserved_bytes": 1306525696,
+        "peak_allocated_bytes": 1267835392,
+        "peak_reserved_bytes": 1306525696
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T09:04:42.113052+00:00",
+        "elapsed_seconds": 21.12504963700121,
+        "allocated_bytes": 686041088,
+        "reserved_bytes": 1306525696,
+        "peak_allocated_bytes": 1152964608,
+        "peak_reserved_bytes": 1306525696
+      }
+    ],
+    "peak_allocated_bytes": 1267835392,
+    "peak_reserved_bytes": 1306525696,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T09:04:42.114069+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

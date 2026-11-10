@@ -1,0 +1,6 @@
+{"event":"stage_start","stage":"fixture-malformed-validate","utc":"2026-11-10T04:43:02.951094+00:00"}
+Dataset is valid!
+
+1/1 rows valid for chatml format
+{"elapsed_seconds":0.608819240999992,"event":"segment","name":"stage_end","stage":"fixture-malformed-validate","utc":"2026-11-10T04:43:03.559887+00:00"}
+{"event":"stage_end","stage":"fixture-malformed-validate","status":"passed","utc":"2026-11-10T04:43:03.609810+00:00"}

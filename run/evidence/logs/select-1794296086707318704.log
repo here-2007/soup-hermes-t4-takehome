@@ -1,0 +1,3 @@
+{"event":"stage_start","stage":"select","utc":"2026-11-10T07:34:46.830068+00:00"}
+{"elapsed_seconds":0.011080320999099058,"event":"segment","name":"stage_end","stage":"select","utc":"2026-11-10T07:34:46.841129+00:00"}
+{"event":"stage_end","stage":"select","status":"passed","utc":"2026-11-10T07:34:46.892504+00:00"}

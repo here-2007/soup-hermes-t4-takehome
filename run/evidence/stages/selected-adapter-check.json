@@ -1,0 +1,48 @@
+{
+  "stage": "selected-adapter-check",
+  "request": {
+    "stage": "cli",
+    "label": "selected-adapter-check",
+    "allowed": "0",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "adapters",
+      "check",
+      "artifacts/adapter-42",
+      "--json"
+    ]
+  },
+  "started_utc": "2026-11-10T07:34:48.012883+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "adapters",
+      "check",
+      "artifacts/adapter-42",
+      "--json"
+    ],
+    "outputs": []
+  },
+  "output_bindings": {},
+  "resources": {
+    "elapsed_seconds": 0.7037325909986976,
+    "peak_rss_bytes_sampled": 66961408,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 3,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T07:34:48.727607+00:00",
+        "elapsed_seconds": 0.7033045729986043
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T07:34:48.728071+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

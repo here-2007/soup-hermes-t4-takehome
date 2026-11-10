@@ -1,0 +1,11 @@
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.log -text
+*.ipynb -text
+*.pt -text
+*.pdf -text
+run/** -text
+data-preparation/** -text

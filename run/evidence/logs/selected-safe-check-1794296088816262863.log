@@ -1,0 +1,8 @@
+{"event":"stage_start","stage":"selected-safe-check","utc":"2026-11-10T07:34:48.938774+00:00"}
+╭────────────────────────── Strict safetensors check ──────────────────────────╮
+│ Adapter:    adapter-42                                                       │
+│ Status:     OK                                                               │
+│ Reason:     all weight files are safetensors                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"elapsed_seconds":0.5796374319997994,"event":"segment","name":"stage_end","stage":"selected-safe-check","utc":"2026-11-10T07:34:49.518388+00:00"}
+{"event":"stage_end","stage":"selected-safe-check","status":"passed","utc":"2026-11-10T07:34:49.563934+00:00"}

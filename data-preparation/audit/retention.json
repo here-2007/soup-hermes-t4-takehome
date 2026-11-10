@@ -1,0 +1,22 @@
+[
+  {
+    "max_length": 512,
+    "retained_rows": 3248,
+    "feasible_grouped_split": false
+  },
+  {
+    "max_length": 1024,
+    "retained_rows": 4004,
+    "feasible_grouped_split": true
+  },
+  {
+    "max_length": 1536,
+    "retained_rows": 4197,
+    "feasible_grouped_split": true
+  },
+  {
+    "max_length": 2048,
+    "retained_rows": 4218,
+    "feasible_grouped_split": true
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "stage": "fixture-missing-doctor",
+  "request": {
+    "stage": "cli",
+    "label": "fixture-missing-doctor",
+    "allowed": "0,1,2,3",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "data",
+      "doctor",
+      "controls/missing_tools.jsonl",
+      "--model",
+      "artifacts/base",
+      "--format",
+      "chatml",
+      "--max-length",
+      "1024",
+      "--sample",
+      "1",
+      "--train-on-eot",
+      "--output",
+      "evidence/fixture-missing-doctor.json"
+    ]
+  },
+  "started_utc": "2026-11-10T04:43:04.675066+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "data",
+      "doctor",
+      "controls/missing_tools.jsonl",
+      "--model",
+      "artifacts/base",
+      "--format",
+      "chatml",
+      "--max-length",
+      "1024",
+      "--sample",
+      "1",
+      "--train-on-eot",
+      "--output",
+      "evidence/fixture-missing-doctor.json"
+    ],
+    "outputs": [
+      "evidence/fixture-missing-doctor.json"
+    ]
+  },
+  "output_bindings": {
+    "evidence/fixture-missing-doctor.json": "15f6a3ef8d96dcb2b20a765f73db0d6c659aaf108e755cbaf559574c09f55f6c"
+  },
+  "resources": {
+    "elapsed_seconds": 8.417665908000004,
+    "peak_rss_bytes_sampled": 922386432,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 28,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:43:13.104012+00:00",
+        "elapsed_seconds": 8.41730615199998
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T04:43:13.104429+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

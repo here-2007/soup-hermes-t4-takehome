@@ -1,0 +1,102 @@
+{
+  "stage": "bench-train",
+  "request": {
+    "stage": "cli",
+    "label": "bench-train",
+    "allowed": "0",
+    "cuda_owner": true,
+    "arguments": [
+      "--",
+      "bench",
+      "train",
+      "--config",
+      "configs/seed-42.yaml",
+      "--steps",
+      "20",
+      "--warmup",
+      "3",
+      "--output",
+      "evidence/bench-train.json"
+    ]
+  },
+  "started_utc": "2026-11-10T04:43:23.702127+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "bench",
+      "train",
+      "--config",
+      "configs/seed-42.yaml",
+      "--steps",
+      "20",
+      "--warmup",
+      "3",
+      "--output",
+      "evidence/bench-train.json"
+    ],
+    "outputs": [
+      "evidence/bench-train.json"
+    ]
+  },
+  "output_bindings": {
+    "evidence/bench-train.json": "ccc57918e3d7768b30bd38a273df49b5535b6ebf02a5b303eb210ff67d977cd0"
+  },
+  "resources": {
+    "elapsed_seconds": 130.53564645600005,
+    "peak_rss_bytes_sampled": 4152385536,
+    "peak_device_used_mib_sampled": 5663,
+    "device_samples": 482,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T04:43:25.339622+00:00",
+        "elapsed_seconds": 1.6264231979999977,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:45:34.247884+00:00",
+        "elapsed_seconds": 130.534687453,
+        "allocated_bytes": 3217356288,
+        "reserved_bytes": 5788139520,
+        "peak_allocated_bytes": 5212484608,
+        "peak_reserved_bytes": 5788139520
+      }
+    ],
+    "peak_allocated_bytes": 5212484608,
+    "peak_reserved_bytes": 5788139520,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "memory_gate": {
+    "passed": true,
+    "measurement_complete": true,
+    "usable_device_gib": 14.562,
+    "sampled_device_peak_gib": 5.53,
+    "allocated_peak_gib": 4.855,
+    "reserved_peak_gib": 5.391,
+    "headroom_gib": 9.032,
+    "required_headroom_gib": 1,
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T04:45:34.248941+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

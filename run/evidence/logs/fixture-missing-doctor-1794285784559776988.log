@@ -1,0 +1,43 @@
+{"event":"stage_start","stage":"fixture-missing-doctor","utc":"2026-11-10T04:43:04.686743+00:00"}
+                                soup data doctor                                
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Check              ┃ Verdict ┃ Message               ┃ Evidence              ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ chat_template      │ OK      │ tokenizer has a       │ 309 chars             │
+│                    │         │ chat_template         │                       │
+│ template_render    │ OK      │ 0/1 rows failed to    │                       │
+│                    │         │ render through the    │                       │
+│                    │         │ chat template         │                       │
+│ generation_markers │ OK      │ template supports     │                       │
+│                    │         │ return_assistant_toke │                       │
+│                    │         │ ns_mask (exact        │                       │
+│                    │         │ assistant-only        │                       │
+│                    │         │ masking)              │                       │
+│ eos_in_labels      │ OK      │ 0/1 rows (0.0%) never │ eos_token_id=[151645] │
+│                    │         │ train an EOS/EOT      │                       │
+│                    │         │ token — the model     │                       │
+│                    │         │ will not learn to     │                       │
+│                    │         │ stop generating       │                       │
+│ bos_duplication    │ OK      │ tokenizer has no      │                       │
+│                    │         │ bos_token_id          │                       │
+│ system_role        │ OK      │ template supports the │                       │
+│                    │         │ system role (1 rows   │                       │
+│                    │         │ use one)              │                       │
+│ unknown_roles      │ OK      │ 0/1 rows (0.0%)       │                       │
+│                    │         │ contain a message     │                       │
+│                    │         │ role outside          │                       │
+│                    │         │ ['assistant',         │                       │
+│                    │         │ 'function', 'system', │                       │
+│                    │         │ 'tool', 'user']       │                       │
+│ truncation_risk    │ OK      │ p95 length = 145      │ p50=145, max=145      │
+│                    │         │ tokens vs             │                       │
+│                    │         │ max_length=1024; 0/1  │                       │
+│                    │         │ rows (0.0%) would be  │                       │
+│                    │         │ truncated             │                       │
+└────────────────────┴─────────┴───────────────────────┴───────────────────────┘
+╭─────── overall ───────╮
+│ OK — 1/1 rows scanned │
+╰───────────────────────╯
+Wrote evidence/fixture-missing-doctor.json
+{"elapsed_seconds":8.41730615199998,"event":"segment","name":"stage_end","stage":"fixture-missing-doctor","utc":"2026-11-10T04:43:13.104012+00:00"}
+{"event":"stage_end","stage":"fixture-missing-doctor","status":"passed","utc":"2026-11-10T04:43:13.104797+00:00"}

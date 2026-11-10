@@ -1,0 +1,72 @@
+{
+  "stage": "fixture-length-doctor",
+  "request": {
+    "stage": "cli",
+    "label": "fixture-length-doctor",
+    "allowed": "0,1,2,3",
+    "cuda_owner": false,
+    "arguments": [
+      "--",
+      "data",
+      "doctor",
+      "controls/length_boundary.jsonl",
+      "--model",
+      "artifacts/base",
+      "--format",
+      "chatml",
+      "--max-length",
+      "16",
+      "--sample",
+      "1",
+      "--train-on-eot",
+      "--output",
+      "evidence/fixture-length-doctor.json"
+    ]
+  },
+  "started_utc": "2026-11-10T04:43:14.165369+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 2,
+    "arguments": [
+      "data",
+      "doctor",
+      "controls/length_boundary.jsonl",
+      "--model",
+      "artifacts/base",
+      "--format",
+      "chatml",
+      "--max-length",
+      "16",
+      "--sample",
+      "1",
+      "--train-on-eot",
+      "--output",
+      "evidence/fixture-length-doctor.json"
+    ],
+    "outputs": [
+      "evidence/fixture-length-doctor.json"
+    ]
+  },
+  "output_bindings": {
+    "evidence/fixture-length-doctor.json": "77332cb7c616303e2051835f9c63a7c70bbd6b9ae7da8fb8a2ee849f9b84a4dc"
+  },
+  "resources": {
+    "elapsed_seconds": 8.415245206999998,
+    "peak_rss_bytes_sampled": 971509760,
+    "peak_device_used_mib_sampled": 0,
+    "device_samples": 28,
+    "segments": [
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T04:43:22.591098+00:00",
+        "elapsed_seconds": 8.414543340999955
+      }
+    ],
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "finished_utc": "2026-11-10T04:43:22.591839+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

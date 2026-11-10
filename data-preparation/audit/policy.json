@@ -1,0 +1,26 @@
+{
+  "soup_commit": "4cff43bf967e96a484381205e5125e2fc39227f1",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "dataset": "NousResearch/hermes-function-calling-v1",
+  "dataset_revision": "dae3e1d28cfbcf4b915c04ea1e072030529b4bda",
+  "seed": 42,
+  "train_target": 1600,
+  "train_min": 1000,
+  "validation_target": 150,
+  "test_target": 150,
+  "length_candidates": [
+    512,
+    1024,
+    1536,
+    2048
+  ],
+  "expansion_allowed": true,
+  "task": "English single-turn call-only generation; multiple calls retain order",
+  "reference_policy": "strict JSON and schemas; no label repair; exclude conflicting references",
+  "split_policy": "connected components of source ID, normalized request, tool name and structural schema family",
+  "selection_policy": "small components reserved for holdouts; seeded round-robin within assigned components",
+  "schema_default": "Draft 7 when $schema is absent; declared supported dialect otherwise",
+  "schema_limits": "no external references, dynamic/recursive references or unknown string formats",
+  "loss_policy": "assistant content and EOT only; role headers and trailing whitespace masked"
+}

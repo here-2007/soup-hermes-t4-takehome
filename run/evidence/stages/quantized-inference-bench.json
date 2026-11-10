@@ -1,0 +1,85 @@
+{
+  "stage": "quantized-inference-bench",
+  "request": {
+    "stage": "cli",
+    "label": "quantized-inference-bench",
+    "allowed": "0",
+    "cuda_owner": true,
+    "arguments": [
+      "--",
+      "bench",
+      "infer",
+      "artifacts/merged-nf4",
+      "--num-prompts",
+      "3",
+      "--max-tokens",
+      "64",
+      "--p50",
+      "--p95"
+    ]
+  },
+  "started_utc": "2026-11-10T09:04:43.882881+00:00",
+  "status": "passed",
+  "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+  "result": {
+    "exit_code": 0,
+    "arguments": [
+      "bench",
+      "infer",
+      "artifacts/merged-nf4",
+      "--num-prompts",
+      "3",
+      "--max-tokens",
+      "64",
+      "--p50",
+      "--p95"
+    ],
+    "outputs": []
+  },
+  "output_bindings": {},
+  "resources": {
+    "elapsed_seconds": 23.779721029999564,
+    "peak_rss_bytes_sampled": 2201882624,
+    "peak_device_used_mib_sampled": 1251,
+    "device_samples": 87,
+    "segments": [
+      {
+        "name": "empty_cuda_context",
+        "utc": "2026-11-10T09:04:45.479153+00:00",
+        "elapsed_seconds": 1.5855211229991255,
+        "allocated_bytes": 0,
+        "reserved_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "peak_reserved_bytes": 0
+      },
+      {
+        "name": "stage_end",
+        "utc": "2026-11-10T09:05:07.672321+00:00",
+        "elapsed_seconds": 23.778694746999463,
+        "allocated_bytes": 684992512,
+        "reserved_bytes": 1172307968,
+        "peak_allocated_bytes": 1157150208,
+        "peak_reserved_bytes": 1172307968
+      }
+    ],
+    "peak_allocated_bytes": 1157150208,
+    "peak_reserved_bytes": 1172307968,
+    "scope": "Child-local allocator segments; 0.2 s target device/RSS sampling may miss transients. Bench CLI resets its own allocator after setup."
+  },
+  "hardware": {
+    "name": "Tesla T4",
+    "total_bytes": 15636037632,
+    "visible_count": 1,
+    "selected_physical_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+    "capability": [
+      7,
+      5
+    ],
+    "torch_version": "2.11.0+cu130",
+    "torch_cuda_build": "13.0",
+    "allocator_backend": "native",
+    "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80"
+  },
+  "finished_utc": "2026-11-10T09:05:07.673430+00:00",
+  "settings_sha256": "3e5e34e7ff4eeb47154b4dfdc833c2243edfeaf4be5a029d0477f056b8aa18b7"
+}

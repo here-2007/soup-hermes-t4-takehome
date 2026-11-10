@@ -1,0 +1,50 @@
+base: ./artifacts/base
+task: sft
+backend: transformers
+data:
+  train: ./data/train.jsonl
+  format: chatml
+  val_split: 0
+  max_length: 1024
+  train_on_responses_only: true
+  chat_template: '{% for m in messages %}{{ ''<|im_start|>'' + m[''role''] + ''
+
+    '' }}{% if m[''role''] == ''assistant'' %}{% generation %}{{ m[''content''] +
+    ''<|im_end|>'' }}{% endgeneration %}{{ ''
+
+    '' }}{% else %}{{ m[''content''] + ''<|im_end|>
+
+    '' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ ''<|im_start|>assistant
+
+    '' }}{% endif %}'
+training:
+  epochs: 2
+  lr: 0.0001
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  optimizer: adamw_torch
+  scheduler: cosine
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  gradient_checkpointing: true
+  quantization: none
+  packing: false
+  train_on_eot: true
+  seed: 42
+  data_seed: 42
+  logging_steps: 1
+  save_steps: 200
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+output: ./artifacts/training-42

@@ -1,0 +1,38 @@
+{"event":"stage_start","stage":"quantized-inference-bench","utc":"2026-11-10T09:04:43.893655+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.5855211229991255,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"quantized-inference-bench","utc":"2026-11-10T09:04:45.479153+00:00"}
+Backend auto-detected: transformers
+╭───────────────────────── Benchmarking Configuration ─────────────────────────╮
+│ Model:    artifacts/merged-nf4                                               │
+│ Device:   cuda                                                               │
+│ Prompts:  3                                                                  │
+│ Tokens/P: 64                                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Loading model to measure resource usage...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 59/338 [00:00<00:00, 575.12it/s]Loading weights:  35%|███▍      | 117/338 [00:00<00:00, 567.81it/s]Loading weights:  51%|█████▏    | 174/338 [00:00<00:00, 547.50it/s]Loading weights:  68%|██████▊   | 231/338 [00:00<00:00, 549.89it/s]Loading weights:  86%|████████▌ | 291/338 [00:00<00:00, 563.47it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 561.10it/s]
+Model loaded in 8.77s.
+
+Warmup run (discarded from timing)...
+Running 3 test inferences...
+  Prompt 1: 64 tokens in 3.45s
+  Prompt 2: 64 tokens in 3.45s
+  Prompt 3: 64 tokens in 3.42s
+
+               Inference Benchmark Results               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓
+┃ Backend      ┃ TPS (Avg) ┃ Latency (Total) ┃ Max VRAM ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Transformers │     18.61 │          10.32s │  1.08 GB │
+└──────────────┴───────────┴─────────────────┴──────────┘
+
+    Per-prompt latency     
+┏━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+┃ Statistic ┃ Latency (s) ┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+│ count     │           3 │
+│ mean      │       3.439 │
+│ p50       │       3.446 │
+│ p95       │       3.454 │
+│ p99       │       3.455 │
+└───────────┴─────────────┘
+{"allocated_bytes":684992512,"elapsed_seconds":23.778694746999463,"event":"segment","name":"stage_end","peak_allocated_bytes":1157150208,"peak_reserved_bytes":1172307968,"reserved_bytes":1172307968,"stage":"quantized-inference-bench","utc":"2026-11-10T09:05:07.672321+00:00"}
+{"event":"stage_end","stage":"quantized-inference-bench","status":"passed","utc":"2026-11-10T09:05:07.673819+00:00"}

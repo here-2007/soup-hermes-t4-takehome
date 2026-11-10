@@ -1,0 +1,36 @@
+{"event":"stage_start","stage":"evaluate-test-B","utc":"2026-11-10T07:58:38.093443+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":1.6530557650003175,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-test-B","utc":"2026-11-10T07:58:39.746475+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":8.385699783999371,"event":"segment","name":"before_cold_load","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"evaluate-test-B","utc":"2026-11-10T07:58:46.479111+00:00"}
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<03:08,  1.79it/s]Loading weights:  40%|███▉      | 135/338 [00:00<00:00, 266.57it/s]Loading weights:  61%|██████    | 205/338 [00:00<00:00, 307.68it/s]Loading weights:  77%|███████▋  | 261/338 [00:01<00:00, 307.65it/s]Loading weights:  91%|█████████ | 307/338 [00:01<00:00, 299.84it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 265.83it/s]
+{"allocated_bytes":3087429632,"elapsed_seconds":19.608923858000708,"event":"segment","name":"after_cold_load","peak_allocated_bytes":3087429632,"peak_reserved_bytes":3149922304,"reserved_bytes":3149922304,"stage":"evaluate-test-B","utc":"2026-11-10T07:58:57.702341+00:00"}
+{"allocated_bytes":3087429632,"elapsed_seconds":19.609807855000327,"event":"segment","name":"before_generation_warmup_excluded_from_latency","peak_allocated_bytes":3087429632,"peak_reserved_bytes":3149922304,"reserved_bytes":3149922304,"stage":"evaluate-test-B","utc":"2026-11-10T07:58:57.703231+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":20.63019973700102,"event":"segment","name":"after_generation_warmup_excluded_from_latency","peak_allocated_bytes":3135455232,"peak_reserved_bytes":3164602368,"reserved_bytes":3164602368,"stage":"evaluate-test-B","utc":"2026-11-10T07:58:58.723618+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":20.63121280999985,"event":"segment","name":"before_teacher_forcing_and_greedy_generation","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3164602368,"reserved_bytes":3164602368,"stage":"evaluate-test-B","utc":"2026-11-10T07:58:58.724635+00:00"}
+{"completed":10,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T07:59:42.586855+00:00"}
+{"completed":20,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:00:29.528566+00:00"}
+{"completed":30,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:01:08.230574+00:00"}
+{"completed":40,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:01:55.167473+00:00"}
+{"completed":50,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:02:29.697813+00:00"}
+{"completed":60,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:03:04.591158+00:00"}
+{"completed":70,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:03:43.788070+00:00"}
+{"completed":80,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:04:21.344178+00:00"}
+{"completed":90,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:05:03.685680+00:00"}
+{"completed":100,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:05:41.103537+00:00"}
+{"completed":110,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:06:23.036506+00:00"}
+{"completed":120,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:07:02.008019+00:00"}
+{"completed":130,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:07:51.249232+00:00"}
+{"completed":140,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:08:39.035546+00:00"}
+{"completed":150,"event":"progress","stage":"eval-test-B","total":150,"utc":"2026-11-10T08:09:23.257428+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":645.1642018000002,"event":"segment","name":"after_teacher_forcing_and_greedy_generation","peak_allocated_bytes":3642477056,"peak_reserved_bytes":3762290688,"reserved_bytes":3762290688,"stage":"evaluate-test-B","utc":"2026-11-10T08:09:23.257625+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":645.1703481330005,"event":"segment","name":"before_bundled_general_suites","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3762290688,"reserved_bytes":3762290688,"stage":"evaluate-test-B","utc":"2026-11-10T08:09:23.263768+00:00"}
+{"event":"progress","score":0.85,"stage":"general-B","suite":"mini_mmlu","utc":"2026-11-10T08:09:26.797683+00:00"}
+{"event":"progress","score":0.825,"stage":"general-B","suite":"mini_common_sense","utc":"2026-11-10T08:09:30.495362+00:00"}
+{"event":"progress","score":1.0,"stage":"general-B","suite":"mini_instruction","utc":"2026-11-10T08:09:32.646438+00:00"}
+{"event":"progress","score":0.75,"stage":"general-B","suite":"mini_arithmetic","utc":"2026-11-10T08:11:58.546368+00:00"}
+{"event":"progress","score":0.7,"stage":"general-B","suite":"mini_tool_call","utc":"2026-11-10T08:12:25.586732+00:00"}
+{"event":"progress","score":0.95,"stage":"general-B","suite":"mini_format_json","utc":"2026-11-10T08:13:10.884432+00:00"}
+{"event":"progress","score":1.0,"stage":"general-B","suite":"mini_safety","utc":"2026-11-10T08:14:17.550927+00:00"}
+{"event":"progress","score":0.325,"stage":"general-B","suite":"mini_over_refusal","utc":"2026-11-10T08:19:57.432791+00:00"}
+{"allocated_bytes":3096997888,"elapsed_seconds":1279.3396472549994,"event":"segment","name":"after_bundled_general_suites","peak_allocated_bytes":3119101952,"peak_reserved_bytes":3762290688,"reserved_bytes":3762290688,"stage":"evaluate-test-B","utc":"2026-11-10T08:19:57.433068+00:00"}
+{"allocated_bytes":9568256,"elapsed_seconds":1279.4041727380009,"event":"segment","name":"stage_end","peak_allocated_bytes":3096997888,"peak_reserved_bytes":3762290688,"reserved_bytes":3762290688,"stage":"evaluate-test-B","utc":"2026-11-10T08:19:57.497590+00:00"}
+{"event":"stage_end","stage":"evaluate-test-B","status":"passed","utc":"2026-11-10T08:19:57.499325+00:00"}

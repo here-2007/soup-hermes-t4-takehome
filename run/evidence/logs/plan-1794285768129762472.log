@@ -1,0 +1,20 @@
+{"event":"stage_start","stage":"plan","utc":"2026-11-10T04:42:48.253081+00:00"}
+                  Training plan                  
+┏━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┓
+┃ Field                   ┃ Value               ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━┩
+│ base                    │ ./artifacts/base    │
+│ task                    │ sft                 │
+│ config_sha              │ 45f4dba4bb98982f... │
+│ dataset_sha             │ 3e1c19821c79e777... │
+│ estimated_cost          │ $0.2000             │
+│ estimated_minutes       │ 40.0                │
+│ peak_vram_gb            │ 6.1                 │
+│ spot_price_usd_per_hour │ $0.30               │
+└─────────────────────────┴─────────────────────┘
+╭──────────────────────────────────── plan ────────────────────────────────────╮
+│ Plan written to evidence/soup.tfstate.                                       │
+│ Review the numbers, then run `soup apply` to record the plan.                │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{"elapsed_seconds":0.635203018000027,"event":"segment","name":"stage_end","stage":"plan","utc":"2026-11-10T04:42:48.888260+00:00"}
+{"event":"stage_end","stage":"plan","status":"passed","utc":"2026-11-10T04:42:48.888897+00:00"}

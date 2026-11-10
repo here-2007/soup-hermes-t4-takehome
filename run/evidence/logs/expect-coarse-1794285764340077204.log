@@ -1,0 +1,9 @@
+{"event":"stage_start","stage":"expect-coarse","utc":"2026-11-10T04:42:44.464013+00:00"}
+               soup expect — data/train.jsonl               
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━┳━━━━━━━━━━━━┓
+┃ Expectation                 ┃ Passed ┃ Rows ┃ Violations ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━╇━━━━━━━━━━━━┩
+│ expect_token_length_between │ PASS   │ 1600 │ 0          │
+└─────────────────────────────┴────────┴──────┴────────────┘
+{"elapsed_seconds":0.6366033930000299,"event":"segment","name":"stage_end","stage":"expect-coarse","utc":"2026-11-10T04:42:45.100591+00:00"}
+{"event":"stage_end","stage":"expect-coarse","status":"passed","utc":"2026-11-10T04:42:45.101758+00:00"}

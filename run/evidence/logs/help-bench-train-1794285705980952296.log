@@ -1,0 +1,20 @@
+{"event":"stage_start","stage":"help-bench-train","utc":"2026-11-10T04:41:46.103686+00:00"}
+                                                                                
+ Usage: verify_artifacts.py bench train [OPTIONS]                               
+                                                                                
+ Train for a fixed number of steps and report timing, memory and tokens --      
+ failing when the model was not actually training.                              
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --config  -c      <str>               Config to train [default: soup.yaml]   │
+│ --steps           <int range> [x>=1]  Optimizer steps to run [default: 20]   │
+│ --warmup          <int range> [x>=0]  Leading steps measured but left out of │
+│                                       the timing                             │
+│                                       [default: 3]                           │
+│ --output  -o      <str>               Where to write the JSON report         │
+│                                       [default: bench-train.json]            │
+│ --help                                Show this message and exit.            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+{"elapsed_seconds":0.6354945439999824,"event":"segment","name":"stage_end","stage":"help-bench-train","utc":"2026-11-10T04:41:46.739157+00:00"}
+{"event":"stage_end","stage":"help-bench-train","status":"passed","utc":"2026-11-10T04:41:46.752407+00:00"}

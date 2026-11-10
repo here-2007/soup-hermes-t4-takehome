@@ -1,0 +1,14 @@
+{
+  "run_id": "20261110T044014005029Z",
+  "dataset_dir": "/kaggle/input/datasets/pernavjain/tool-calling",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "gpu_uuid": "GPU-1abb4f06-438e-a094-a927-1e023c093229",
+  "physical_gpu_index": 0,
+  "reflection": "",
+  "allocator_config": "backend:native,expandable_segments:True,garbage_collection_threshold:0.80",
+  "max_length": 1024
+}

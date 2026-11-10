@@ -1,0 +1,67 @@
+{"event":"stage_start","stage":"train-43","utc":"2026-11-10T05:49:00.828572+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":9.21856502799983,"event":"segment","name":"empty_cuda_context","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"train-43","utc":"2026-11-10T05:49:10.047112+00:00"}
+{"allocated_bytes":0,"elapsed_seconds":17.82277652599987,"event":"segment","name":"before_base_load_and_lora_setup","peak_allocated_bytes":0,"peak_reserved_bytes":0,"reserved_bytes":0,"stage":"train-43","utc":"2026-11-10T05:49:18.651320+00:00"}
+Loading tokenizer: ./artifacts/base
+Loading model: ./artifacts/base
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<03:12,  1.75it/s]Loading weights:  37%|███▋      | 124/338 [00:00<00:00, 247.04it/s]Loading weights:  58%|█████▊    | 197/338 [00:00<00:00, 275.54it/s]Loading weights:  74%|███████▍  | 251/338 [00:01<00:00, 295.72it/s]Loading weights:  88%|████████▊ | 298/338 [00:01<00:00, 298.36it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 257.30it/s]
+LoRA applied: 9,232,384 trainable / 1,552,946,688 total (0.59%)
+chat_template override applied. Subsequent tokenizer.save_pretrained() / soup 
+push will persist this Jinja string into tokenizer_config.json — replacing 
+whatever the model originally shipped.
+Map:   0%|          | 0/1600 [00:00<?, ? examples/s]Map:   3%|▎         | 47/1600 [00:00<00:03, 454.41 examples/s]Map:   7%|▋         | 115/1600 [00:00<00:03, 444.84 examples/s]Map:  10%|█         | 162/1600 [00:00<00:03, 449.47 examples/s]Map:  14%|█▍        | 230/1600 [00:00<00:03, 444.68 examples/s]Map:  17%|█▋        | 278/1600 [00:00<00:02, 452.25 examples/s]Map:  21%|██▏       | 343/1600 [00:00<00:02, 439.95 examples/s]Map:  24%|██▍       | 391/1600 [00:00<00:02, 446.59 examples/s]Map:  28%|██▊       | 456/1600 [00:01<00:02, 437.61 examples/s]Map:  32%|███▎      | 520/1600 [00:01<00:02, 431.74 examples/s]Map:  37%|███▋      | 593/1600 [00:01<00:02, 502.32 examples/s]Map:  42%|████▏     | 666/1600 [00:01<00:01, 559.54 examples/s]Map:  46%|████▌     | 737/1600 [00:01<00:01, 598.93 examples/s]Map:  51%|█████     | 809/1600 [00:01<00:01, 629.43 examples/s]Map:  55%|█████▌    | 882/1600 [00:01<00:01, 655.79 examples/s]Map:  59%|█████▉    | 950/1600 [00:01<00:00, 660.55 examples/s]Map:  65%|██████▍   | 1036/1600 [00:02<00:01, 333.88 examples/s]Map:  69%|██████▉   | 1109/1600 [00:02<00:01, 396.60 examples/s]Map:  74%|███████▍  | 1184/1600 [00:02<00:00, 461.08 examples/s]Map:  79%|███████▊  | 1257/1600 [00:02<00:00, 515.54 examples/s]Map:  83%|████████▎ | 1329/1600 [00:02<00:00, 561.11 examples/s]Map:  89%|████████▉ | 1426/1600 [00:02<00:00, 585.40 examples/s]Map:  93%|█████████▎| 1495/1600 [00:02<00:00, 609.56 examples/s]Map:  98%|█████████▊| 1568/1600 [00:03<00:00, 637.20 examples/s]Map: 100%|██████████| 1600/1600 [00:03<00:00, 507.22 examples/s]
+Map:   0%|          | 0/150 [00:00<?, ? examples/s]Map:  28%|██▊       | 42/150 [00:00<00:00, 405.80 examples/s]Map:  56%|█████▌    | 84/150 [00:00<00:00, 410.59 examples/s]Map:  84%|████████▍ | 126/150 [00:00<00:00, 410.08 examples/s]Map: 100%|██████████| 150/150 [00:00<00:00, 342.58 examples/s]
+Map:   0%|          | 0/1600 [00:00<?, ? examples/s]Map:  16%|█▌        | 259/1600 [00:00<00:00, 2561.28 examples/s]Map:  33%|███▎      | 528/1600 [00:00<00:00, 2632.48 examples/s]Map:  62%|██████▏   | 994/1600 [00:00<00:00, 3548.12 examples/s]Map:  91%|█████████▏| 1461/1600 [00:00<00:00, 2290.90 examples/s]Map: 100%|██████████| 1600/1600 [00:00<00:00, 2365.34 examples/s]
+Map:   0%|          | 0/150 [00:00<?, ? examples/s]Map: 100%|██████████| 150/150 [00:00<00:00, 1142.34 examples/s]Map: 100%|██████████| 150/150 [00:00<00:00, 1127.53 examples/s]
+Gradient checkpointing: full (every block)
+Truncating train dataset:   0%|          | 0/1600 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 1600/1600 [00:00<00:00, 46595.94 examples/s]
+Truncating eval dataset:   0%|          | 0/150 [00:00<?, ? examples/s]Truncating eval dataset: 100%|██████████| 150/150 [00:00<00:00, 29102.86 examples/s]
+Rewind log: artifacts/training-43/rewind.jsonl
+{"allocated_bytes":3124359168,"elapsed_seconds":32.764838608999526,"event":"segment","name":"after_base_load_and_lora_setup","peak_allocated_bytes":3124477952,"peak_reserved_bytes":3185573888,"reserved_bytes":3185573888,"stage":"train-43","utc":"2026-11-10T05:49:33.593388+00:00"}
+{"allocated_bytes":3124359168,"elapsed_seconds":32.7666527170004,"event":"segment","name":"before_initial_noop_and_numerical_floor","peak_allocated_bytes":3124359168,"peak_reserved_bytes":3185573888,"reserved_bytes":3185573888,"stage":"train-43","utc":"2026-11-10T05:49:33.595189+00:00"}
+{"allocated_bytes":3133927424,"elapsed_seconds":36.28828534799959,"event":"segment","name":"after_initial_noop_and_numerical_floor","peak_allocated_bytes":3614981632,"peak_reserved_bytes":3697278976,"reserved_bytes":3697278976,"stage":"train-43","utc":"2026-11-10T05:49:37.116829+00:00"}
+{"allocated_bytes":3133927424,"elapsed_seconds":36.28924921199996,"event":"segment","name":"before_primary_training","peak_allocated_bytes":3133927424,"peak_reserved_bytes":3697278976,"reserved_bytes":3697278976,"stage":"train-43","utc":"2026-11-10T05:49:37.117800+00:00"}
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'pad_token_id': 151643}.
+{"allocated_bytes":4238141952,"elapsed_seconds":37.27083307399971,"event":"segment","name":"first_forward_complete","peak_allocated_bytes":4515667968,"peak_reserved_bytes":4552916992,"reserved_bytes":4552916992,"stage":"train-43","utc":"2026-11-10T05:49:38.099378+00:00"}
+{"allocated_bytes":3180535296,"elapsed_seconds":37.936692397000115,"event":"segment","name":"first_backward_complete","peak_allocated_bytes":4751072768,"peak_reserved_bytes":5075107840,"reserved_bytes":5075107840,"stage":"train-43","utc":"2026-11-10T05:49:38.765234+00:00"}
+{"allocated_bytes":3180536320,"elapsed_seconds":42.36444124300033,"event":"segment","name":"before_first_optimizer_step","peak_allocated_bytes":5010237952,"peak_reserved_bytes":5599395840,"reserved_bytes":5599395840,"stage":"train-43","utc":"2026-11-10T05:49:43.192983+00:00"}
+{"allocated_bytes":3254394880,"elapsed_seconds":42.446666333000394,"event":"segment","name":"after_first_optimizer_step","peak_allocated_bytes":3291324928,"peak_reserved_bytes":5685379072,"reserved_bytes":5685379072,"stage":"train-43","utc":"2026-11-10T05:49:43.275209+00:00"}
+{"event":"progress","optimizer_step":20,"stage":"train-43","utc":"2026-11-10T05:51:23.523012+00:00"}
+{"event":"progress","optimizer_step":40,"stage":"train-43","utc":"2026-11-10T05:53:04.420861+00:00"}
+{"event":"progress","optimizer_step":60,"stage":"train-43","utc":"2026-11-10T05:54:45.226298+00:00"}
+{"event":"progress","optimizer_step":80,"stage":"train-43","utc":"2026-11-10T05:56:33.105058+00:00"}
+{"event":"progress","optimizer_step":100,"stage":"train-43","utc":"2026-11-10T05:58:16.255242+00:00"}
+{"event":"progress","optimizer_step":120,"stage":"train-43","utc":"2026-11-10T06:00:03.162357+00:00"}
+{"event":"progress","optimizer_step":140,"stage":"train-43","utc":"2026-11-10T06:01:52.282647+00:00"}
+{"event":"progress","optimizer_step":160,"stage":"train-43","utc":"2026-11-10T06:03:40.159328+00:00"}
+{"event":"progress","optimizer_step":180,"stage":"train-43","utc":"2026-11-10T06:05:22.683394+00:00"}
+{"event":"progress","optimizer_step":200,"stage":"train-43","utc":"2026-11-10T06:07:14.253196+00:00"}
+{"event":"progress","optimizer_step":200,"stage":"train-43","utc":"2026-11-10T06:08:03.137544+00:00"}
+{"allocated_bytes":3217465344,"elapsed_seconds":1142.3092333610002,"event":"segment","name":"evaluation_complete_step_200","peak_allocated_bytes":5212466176,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:08:03.137784+00:00"}
+{"allocated_bytes":3217465344,"elapsed_seconds":1142.3209553569995,"event":"segment","name":"before_model_save","peak_allocated_bytes":3217465344,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:08:03.149505+00:00"}
+{"allocated_bytes":3217465344,"elapsed_seconds":1142.536819033,"event":"segment","name":"after_model_save","peak_allocated_bytes":3217465344,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:08:03.365364+00:00"}
+{"allocated_bytes":3217465344,"elapsed_seconds":1142.6913672869996,"event":"segment","name":"checkpoint_saved_step_200","peak_allocated_bytes":3217465344,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:08:03.519912+00:00"}
+{"event":"progress","optimizer_step":220,"stage":"train-43","utc":"2026-11-10T06:09:44.660893+00:00"}
+{"event":"progress","optimizer_step":240,"stage":"train-43","utc":"2026-11-10T06:11:30.358180+00:00"}
+{"event":"progress","optimizer_step":260,"stage":"train-43","utc":"2026-11-10T06:13:15.481840+00:00"}
+{"event":"progress","optimizer_step":280,"stage":"train-43","utc":"2026-11-10T06:15:00.415475+00:00"}
+{"event":"progress","optimizer_step":300,"stage":"train-43","utc":"2026-11-10T06:16:46.776203+00:00"}
+{"event":"progress","optimizer_step":320,"stage":"train-43","utc":"2026-11-10T06:18:34.190854+00:00"}
+{"event":"progress","optimizer_step":340,"stage":"train-43","utc":"2026-11-10T06:20:20.310350+00:00"}
+{"event":"progress","optimizer_step":360,"stage":"train-43","utc":"2026-11-10T06:22:05.097953+00:00"}
+{"event":"progress","optimizer_step":380,"stage":"train-43","utc":"2026-11-10T06:23:53.579634+00:00"}
+{"event":"progress","optimizer_step":400,"stage":"train-43","utc":"2026-11-10T06:25:37.235557+00:00"}
+{"event":"progress","optimizer_step":400,"stage":"train-43","utc":"2026-11-10T06:26:26.133983+00:00"}
+{"allocated_bytes":3217474560,"elapsed_seconds":2245.305675253,"event":"segment","name":"evaluation_complete_step_400","peak_allocated_bytes":5212463104,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.134227+00:00"}
+{"allocated_bytes":3217474560,"elapsed_seconds":2245.3180987509995,"event":"segment","name":"before_model_save","peak_allocated_bytes":3217474560,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.146648+00:00"}
+{"allocated_bytes":3217474560,"elapsed_seconds":2245.500943412,"event":"segment","name":"after_model_save","peak_allocated_bytes":3217474560,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.329483+00:00"}
+{"allocated_bytes":3217474560,"elapsed_seconds":2245.656404452,"event":"segment","name":"checkpoint_saved_step_400","peak_allocated_bytes":3217474560,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.484950+00:00"}
+{"event":"progress","optimizer_step":400,"stage":"train-43","utc":"2026-11-10T06:26:26.486232+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2245.898660396,"event":"segment","name":"before_model_save","peak_allocated_bytes":3254285824,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.727207+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2246.0723446929996,"event":"segment","name":"after_model_save","peak_allocated_bytes":3217356288,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.900891+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2246.1667503870003,"event":"segment","name":"after_primary_training","peak_allocated_bytes":3217356288,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.995291+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2246.1682675049997,"event":"segment","name":"before_clean_adapter_export","peak_allocated_bytes":3217356288,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:26.996814+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2246.3520740579997,"event":"segment","name":"after_clean_adapter_export","peak_allocated_bytes":3217356288,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:27.180611+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2246.582925726,"event":"segment","name":"before_trained_adapter_on_off","peak_allocated_bytes":3217858048,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:27.411470+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2249.3199150259998,"event":"segment","name":"after_trained_adapter_on_off","peak_allocated_bytes":4150875648,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:30.148455+00:00"}
+{"allocated_bytes":3217356288,"elapsed_seconds":2249.7929081310003,"event":"segment","name":"stage_end","peak_allocated_bytes":3217356288,"peak_reserved_bytes":5830082560,"reserved_bytes":5830082560,"stage":"train-43","utc":"2026-11-10T06:26:30.621452+00:00"}
+{"event":"stage_end","stage":"train-43","status":"passed","utc":"2026-11-10T06:26:30.623185+00:00"}

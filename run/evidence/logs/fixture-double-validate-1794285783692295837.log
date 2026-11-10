@@ -1,0 +1,6 @@
+{"event":"stage_start","stage":"fixture-double-validate","utc":"2026-11-10T04:43:03.817770+00:00"}
+Dataset is valid!
+
+1/1 rows valid for chatml format
+{"elapsed_seconds":0.5863437620000127,"event":"segment","name":"stage_end","stage":"fixture-double-validate","utc":"2026-11-10T04:43:04.404091+00:00"}
+{"event":"stage_end","stage":"fixture-double-validate","status":"passed","utc":"2026-11-10T04:43:04.453362+00:00"}

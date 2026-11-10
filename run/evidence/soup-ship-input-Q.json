@@ -1,0 +1,47 @@
+{
+  "task": {
+    "mode": "metric",
+    "base": 0.5,
+    "tuned": 0.49333333333333335
+  },
+  "benchmarks": {
+    "mini_mmlu": {
+      "base": 0.85,
+      "tuned": 0.825
+    },
+    "mini_common_sense": {
+      "base": 0.825,
+      "tuned": 0.85
+    },
+    "mini_instruction": {
+      "base": 1.0,
+      "tuned": 0.9583333333333334
+    },
+    "mini_arithmetic": {
+      "base": 0.75,
+      "tuned": 0.875
+    },
+    "mini_tool_call": {
+      "base": 0.7,
+      "tuned": 0.55
+    },
+    "mini_format_json": {
+      "base": 0.95,
+      "tuned": 1.0
+    },
+    "mini_safety": {
+      "base": 1.0,
+      "tuned": 1.0
+    },
+    "mini_over_refusal": {
+      "base": 0.325,
+      "tuned": 0.375
+    }
+  },
+  "provenance": {
+    "source": "offline replay of measured predictions",
+    "runtime_sha256": "f3cb5f8ac750e2cdf86f9cc236f9f327a957c56e8e937d387ac589e45cd4bbb1",
+    "predictions_sha256": "89f22488ff9418192da0a0195810c7ab51e2d5f36676a1c41c01ab5c472e2dd0",
+    "artifact_sha256": "c97131ef177723695badcb8396019409e1e58db403a0cb342e24ae410b8fe2ac"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "identity": {
+    "variant": "A",
+    "resolved_path": "/kaggle/working/soup-experiment/20261110T044014005029Z/artifacts/adapter-44",
+    "class": "PeftModelForCausalLM",
+    "quantized_linear_count": 0,
+    "quantization_config": null,
+    "devices": [
+      "cuda:0"
+    ],
+    "parameter_dtypes": {
+      "torch.float16": 338,
+      "torch.float32": 392
+    },
+    "portable_base_adapter_reads_blocked": false
+  },
+  "split": "validation",
+  "variant": "A",
+  "seed": 44,
+  "parse_ok": 0.9733333333333334,
+  "known_tools": 0.9733333333333334,
+  "tool_selection": 0.7933333333333333,
+  "schema_ok": 0.9333333333333333,
+  "arguments_ok": 0.5466666666666666,
+  "complete": 0.5466666666666666,
+  "truncated": 0.006666666666666667,
+  "extra_calls": 0.08,
+  "unknown_calls": 0.0,
+  "n": 150,
+  "mean_assistant_nll": 0.044492175792135734,
+  "slices": {
+    "single_call": {
+      "n": 69,
+      "complete": 0.6086956521739131
+    },
+    "multiple_call": {
+      "n": 81,
+      "complete": 0.49382716049382713
+    },
+    "length_le_512": {
+      "n": 10,
+      "complete": 0.6
+    },
+    "length_gt_512": {
+      "n": 140,
+      "complete": 0.5428571428571428
+    }
+  },
+  "latency_seconds": {
+    "median": 5.31750117699994,
+    "p95": 10.275892665998981
+  }
+}

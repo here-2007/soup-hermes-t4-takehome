@@ -1,0 +1,37 @@
+{"event":"stage_start","stage":"fixture-length-doctor","utc":"2026-11-10T04:43:14.176587+00:00"}
+                                soup data doctor                                
+┏━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+┃ Check              ┃ Verdict ┃ Message                  ┃ Evidence           ┃
+┡━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+│ chat_template      │ OK      │ tokenizer has a          │ 309 chars          │
+│                    │         │ chat_template            │                    │
+│ template_render    │ OK      │ 0/1 rows failed to       │                    │
+│                    │         │ render through the chat  │                    │
+│                    │         │ template                 │                    │
+│ generation_markers │ OK      │ template supports        │                    │
+│                    │         │ return_assistant_tokens_ │                    │
+│                    │         │ mask (exact              │                    │
+│                    │         │ assistant-only masking)  │                    │
+│ eos_in_labels      │ OK      │ no assistant turns to    │                    │
+│                    │         │ check                    │                    │
+│ bos_duplication    │ OK      │ tokenizer has no         │                    │
+│                    │         │ bos_token_id             │                    │
+│ system_role        │ OK      │ template supports the    │                    │
+│                    │         │ system role (1 rows use  │                    │
+│                    │         │ one)                     │                    │
+│ unknown_roles      │ OK      │ 0/1 rows (0.0%) contain  │                    │
+│                    │         │ a message role outside   │                    │
+│                    │         │ ['assistant',            │                    │
+│                    │         │ 'function', 'system',    │                    │
+│                    │         │ 'tool', 'user']          │                    │
+│ truncation_risk    │ MAJOR   │ p95 length = 1024 tokens │ p50=1024, max=1024 │
+│                    │         │ vs max_length=16; 1/1    │                    │
+│                    │         │ rows (100.0%) would be   │                    │
+│                    │         │ truncated                │                    │
+└────────────────────┴─────────┴──────────────────────────┴────────────────────┘
+╭──────── overall ─────────╮
+│ MAJOR — 1/1 rows scanned │
+╰──────────────────────────╯
+Wrote evidence/fixture-length-doctor.json
+{"elapsed_seconds":8.414543340999955,"event":"segment","name":"stage_end","stage":"fixture-length-doctor","utc":"2026-11-10T04:43:22.591098+00:00"}
+{"event":"stage_end","stage":"fixture-length-doctor","status":"passed","utc":"2026-11-10T04:43:22.592294+00:00"}
